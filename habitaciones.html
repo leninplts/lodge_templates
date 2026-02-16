@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Habitaciones - Quillapata Lodge</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#c5942b",
+            "background-light": "#f8f7f6",
+            "background-dark": "#201b12",
+            "deep-blue": "#1B3A5C",
+            "brown-earth": "#8B4513",
+            "cream-warm": "#FAF6F0",
+          },
+          fontFamily: {
+            "display": ["Work Sans"],
+            "serif": ["Playfair Display", "serif"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .hero-gradient {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    }
+
+    .bg-texture {
+      background-color: #FAF6F0;
+      background-image: radial-gradient(#c5942b10 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+  </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-100">
+  <!-- 1. Header: Sticky Navigation -->
+  <header
+    class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-primary/10 shadow-sm">
+    <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl font-serif font-bold text-primary tracking-tight">Quillapata Lodge</span>
+      </div>
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide uppercase">
+        <a class="hover:text-primary transition-colors" href="index.html">Inicio</a>
+        <a class="hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
+        <a class="hover:text-primary transition-colors" href="como-llegar.html">Cómo Llegar</a>
+        <a class="text-primary font-bold" href="habitaciones.html">Habitaciones</a>
+        <a class="hover:text-primary transition-colors" href="alimentacion.html">Alimentación</a>
+        <a class="hover:text-primary transition-colors" href="actividades.html">Actividades</a>
+        <a class="hover:text-primary transition-colors" href="paquetes.html">Paquetes</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <button
+          class="bg-primary hover:bg-primary/90 text-white px-8 py-2.5 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg flex items-center gap-2">
+          <span class="material-icons text-lg">calendar_today</span>
+          Reservar
+        </button>
+        <!-- Mobile Hamburger -->
+        <button class="md:hidden text-deep-blue dark:text-primary p-2"
+          onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu"
+        class="hidden md:hidden bg-white dark:bg-background-dark border-t border-primary/10 px-6 py-4">
+        <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="index.html">Inicio</a>
+        <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
+        <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="como-llegar.html">Cómo Llegar</a>
+        <a class="block py-3 text-primary font-bold" href="habitaciones.html">Habitaciones</a>
+        <a class="block py-3 text-gray-600 hover:text-primary transition-colors"
+          href="alimentacion.html">Alimentación</a>
+        <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="actividades.html">Actividades</a>
+        <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="paquetes.html">Paquetes</a>
+        <a class="block py-3 bg-primary text-white text-center rounded-lg font-semibold mt-2"
+          href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a>
+      </div>
+    </nav>
+  </header>
+  <!-- 2. Hero Section -->
+  <section class="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img alt="Habitación de lujo con vista al lago Titicaca" class="w-full h-full object-cover"
+        data-alt="Luxurious room interior with large windows and lake view"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc62IvN7GbslMKbztCuPozXYDWWCSXT3nEVp3OrxvwRi5TF8WPKR66x01X3Qm7izYtFAqT03lSk8TnaXjyvnzXIAvbSqiL4KPtfXzo8IDOb2XgfO6If1uURYN_IDoaLQDQX21jchT5Lk3FKmbSKKmqKy1SmQbw4fBcd1Dz2DNsYVimuHF6MF8YUdnhkzMvrlKAFASRc3_M3X8KrLAEuUAyp1iBUP8gbPxoCPCCsX-WFDh-SB4U4NT25ut3IvJFZEkBqROIYacjixE" />
+      <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+    <div class="relative text-center px-6">
+      <h1 class="text-5xl md:text-7xl font-serif text-white mb-4 italic">Nuestras Habitaciones</h1>
+      <div class="w-24 h-1 bg-primary mx-auto"></div>
+      <p class="mt-6 text-white/90 text-lg md:text-xl font-light max-w-2xl mx-auto">
+        Un refugio de calidez y elegancia en el corazón del Altiplano.
+      </p>
+    </div>
+  </section>
+  <!-- 3. Intro Text -->
+  <section class="py-20 bg-cream-warm dark:bg-background-dark bg-texture">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <span class="text-primary font-bold tracking-[0.2em] text-sm uppercase mb-4 block">Esencia Neo-Andina</span>
+      <h2 class="text-3xl md:text-4xl font-serif mb-8 text-deep-blue dark:text-primary">Calidez Natural y Tradición</h2>
+      <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+        Cada espacio ha sido diseñado utilizando materiales nobles de la región: muros de adobe que conservan el calor,
+        techos altos con vigas de madera local y amplios ventanales que enmarcan la majestuosidad del Lago Titicaca.
+        Nuestras habitaciones cuentan con estufas a leña y las más finas mantas de alpaca, garantizando un descanso
+        profundo y reparador en la quietud de Puno.
+      </p>
+    </div>
+  </section>
+  <!-- 4. Room Types Grid -->
+  <section class="py-20 bg-background-light dark:bg-background-dark">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Room 1: Doble -->
+        <div
+          class="bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow group border border-primary/10">
+          <div class="h-64 overflow-hidden relative">
+            <img alt="Habitación Doble"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Two twin beds in a sunlit room with rustic decor"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO09IXnfSjbKfC5FVv26eE2DcXrl8e-kPAwoZW9nRUOpulEwNPw2p6r90NnS_7YWEPz46tEcVH7IJ-WNlK7aFOMDaPDGwwxT1-ix9RwHMLC3LNfsXkATlykpFXBQE4DtZDSrYH8Ea-7M7R1Sa3Itpd3YCfQcQoFRspK_1ONlVUEgMEMnqtvneAaTa71dmSgJfL4nCndIrtP-TvKGTMtmnd_U2PTzQ9wyW5NdKhfZHAaF1blbU2F0_OC60YSQ-lWT2sZV4TX0Anv5U" />
+            <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Doble
+            </div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-serif mb-3 text-deep-blue dark:text-primary">Habitación Doble</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm">Perfecta para compartir, con dos camas
+              individuales, estufa tradicional y vistas laterales al lago.</p>
+            <div class="flex gap-4 border-t border-primary/10 pt-6 text-primary">
+              <span class="material-icons text-xl" title="Vista al lago">wb_sunny</span>
+              <span class="material-icons text-xl" title="Estufa">fireplace</span>
+              <span class="material-icons text-xl" title="Alpaca">spa</span>
+            </div>
+          </div>
+        </div>
+        <!-- Room 2: Matrimonial -->
+        <div
+          class="bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow group border border-primary/10">
+          <div class="h-64 overflow-hidden relative">
+            <img alt="Habitación Matrimonial"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Cozy king bed with luxury alpaca blankets"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrDO-CyclM9vf8sCy9kax7-33a-iNr-3lYYRZAO-MpnL-nv2qr_EnJWTMayM1JFtTWLzrLILjpnOuXPqIgtmkAxP4IhbSzrdEU8I_A89nCCxp9Uihe07twrVuj0j1WyWUl0q3tjkQwXWGqxNcTnkTwE57PUmTsgBJ7CuYMQXvhGnbB6E8DTmvQ7Vk-Q8fv1SdNzepVFB5Zp9NHy-i7f9NY4RvuAfPQfnYGIjKJwPqD75Tt8YJuYaS2-Weo5-65up7nnPXWQIbVnQk" />
+            <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">King
+            </div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-serif mb-3 text-deep-blue dark:text-primary">Habitación Matrimonial</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm">Elegante cama King con las mejores mantas de alpaca
+              y vista frontal ininterrumpida al lago.</p>
+            <div class="flex gap-4 border-t border-primary/10 pt-6 text-primary">
+              <span class="material-icons text-xl" title="Cama King">king_bed</span>
+              <span class="material-icons text-xl" title="Estufa">fireplace</span>
+              <span class="material-icons text-xl" title="Vista frontal">visibility</span>
+            </div>
+          </div>
+        </div>
+        <!-- Room 3: Triple -->
+        <div
+          class="bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow group border border-primary/10">
+          <div class="h-64 overflow-hidden relative">
+            <img alt="Habitación Triple"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Three beds in a spacious wooden room"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyzYKpIypjZAre81aK221qv1BYLU0VSS9MctMmGi2BRsOyfbRzOICx4HMeNfqbIH2M9gMh1vTSiyS1H766wkhew-tC55nCIvBJHE5xJCwHf19kG_tAlBzBV5OdiMmrqVyX9lWiAdlZifphSljJdK6mluROy9EJkuivEFkqgxpM8woFh5ChdpYiO65WDtgVowOX06idW8tpHk47OVgtQGiQMaggiN4cpxfn_VG7NTdP92PJjf829809mHw02tzJnqRhoiiMaQfJA-Y" />
+            <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Flexible
+            </div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-serif mb-3 text-deep-blue dark:text-primary">Habitación Triple</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm">Espacio flexible con tres camas independientes o
+              matrimonial más una simple, ideal para amigos.</p>
+            <div class="flex gap-4 border-t border-primary/10 pt-6 text-primary">
+              <span class="material-icons text-xl" title="3 Camas">hotel</span>
+              <span class="material-icons text-xl" title="Estufa">fireplace</span>
+              <span class="material-icons text-xl" title="Wi-Fi">wifi</span>
+            </div>
+          </div>
+        </div>
+        <!-- Room 4: Cuádruple -->
+        <div
+          class="bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow group border border-primary/10">
+          <div class="h-64 overflow-hidden relative">
+            <img alt="Habitación Cuádruple"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Large family room with four organized beds"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT_rAySGdijUNd9xKgNIJHyuq_RNRTQi7fQdTwK8oJW_ZoY6VT40uOoTZbHZD4qNbSH8kSYGbrfAg-gJmpRUd9y6b2A6PrtZM1bvbEWT6k6pcplw4Vqy3ijbNhtV3j2-dr2_rwjGdUYtXFIEfneaGorg5vGmS5LNwU5GntrISwmc8pOk4Ijp707wvQ6zI-KeF2Yacr9qX-0Y-EBIL5mgs5butjmOuPuABjyaHDtdQ7FOmY3imtzj70sklSBNTZJbuOkAr8eHfDRKQ" />
+            <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Familiar
+            </div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-serif mb-3 text-deep-blue dark:text-primary">Habitación Cuádruple</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm">Nuestra opción más amplia para familias. Confort
+              térmico superior y techos artesanales.</p>
+            <div class="flex gap-4 border-t border-primary/10 pt-6 text-primary">
+              <span class="material-icons text-xl" title="Familiar">groups</span>
+              <span class="material-icons text-xl" title="Estufa">fireplace</span>
+              <span class="material-icons text-xl" title="Baño amplio">bathtub</span>
+            </div>
+          </div>
+        </div>
+        <!-- Room 5: Bungalow Titicaca -->
+        <div
+          class="bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow group border border-primary/20 scale-[1.02] ring-1 ring-primary/30">
+          <div class="h-64 overflow-hidden relative">
+            <img alt="Bungalow El Titicaca"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Cozy wooden cabin overlooking a serene lake"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoUmPcudgeM7fu0-vr_JEjNNsk41j5ERrUE0zgnFIf1RWTxw3sgtIxsynmxr16sAhi9L8juupSI_4Kvwtcy2c40h9UbearJc4QeeEJrqsvri11SDNSpt5L1PI74hHNgzuLYDe-LthNnnGvg23iDUltovYy0YB0VOxq_1U7LbkUC6xiQNlNCbjbRPiP4fTUs5sADcL_YiZrD7oGPRGMcGGCddVTPN7Mgv6zZbGmkBmveVNF-sTaJPoH_0HVrGaJVyxCu3M1Kaaxo0A" />
+            <div
+              class="absolute top-4 right-4 bg-brown-earth text-white text-xs font-bold px-3 py-1 rounded-full uppercase">
+              Premium</div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-serif mb-3 text-deep-blue dark:text-primary">Bungalow El Titicaca</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm">Cabaña privada para 6 personas. 2 dormitorios,
+              sala-comedor, cocina y terraza panorámica.</p>
+            <div class="flex gap-4 border-t border-primary/10 pt-6 text-primary">
+              <span class="material-icons text-xl" title="6 Personas">people</span>
+              <span class="material-icons text-xl" title="Terraza">deck</span>
+              <span class="material-icons text-xl" title="Cocina">restaurant</span>
+            </div>
+          </div>
+        </div>
+        <!-- Room 6: Bungalow Sillustani -->
+        <div
+          class="bg-white dark:bg-neutral-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow group border border-primary/10">
+          <div class="h-64 overflow-hidden relative">
+            <img alt="Bungalow El Sillustani"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Rustic large bungalow with stone accents and grill"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXoZBzL0VRk6tyZIt0cLULkhwLr4KA6vgkufOo3l4x91xMCHN66QT4xGDe0b182Jr3pZWHqYPOZXrX9kARY0drMrF-QR2VQyMSbw7084ANrBs5cibUMSBBxCaBgeFCaXvwVit5PssfFDMMWYxW5d9JLpoJ6wk0DBHReFJw45M_dbaH3xIwsSdowAltvNL7NKUqnq8WGiASozZJOIu0Jv3O5K5L_gnq9N33wTjKveqe-12CFqFp0bVnMzvfNtyKJgBmyngg7kWcrls" />
+            <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Grupos
+            </div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-serif mb-3 text-deep-blue dark:text-primary">Bungalow El Sillustani</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm">Máxima capacidad (8 personas). 2 habitaciones,
+              terraza privada con zona de parrilla.</p>
+            <div class="flex gap-4 border-t border-primary/10 pt-6 text-primary">
+              <span class="material-icons text-xl" title="8 Personas">groups_3</span>
+              <span class="material-icons text-xl" title="Parrilla">outdoor_grill</span>
+              <span class="material-icons text-xl" title="Patio">grid_view</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 5. Amenities Icon Strip -->
+  <section class="py-12 border-y border-primary/10 bg-white dark:bg-background-dark/50">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+        <div class="flex flex-col items-center gap-3">
+          <div class="p-4 bg-primary/10 rounded-full text-primary">
+            <span class="material-icons text-3xl">wifi</span>
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Wi-Fi</span>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <div class="p-4 bg-primary/10 rounded-full text-primary">
+            <span class="material-icons text-3xl">hot_tub</span>
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 text-center">Agua caliente
+            24h</span>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <div class="p-4 bg-primary/10 rounded-full text-primary">
+            <span class="material-icons text-3xl">fireplace</span>
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 text-center">Estufa a leña</span>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <div class="p-4 bg-primary/10 rounded-full text-primary">
+            <span class="material-icons text-3xl">spa</span>
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 text-center">Mantas de alpaca</span>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <div class="p-4 bg-primary/10 rounded-full text-primary">
+            <span class="material-icons text-3xl">terrain</span>
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 text-center">Vistas al lago</span>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <div class="p-4 bg-primary/10 rounded-full text-primary">
+            <span class="material-icons text-3xl">local_mall</span>
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 text-center">Prod.
+            artesanales</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 6. CTA Section -->
+  <section class="py-24 bg-primary relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <img alt="Detalle textil andino" class="w-full h-full object-cover" data-alt="Andean textile pattern close-up"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC54VCyLATUbDcTueFSbkbOpBnSRPLhgyjQZSfJYDt5GfVukisQrg0vzOmQ53ZxNYpZ4gqr7BMyDftpFWHp9DAI-k_fhHaUrZayHIDWJygwttya8locUVx9wlZknv9RjGBzH3Rh5GQMEznXhs2S2EueNiirb-gvatA7pR4U6vjXC5nTaXfyOOx8ZJxOx2HEXRzIG7eH4CMAcfFoi3SpxOrhH0KzmILe5W960MJxU616HuTmAH50yjjCOE51-owpaVV3nz37O0r5f0" />
+    </div>
+    <div class="container mx-auto px-6 relative z-10 text-center text-white">
+      <h2 class="text-4xl md:text-5xl font-serif mb-6">¡Quillapata Lodge te está esperando!</h2>
+      <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto font-light">
+        Descubre el equilibrio perfecto entre lujo y naturaleza. Reserva hoy tu próxima desconexión en el Titicaca.
+      </p>
+      <button
+        class="bg-white text-primary px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
+        Empieza la desconexión
+      </button>
+    </div>
+  </section>
+  <!-- 7. Footer -->
+  <footer class="bg-deep-blue text-white/80 py-16">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div class="col-span-1 md:col-span-1">
+          <h4 class="text-2xl font-serif text-primary font-bold mb-6">Quillapata Lodge</h4>
+          <p class="text-sm leading-relaxed">Un santuario neo-andino a las orillas del lago navegable más alto del
+            mundo. Experiencias únicas, confort incomparable.</p>
+        </div>
+        <div>
+          <h5 class="text-white font-bold mb-6 uppercase text-sm tracking-widest">Explora</h5>
+          <ul class="space-y-4 text-sm">
+            <li><a class="hover:text-primary transition-colors" href="index.html">Inicio</a></li>
+            <li><a class="hover:text-primary transition-colors" href="nosotros.html">Nosotros</a></li>
+            <li><a class="hover:text-primary transition-colors" href="alimentacion.html">Alimentación</a></li>
+            <li><a class="hover:text-primary transition-colors" href="actividades.html">Actividades</a></li>
+            <li><a class="hover:text-primary transition-colors" href="paquetes.html">Paquetes</a></li>
+            <li><a class="hover:text-primary transition-colors" href="como-llegar.html">Cómo Llegar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-white font-bold mb-6 uppercase text-sm tracking-widest">Contacto</h5>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-center gap-3">
+              <span class="material-icons text-primary text-lg">location_on</span>
+              Puno, Lago Titicaca, Perú
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-icons text-primary text-lg">phone</span>
+              +51 987 654 321
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-icons text-primary text-lg">mail</span>
+              reservas@quillapatalodge.com
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-white font-bold mb-6 uppercase text-sm tracking-widest">Síguenos</h5>
+          <div class="flex gap-4">
+            <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-all"
+              href="#">
+              <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z">
+                </path>
+              </svg>
+            </a>
+            <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-all"
+              href="#">
+              <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-20 pt-8 border-t border-white/10 text-center text-xs tracking-widest uppercase opacity-60">
+        © 2024 Quillapata Lodge. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

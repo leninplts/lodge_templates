@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Alimentación - Quillapata Lodge</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c6972a",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#201c12",
+                        "andean-blue": "#1B3A5C",
+                        "andean-brown": "#8B4513",
+                        "andean-cream": "#FAF6F0",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bg-cream {
+            background-color: #FAF6F0;
+        }
+
+        .text-gold {
+            color: #c6972a;
+        }
+
+        .bg-gold {
+            background-color: #c6972a;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-andean-blue dark:text-andean-cream">
+    <!-- 1. Header: Sticky nav -->
+    <header
+        class="sticky top-0 z-50 bg-andean-cream/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-primary/10">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl font-serif font-bold tracking-tight text-andean-blue dark:text-primary">Quillapata
+                    Lodge</span>
+            </div>
+            <ul class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <li><a class="hover:text-primary transition-colors uppercase" href="index.html">Inicio</a></li>
+                <li><a class="hover:text-primary transition-colors uppercase" href="nosotros.html">Nosotros</a></li>
+                <li><a class="hover:text-primary transition-colors uppercase" href="como-llegar.html">Cómo Llegar</a>
+                </li>
+                <li><a class="hover:text-primary transition-colors uppercase" href="habitaciones.html">Habitaciones</a>
+                </li>
+                <li><a class="text-primary border-b-2 border-primary pb-1 uppercase"
+                        href="alimentacion.html">Alimentación</a></li>
+                <li><a class="hover:text-primary transition-colors uppercase" href="actividades.html">Actividades</a>
+                </li>
+                <li><a class="hover:text-primary transition-colors uppercase" href="paquetes.html">Paquetes</a></li>
+            </ul>
+            <div class="flex items-center gap-4">
+                <button
+                    class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-semibold uppercase tracking-widest transition-all shadow-md">
+                    Reservar
+                </button>
+                <!-- Mobile Hamburger -->
+                <button class="md:hidden text-andean-blue dark:text-primary p-2"
+                    onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="hidden md:hidden bg-white dark:bg-background-dark border-t border-primary/10 px-6 py-4">
+                <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="index.html">Inicio</a>
+                <a class="block py-3 text-gray-600 hover:text-primary transition-colors"
+                    href="nosotros.html">Nosotros</a>
+                <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="como-llegar.html">Cómo
+                    Llegar</a>
+                <a class="block py-3 text-gray-600 hover:text-primary transition-colors"
+                    href="habitaciones.html">Habitaciones</a>
+                <a class="block py-3 text-primary font-bold" href="alimentacion.html">Alimentación</a>
+                <a class="block py-3 text-gray-600 hover:text-primary transition-colors"
+                    href="actividades.html">Actividades</a>
+                <a class="block py-3 text-gray-600 hover:text-primary transition-colors"
+                    href="paquetes.html">Paquetes</a>
+                <a class="block py-3 bg-primary text-white text-center rounded-lg font-semibold mt-2"
+                    href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a>
+            </div>
+        </nav>
+    </header>
+    <!-- 2. Hero Section -->
+    <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img alt="Gastronomía Andina" class="w-full h-full object-cover"
+                data-alt="Beautifully plated Andean dish with native ingredients"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOE-EXmjHmdgrlugm6WXu0xsHfpWz-FZ7XqzMe_u-DYcTQBSnmCigsCxQk5gcbEzJ6qLOrDeh76KcuXHQe0KUs4_kR3lzZ-JY-cwUximrDSk807iIXIqtmLkB2QvZM9KRd879PUPhQrqHP60-vmsbTJQwoOVNPDS2CDXNNgwdkbGTs7zcvS6ABIHT8LdJgChkFiPWE9PKuZ6qPPcGfrPm5L8rE9dtLDPryxvB6j2se5LJB2Z_TCEvz6WKw4x9JOZ39pKmLLrprTeM" />
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-serif text-white mb-4">Alimentación</h1>
+            <p class="text-white/90 text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto">
+                Sabores ancestrales en el corazón de Puno, una danza entre la tierra y el paladar.
+            </p>
+        </div>
+    </section>
+    <!-- 3. Filosofía Section -->
+    <section class="py-24 bg-andean-cream dark:bg-background-dark overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-primary font-semibold tracking-widest uppercase text-sm">Nuestro Legado</span>
+                        <h2 class="text-4xl md:text-5xl font-serif text-andean-blue dark:text-primary mt-2">Comida que
+                            Sana</h2>
+                    </div>
+                    <p class="text-lg text-andean-blue/80 dark:text-andean-cream/80 leading-relaxed">
+                        Nuestra filosofía <span
+                            class="text-andean-brown font-semibold dark:text-primary">"Farm-to-Table"</span> nace del
+                        profundo respeto por la Pachamama. Trabajamos mano a mano con agricultores locales y nuestro
+                        propio huerto orgánico para traer a su mesa la esencia de los Andes.
+                    </p>
+                    <p class="text-lg text-andean-blue/80 dark:text-andean-cream/80 leading-relaxed">
+                        Desde la quinua real de grano dorado hasta la trucha fresca del Titicaca y una variedad infinita
+                        de papas nativas, cada ingrediente cuenta una historia de altitud y tradición.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="h-1 w-12 bg-primary"></div>
+                        <span class="font-serif italic text-xl">Chef Ejecutivo, Juan Mamani</span>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -top-6 -left-6 w-full h-full border-2 border-primary/20 rounded-xl"></div>
+                    <img alt="Huerto Orgánico" class="relative z-10 rounded-xl shadow-2xl w-full h-[500px] object-cover"
+                        data-alt="Close up of an organic vegetable garden"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6KJb01F4og6Y4gKZHmA3ZQjzeaPyXj15qbqnvxIF4jZeW9u1iNgPvBzWLemJiKapnGZlrxQwpH38XRsLdvj78y97DjGe2uEdis_1nNylR3GLRxnka1ucqV1O0_PszZAYnLWP0eO5zW0SZEiKreBfrMjrPdp8pqTvfu_IrIDb8iTeHV5R-_O5lcra4j06viCj4X6KC-OZZwRbXxkgKy0wbxb4ko-s-lYkJqWQteKMm-mAImHZBQS6ePIGbENZTI4IZbN2GU7_R8l4" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 4. Menú Diario Section -->
+    <section class="py-24 bg-background-light dark:bg-black/20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif text-andean-blue dark:text-primary">Rituales Diarios</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Desayuno -->
+                <div
+                    class="bg-white dark:bg-background-dark p-8 rounded-xl shadow-sm border-t-4 border-primary hover:shadow-xl transition-shadow group">
+                    <div class="text-primary mb-6">
+                        <span class="material-icons text-5xl">light_mode</span>
+                    </div>
+                    <h3 class="text-2xl font-serif mb-4 group-hover:text-primary transition-colors">🌅 Desayuno</h3>
+                    <p class="text-andean-blue/70 dark:text-andean-cream/70 mb-6 italic">Inicia el día con la energía
+                        del sol andino.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center space-x-2"><span
+                                class="material-icons text-primary text-xs">radio_button_checked</span> <span>Pan
+                                artesanal de horno de barro</span></li>
+                        <li class="flex items-center space-x-2"><span
+                                class="material-icons text-primary text-xs">radio_button_checked</span> <span>Infusiones
+                                de hierbas andinas</span></li>
+                        <li class="flex items-center space-x-2"><span
+                                class="material-icons text-primary text-xs">radio_button_checked</span> <span>Frutas
+                                frescas de la estación</span></li>
+                        <li class="flex items-center space-x-2"><span
+                                class="material-icons text-primary text-xs">radio_button_checked</span> <span>Miel
+                                orgánica y mermeladas</span></li>
+                    </ul>
+                </div>
+                <!-- Almuerzo -->
+                <div
+                    class="bg-white dark:bg-background-dark p-8 rounded-xl shadow-sm border-t-4 border-primary hover:shadow-xl transition-shadow group">
+                    <div class="text-primary mb-6">
+                        <span class="material-icons text-5xl">wb_sunny</span>
+                    </div>
+                    <h3 class="text-2xl font-serif mb-4 group-hover:text-primary transition-colors">🌞 Almuerzo</h3>
+                    <p class="text-andean-blue/70 dark:text-andean-cream/70 mb-6 italic">Un festín de tres tiempos bajo
+                        el cielo azul.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center space-x-2"><span
+                                class="material-icons text-primary text-xs">radio_button_checked</span> <span>Entradas
+                                creativas con granos</span></li>
+                        <li class="flex items-center space-x-2"><span
+                                class="material-icons text-primary text-xs">radio_button_checked</span> <span>Pesca del
+                                día o carnes locales</span></li>
+                        <li class="flex items-center space-x-2"><span
+                                class="material-icons text-primary text-xs">radio_button_checked</span>
+                            <span>Acompañamientos de huerta</span></li>
+                        <li class="flex items-center space-x-2"><span
+                                class="material-icons text-primary text-xs">radio_button_checked</span> <span>Postres de
+                                autor</span></li>
+                    </ul>
+                </div>
+                <!-- Cena -->
+                <div
+                    class="bg-white dark:bg-background-dark p-8 rounded-xl shadow-sm border-t-4 border-primary hover:shadow-xl transition-shadow group">
+                    <div class="text-primary mb-6">
+                        <span class="material-icons text-5xl">nights_stay</span>
+                    </div>
+                    <h3 class="text-2xl font-serif mb-4 group-hover:text-primary transition-colors">🌙 Cena</h3>
+                    <p class="text-andean-blue/70 dark:text-andean-cream/70 mb-6 italic">Elegancia y calidez para cerrar
+                        la jornada.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center space-x-2"><span
+                                class="material-icons text-primary text-xs">radio_button_checked</span> <span>Sopas
+                                reconfortantes</span></li>
+                        <li class="flex items-center space-x-2"><span
+                                class="material-icons text-primary text-xs">radio_button_checked</span> <span>Menú de
+                                temporada de 3 tiempos</span></li>
+                        <li class="flex items-center space-x-2"><span
+                                class="material-icons text-primary text-xs">radio_button_checked</span> <span>Opciones
+                                vegetarianas premium</span></li>
+                        <li class="flex items-center space-x-2"><span
+                                class="material-icons text-primary text-xs">radio_button_checked</span> <span>Maridaje
+                                sugerido</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 5. Experiencias Especiales -->
+    <section class="py-24 bg-andean-cream dark:bg-background-dark">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-serif text-center mb-16 text-andean-blue dark:text-primary">Experiencias Exclusivas
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <!-- Card 1 -->
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-white dark:bg-black/20 rounded-xl border border-primary/10 hover:border-primary transition-colors">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary text-3xl">local_pizza</span>
+                    </div>
+                    <h4 class="font-serif text-lg leading-tight">Noche de Pizzas</h4>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-white dark:bg-black/20 rounded-xl border border-primary/10 hover:border-primary transition-colors">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary text-3xl">landscape</span>
+                    </div>
+                    <h4 class="font-serif text-lg leading-tight">Pachamanca Tradicional</h4>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-white dark:bg-black/20 rounded-xl border border-primary/10 hover:border-primary transition-colors">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary text-3xl">local_fire_department</span>
+                    </div>
+                    <h4 class="font-serif text-lg leading-tight">Cena junto a la Fogata</h4>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-white dark:bg-black/20 rounded-xl border border-primary/10 hover:border-primary transition-colors">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary text-3xl">stars</span>
+                    </div>
+                    <h4 class="font-serif text-lg leading-tight">Cena Privada</h4>
+                </div>
+                <!-- Card 5 -->
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-white dark:bg-black/20 rounded-xl border border-primary/10 hover:border-primary transition-colors">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary text-3xl">ramen_dining</span>
+                    </div>
+                    <h4 class="font-serif text-lg leading-tight">Festival de Sopas</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 6. Planes Comparison -->
+    <section class="py-24 bg-background-light dark:bg-black/40">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Pensión Completa -->
+                <div
+                    class="bg-white dark:bg-background-dark rounded-xl overflow-hidden shadow-2xl border-2 border-primary transform hover:-translate-y-2 transition-transform">
+                    <div class="bg-primary p-6 text-center text-white">
+                        <h3 class="text-2xl font-serif font-bold uppercase tracking-widest">Pensión Completa</h3>
+                        <p class="text-sm opacity-90 mt-2">La experiencia culinaria total</p>
+                    </div>
+                    <div class="p-8 space-y-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-center space-x-3">
+                                <span class="material-icons text-primary">check_circle</span>
+                                <span>Desayuno Buffet Regional</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="material-icons text-primary">check_circle</span>
+                                <span>Almuerzo Gourmet (3 tiempos)</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="material-icons text-primary">check_circle</span>
+                                <span>Cena de Autor (3 tiempos)</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="material-icons text-primary">check_circle</span>
+                                <span>Infusiones ilimitadas</span>
+                            </li>
+                        </ul>
+                        <button
+                            class="w-full py-3 bg-primary text-white rounded-lg font-bold hover:bg-primary/90 transition-colors uppercase tracking-widest">Elegir
+                            Plan</button>
+                    </div>
+                </div>
+                <!-- Media Pensión -->
+                <div
+                    class="bg-white dark:bg-background-dark rounded-xl overflow-hidden shadow-lg border-2 border-primary/20 transform hover:-translate-y-2 transition-transform">
+                    <div class="bg-primary/10 p-6 text-center text-andean-blue dark:text-primary">
+                        <h3 class="text-2xl font-serif font-bold uppercase tracking-widest">Media Pensión</h3>
+                        <p class="text-sm opacity-70 mt-2">Flexibilidad para tu aventura</p>
+                    </div>
+                    <div class="p-8 space-y-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-center space-x-3">
+                                <span class="material-icons text-primary">check_circle</span>
+                                <span>Desayuno Buffet Regional</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="material-icons text-primary">check_circle</span>
+                                <span>Cena de Autor (3 tiempos)</span>
+                            </li>
+                            <li class="flex items-center space-x-3 opacity-30 italic">
+                                <span class="material-icons">block</span>
+                                <span>Almuerzo no incluido</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="material-icons text-primary">check_circle</span>
+                                <span>Infusiones ilimitadas</span>
+                            </li>
+                        </ul>
+                        <button
+                            class="w-full py-3 border-2 border-primary text-primary rounded-lg font-bold hover:bg-primary hover:text-white transition-all uppercase tracking-widest">Elegir
+                            Plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 7. Footer -->
+    <footer class="bg-andean-blue text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-serif text-primary">Quillapata Lodge</h3>
+                    <p class="text-sm text-white/70">
+                        Un refugio de lujo y tradición frente a la inmensidad del lago más alto del mundo.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 uppercase text-sm tracking-widest">Navegación</h4>
+                    <ul class="space-y-3 text-sm text-white/70">
+                        <li><a class="hover:text-primary transition-colors" href="index.html">Inicio</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="nosotros.html">Nosotros</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="habitaciones.html">Habitaciones</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="actividades.html">Actividades</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="paquetes.html">Paquetes</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="como-llegar.html">Cómo Llegar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 uppercase text-sm tracking-widest">Contacto</h4>
+                    <ul class="space-y-3 text-sm text-white/70">
+                        <li class="flex items-center space-x-2">
+                            <span class="material-icons text-xs text-primary">location_on</span>
+                            <span>Sector Quillapata, Puno - Perú</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="material-icons text-xs text-primary">phone</span>
+                            <span>+51 987 654 321</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="material-icons text-xs text-primary">email</span>
+                            <span>reservas@quillapata.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 uppercase text-sm tracking-widest">Síguenos</h4>
+                    <div class="flex space-x-4">
+                        <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">
+                            <span class="material-icons text-xl">facebook</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">
+                            <span class="material-icons text-xl">camera_alt</span>
+                        </a>
+                    </div>
+                    <div class="mt-8">
+                        <p class="text-xs text-white/50">© 2024 Quillapata Lodge. Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Paquetes - Quillapata Lodge</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#c5942b",
+            "background-light": "#FAF6F0",
+            "background-dark": "#201b12",
+            "andean-blue": "#1B3A5C",
+            "andean-brown": "#8B4513",
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"],
+            "serif": ["Playfair Display", "serif"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .neo-pattern {
+      background-image: radial-gradient(#c5942b 0.5px, transparent 0.5px);
+      background-size: 24px 24px;
+      opacity: 0.1;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(to bottom, rgba(27, 58, 92, 0.4), rgba(27, 58, 92, 0.1));
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100">
+  <!-- Sticky Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-primary/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg">
+          <span class="material-icons text-white">landscape</span>
+        </div>
+        <span class="font-serif text-2xl font-bold tracking-tight text-andean-blue dark:text-primary">Quillapata
+          Lodge</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8 font-medium">
+        <a class="hover:text-primary transition-colors" href="index.html">Inicio</a>
+        <a class="hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
+        <a class="hover:text-primary transition-colors" href="como-llegar.html">Cómo Llegar</a>
+        <a class="hover:text-primary transition-colors" href="habitaciones.html">Habitaciones</a>
+        <a class="hover:text-primary transition-colors" href="alimentacion.html">Alimentación</a>
+        <a class="hover:text-primary transition-colors" href="actividades.html">Actividades</a>
+        <a class="text-primary font-bold" href="paquetes.html">Paquetes</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <button
+          class="bg-primary text-white px-6 py-2.5 rounded-lg font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+          Reservar
+        </button>
+        <!-- Mobile Hamburger -->
+        <button class="md:hidden text-andean-blue dark:text-primary p-2"
+          onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="hidden md:hidden bg-white dark:bg-background-dark border-t border-primary/10 px-6 py-4">
+      <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="index.html">Inicio</a>
+      <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
+      <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="como-llegar.html">Cómo Llegar</a>
+      <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="habitaciones.html">Habitaciones</a>
+      <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="alimentacion.html">Alimentación</a>
+      <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="actividades.html">Actividades</a>
+      <a class="block py-3 text-primary font-bold" href="paquetes.html">Paquetes</a>
+      <a class="block py-3 bg-primary text-white text-center rounded-lg font-semibold mt-2"
+        href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+    <img alt="Andean Landscape" class="absolute inset-0 w-full h-full object-cover"
+      data-alt="Panoramic view of the Andean mountains at sunset"
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFJw308XSOAIneDf1pExPiUxW6VP_LWAu5BU8GUxnRxl0hdxJhTtNjc8ukOGI5to_wMoIm0MJxBHcx4HLNteFhqdBgsI8x6i0SXpdzcSfWNbTYIbkjafVq-8MwMEKwSwlh5DPSCBrENboFsdvt4wHR5u3xcDImYleLaO9XNPJXm38z0QsQKt-V3p10mbyiAn3JH53DOa9teNAmyMtHrMMDZwDLQv2pg_iYob5ncLsxj1guDOOOLK8TERV72lHU35OxzaeKIYHgTK8" />
+    <div class="absolute inset-0 hero-gradient"></div>
+    <div class="relative z-10 text-center text-white px-4 max-w-4xl">
+      <h1 class="font-serif text-5xl md:text-7xl mb-6 drop-shadow-lg italic">Aléjate de la Ciudad</h1>
+      <p class="text-xl md:text-2xl font-light mb-10 tracking-wide opacity-95">Un viaje inolvidable te espera en el
+        corazón de Puno</p>
+      <button
+        class="bg-primary hover:bg-white hover:text-primary text-white px-10 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-xl">
+        Haz tu Reserva
+      </button>
+    </div>
+  </section>
+  <!-- Intro Section -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 neo-pattern"></div>
+    <div class="max-w-3xl mx-auto text-center px-6 relative z-10">
+      <span class="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Experiencia Neo-Andina</span>
+      <h2 class="font-serif text-4xl text-andean-blue dark:text-primary mb-6">Bienvenidos a lo Sagrado</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed italic">
+        Descubre un refugio donde la modernidad se rinde ante la majestuosidad de los Andes. En Quillapata Lodge, cada
+        amanecer es una ceremonia y cada noche un encuentro con las estrellas.
+      </p>
+    </div>
+  </section>
+  <!-- Packages 3D/2N -->
+  <section class="py-16 bg-white dark:bg-gray-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span
+            class="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full font-bold text-xs uppercase tracking-widest mb-3 border border-primary/20">
+            Solo Viernes a Domingo
+          </span>
+          <h3 class="font-serif text-3xl text-andean-blue dark:text-white">Paquetes 3 Días / 2 Noches</h3>
+        </div>
+        <div class="h-1 flex-grow mx-8 bg-primary/10 hidden md:block rounded-full mb-4"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div
+          class="bg-background-light dark:bg-background-dark p-8 rounded-xl border border-primary/10 shadow-sm hover:shadow-xl transition-all group">
+          <h4 class="font-serif text-2xl mb-2">2 Personas</h4>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-6 uppercase tracking-wider">Habitación Matrimonial</p>
+          <div class="text-4xl font-bold text-primary mb-8">S/ 1,140</div>
+          <ul class="space-y-4 mb-10 text-sm">
+            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+              <span class="material-icons text-primary text-sm">check_circle</span> Alojamiento de Lujo
+            </li>
+            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+              <span class="material-icons text-primary text-sm">check_circle</span> Alimentación Completa
+            </li>
+            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+              <span class="material-icons text-primary text-sm">check_circle</span> Caminata Sostenible
+            </li>
+            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+              <span class="material-icons text-primary text-sm">check_circle</span> Fogata Nocturna
+            </li>
+          </ul>
+          <button
+            class="w-full py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">Elegir
+            Plan</button>
+        </div>
+        <!-- Card 2 -->
+        <div
+          class="bg-primary/5 dark:bg-primary/10 p-8 rounded-xl border-2 border-primary shadow-xl scale-105 z-10 relative">
+          <div
+            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase">
+            Más Popular</div>
+          <h4 class="font-serif text-2xl mb-2">3 Personas</h4>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-6 uppercase tracking-wider">Habitación Triple</p>
+          <div class="text-4xl font-bold text-primary mb-8">S/ 1,680</div>
+          <ul class="space-y-4 mb-10 text-sm font-medium">
+            <li class="flex items-center gap-3"><span class="material-icons text-primary text-sm">check_circle</span>
+              Alojamiento de Lujo</li>
+            <li class="flex items-center gap-3"><span class="material-icons text-primary text-sm">check_circle</span>
+              Alimentación Completa</li>
+            <li class="flex items-center gap-3"><span class="material-icons text-primary text-sm">check_circle</span>
+              Festival de Sopas</li>
+            <li class="flex items-center gap-3"><span class="material-icons text-primary text-sm">check_circle</span>
+              Cabalgata Guiada</li>
+          </ul>
+          <button
+            class="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-andean-blue transition-colors">Elegir
+            Plan</button>
+        </div>
+        <!-- Card 3 -->
+        <div
+          class="bg-background-light dark:bg-background-dark p-8 rounded-xl border border-primary/10 shadow-sm hover:shadow-xl transition-all">
+          <h4 class="font-serif text-2xl mb-2">4 Personas</h4>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-6 uppercase tracking-wider">Habitación Cuádruple</p>
+          <div class="text-4xl font-bold text-primary mb-8">S/ 2,220</div>
+          <ul class="space-y-4 mb-10 text-sm">
+            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+              <span class="material-icons text-primary text-sm">check_circle</span> Suite Cuádruple
+            </li>
+            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+              <span class="material-icons text-primary text-sm">check_circle</span> Alimentación Gourmet
+            </li>
+            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+              <span class="material-icons text-primary text-sm">check_circle</span> Cena de Pizzas
+            </li>
+            <li class="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+              <span class="material-icons text-primary text-sm">check_circle</span> Cabalgata Familiar
+            </li>
+          </ul>
+          <button
+            class="w-full py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">Elegir
+            Plan</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Packages 4D/3N -->
+  <section class="py-16 bg-background-light dark:bg-background-dark">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span
+            class="inline-block bg-andean-blue/10 text-andean-blue dark:text-primary px-4 py-1.5 rounded-full font-bold text-xs uppercase tracking-widest mb-3 border border-andean-blue/20">
+            Jueves a Domingo
+          </span>
+          <h3 class="font-serif text-3xl text-andean-blue dark:text-white">Paquetes 4 Días / 3 Noches</h3>
+        </div>
+        <div class="h-1 flex-grow mx-8 bg-primary/10 hidden md:block rounded-full mb-4"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 opacity-90">
+        <!-- Card 1 -->
+        <div
+          class="bg-white dark:bg-gray-900/50 p-8 rounded-xl border border-primary/5 shadow-sm hover:border-primary/30 transition-all">
+          <h4 class="font-serif text-2xl mb-2">2 Personas</h4>
+          <div class="text-4xl font-bold text-primary mb-6">S/ 1,710</div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-8">Incluye todas las actividades de fin de semana más un
+            día adicional de relax y excursión a medida.</p>
+          <button
+            class="w-full py-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">Ver
+            Detalles</button>
+        </div>
+        <!-- Card 2 -->
+        <div
+          class="bg-white dark:bg-gray-900/50 p-8 rounded-xl border border-primary/5 shadow-sm hover:border-primary/30 transition-all">
+          <h4 class="font-serif text-2xl mb-2">3 Personas</h4>
+          <div class="text-4xl font-bold text-primary mb-6">S/ 2,505</div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-8">Experiencia completa con alojamiento triple premium y
+            itinerario extendido de montaña.</p>
+          <button
+            class="w-full py-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">Ver
+            Detalles</button>
+        </div>
+        <!-- Card 3 -->
+        <div
+          class="bg-white dark:bg-gray-900/50 p-8 rounded-xl border border-primary/5 shadow-sm hover:border-primary/30 transition-all">
+          <h4 class="font-serif text-2xl mb-2">4 Personas</h4>
+          <div class="text-4xl font-bold text-primary mb-6">S/ 3,300</div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-8">Máximo confort para grupos o familias en suite
+            premium con todos los servicios incluidos.</p>
+          <button
+            class="w-full py-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">Ver
+            Detalles</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Qué Incluye -->
+  <section class="py-24 bg-andean-blue text-white overflow-hidden relative">
+    <div class="absolute right-0 bottom-0 opacity-10 pointer-events-none">
+      <span class="material-icons text-[20rem]">filter_hdr</span>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16">
+        <h3 class="font-serif text-4xl mb-4">Lo que hace única tu estancia</h3>
+        <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8">
+        <div class="text-center">
+          <div class="text-4xl mb-4">🛏️</div>
+          <h5 class="font-bold text-lg mb-2">Alojamiento</h5>
+          <p class="text-white/70 text-sm">Habitaciones con diseño neo-andino y vistas panorámicas.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-4">🍽️</div>
+          <h5 class="font-bold text-lg mb-2">Alimentación Completa</h5>
+          <p class="text-white/70 text-sm">Desayuno, almuerzo y cena con productos locales orgánicos.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-4">🚶</div>
+          <h5 class="font-bold text-lg mb-2">Caminata Sostenible</h5>
+          <p class="text-white/70 text-sm">Rutas guiadas respetuosas con el ecosistema andino.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-4">🔥</div>
+          <h5 class="font-bold text-lg mb-2">Fogata Nocturna</h5>
+          <p class="text-white/70 text-sm">Cuentos y leyendas bajo el cielo estrellado de Puno.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-4">🐎</div>
+          <h5 class="font-bold text-lg mb-2">Paseo a Caballo</h5>
+          <p class="text-white/70 text-sm">Exploración por los senderos ancestrales de la propiedad.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-4">🍕</div>
+          <h5 class="font-bold text-lg mb-2">Cena Temática</h5>
+          <p class="text-white/70 text-sm">Noches especiales de pizzas artesanales al horno de barro.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-4">✈️</div>
+          <h5 class="font-bold text-lg mb-2">Transporte</h5>
+          <p class="text-white/70 text-sm">Asistencia técnica para coordinar traslados desde Puno o Juliaca.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-4">🍲</div>
+          <h5 class="font-bold text-lg mb-2">Festival de Sopas</h5>
+          <p class="text-white/70 text-sm">Degustación de caldos tradicionales de la región.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Final CTA -->
+  <section class="py-24 text-center">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-serif text-4xl md:text-5xl text-andean-blue dark:text-white mb-8">¿Listo para desconectarte?</h2>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <button
+          class="w-full sm:w-auto px-12 py-5 bg-primary text-white text-lg font-bold rounded-xl shadow-xl shadow-primary/30 hover:-translate-y-1 transition-all">
+          Reserva Ahora
+        </button>
+        <a class="flex items-center gap-3 text-andean-blue dark:text-primary font-bold hover:underline" href="#">
+          <img alt="WhatsApp" class="w-6 h-6"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6vpLxg9QMakHRjy9PE-pp63mLu9TrgLgPQfCwy6MWnzlh9mqqoJcAa-buQaPD-Cq29PM082WtCAvW3ttgrzIzEA9E3fHpA-pqbXbxHIkz3NO4Q2qtIrK4xc2rLNaYVk2mrln0xrretb5jq3J4eaoKyiTeaKLWbpCii9PJ9vWdAeePLNR07Zd8qlXNa8hibhYSRdwd-fPj1j_bzZK6qxlNYGzYhIAAjR41V8K16KeS3E-ruobbCqNIWvbMRFypGXweRvuX9t9BhhE" />
+          Contáctanos por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-andean-blue text-white pt-20 pb-10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 border-b border-white/10 pb-16">
+        <div class="col-span-1 md:col-span-1">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="w-8 h-8 bg-primary flex items-center justify-center rounded-lg">
+              <span class="material-icons text-white text-sm">landscape</span>
+            </div>
+            <span class="font-serif text-xl font-bold tracking-tight">Quillapata Lodge</span>
+          </div>
+          <p class="text-white/60 text-sm leading-relaxed">
+            Ubicado en las alturas de Puno, ofrecemos una experiencia de lujo sostenible conectada con la esencia de los
+            Andes.
+          </p>
+        </div>
+        <div>
+          <h6 class="font-bold mb-6 text-primary uppercase text-xs tracking-widest">Navegación</h6>
+          <ul class="space-y-4 text-sm text-white/70">
+            <li><a class="hover:text-primary transition-colors" href="index.html">Inicio</a></li>
+            <li><a class="hover:text-primary transition-colors" href="nosotros.html">Nosotros</a></li>
+            <li><a class="hover:text-primary transition-colors" href="habitaciones.html">Habitaciones</a></li>
+            <li><a class="hover:text-primary transition-colors" href="alimentacion.html">Alimentación</a></li>
+            <li><a class="hover:text-primary transition-colors" href="actividades.html">Actividades</a></li>
+            <li><a class="hover:text-primary transition-colors" href="como-llegar.html">Cómo Llegar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-bold mb-6 text-primary uppercase text-xs tracking-widest">Contacto</h6>
+          <ul class="space-y-4 text-sm text-white/70">
+            <li class="flex items-start gap-3">
+              <span class="material-icons text-primary text-sm">place</span>
+              Comunidad de Quillapata, Puno, Perú
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-icons text-primary text-sm">phone</span>
+              +51 987 654 321
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-icons text-primary text-sm">mail</span>
+              reservas@quillapatalodge.com
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-bold mb-6 text-primary uppercase text-xs tracking-widest">Síguenos</h6>
+          <div class="flex gap-4">
+            <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              href="#">
+              <span class="material-icons text-lg">facebook</span>
+            </a>
+            <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              href="#">
+              <span class="material-icons text-lg">photo_camera</span>
+            </a>
+            <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              href="#">
+              <span class="material-icons text-lg">play_circle</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
+        <p>© 2024 Quillapata Lodge. Todos los derechos reservados.</p>
+        <div class="flex gap-6">
+          <a class="hover:text-white transition-colors" href="#">Políticas de Privacidad</a>
+          <a class="hover:text-white transition-colors" href="#">Términos y Condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Floating WhatsApp -->
+  <a class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center"
+    href="#">
+    <img alt="WhatsApp Icon" class="w-6 h-6"
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjdkTbDnBIu8EIsSlAT124OH4DEpJMi_anRuxXATo0KT8VxOU2pKTEY2sorvj6w8rTi6JX7kC616n_5g3d9TcD5QBChRJd3f9xxcCjqbgmuWyate8QZaHPIhoPwH3HNwA5BKDrqtfYXQhN2vgfNsT6Z0QgTFW-Tg9ufaqybmu7WUK1rDHeD8v6Nnf90Ky_wKq5LxYs1IKvII5tAY5L_xcwENMSbLgt9kPLp41RqeBN_WxgVITfc-VB0jI0oSnbSm4PqmDU1mvY0gU" />
+  </a>
+</body>
+
+</html>

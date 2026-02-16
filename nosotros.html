@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Nosotros - Quillapata Lodge</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#c5942b",
+            "background-light": "#f8f7f6",
+            "background-dark": "#201b12",
+            "deep-blue": "#1B3A5C",
+            "andean-brown": "#8B4513",
+            "cream": "#FAF6F0"
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans"],
+            "serif": ["Playfair Display", "serif"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .neo-andean-pattern {
+      background-image: radial-gradient(circle at 2px 2px, #c5942b 1px, transparent 0);
+      background-size: 40px 40px;
+      opacity: 0.05;
+    }
+
+    .text-shadow-sm {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+
+<body class="font-display bg-background-light text-slate-800 antialiased">
+  <!-- Header / Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-primary/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0 flex items-center">
+          <span class="font-serif text-2xl font-bold text-deep-blue tracking-tight">QUILLAPATA <span
+              class="text-primary italic">LODGE</span></span>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+            href="index.html">Inicio</a>
+          <a class="text-sm font-bold text-primary border-b-2 border-primary" href="nosotros.html">Nosotros</a>
+          <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+            href="como-llegar.html">Cómo Llegar</a>
+          <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+            href="habitaciones.html">Habitaciones</a>
+          <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+            href="alimentacion.html">Alimentación</a>
+          <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+            href="actividades.html">Actividades</a>
+          <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+            href="paquetes.html">Paquetes</a>
+          <button
+            class="bg-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20">
+            Reservar
+          </button>
+        </div>
+        <!-- Mobile Hamburger -->
+        <button class="md:hidden text-deep-blue p-2"
+          onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-primary/10 px-4 py-4">
+      <a class="block py-3 text-slate-600 hover:text-primary" href="index.html">Inicio</a>
+      <a class="block py-3 text-primary font-bold" href="nosotros.html">Nosotros</a>
+      <a class="block py-3 text-slate-600 hover:text-primary" href="como-llegar.html">Cómo Llegar</a>
+      <a class="block py-3 text-slate-600 hover:text-primary" href="habitaciones.html">Habitaciones</a>
+      <a class="block py-3 text-slate-600 hover:text-primary" href="alimentacion.html">Alimentación</a>
+      <a class="block py-3 text-slate-600 hover:text-primary" href="actividades.html">Actividades</a>
+      <a class="block py-3 text-slate-600 hover:text-primary" href="paquetes.html">Paquetes</a>
+      <a class="block py-3 bg-primary text-white text-center rounded-lg font-semibold mt-2"
+        href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <header class="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img alt="Andean landscape with mountain peaks" class="w-full h-full object-cover"
+        data-alt="Stunning Andean mountain range at sunset with golden light"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuChzH1l4--FzqWGIsKvYtFeIJ9JDfyitIGGmhbO_Vk5zbeQxIyQPq3S4lZRCakp69C25DbBuMHMScITqvCtFEravJTpiWyUVJZFR3DAJoIeitvK1Ii4xDT4P9E2HjSWCf4O2XvTXL5DSu9MbDK9SojOBzK34ZGUd_wnL2zmb5smaBiw8U4Y5jXmdbKwdQlV1bQdoL4nNRNruBkYxvubvTOggZYhBaIuZNx2xuP0JnFV-yEeE6Kw6VhleaBDhsNeYEWMjynFDd9jHEI" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-transparent"></div>
+    </div>
+    <div class="relative text-center px-4">
+      <h1 class="font-serif text-5xl md:text-7xl text-white mb-4 text-shadow-sm">Nosotros</h1>
+      <div class="h-1 w-24 bg-primary mx-auto rounded-full"></div>
+      <p class="mt-6 text-xl text-white/90 max-w-2xl mx-auto font-light italic">
+        El alma de los Andes, preservada por generaciones en el corazón de Puno.
+      </p>
+    </div>
+  </header>
+  <!-- Nuestra Historia -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="neo-andean-pattern absolute inset-0"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="order-2 lg:order-1">
+          <span class="text-primary font-bold tracking-widest uppercase text-sm">Legado y Tradición</span>
+          <h2 class="font-serif text-4xl text-deep-blue mt-4 mb-8">Nuestra Historia</h2>
+          <div class="space-y-6 text-slate-600 leading-relaxed text-lg">
+            <p>
+              Hace 60 años, estas tierras servían como un modesto rancho familiar, un refugio contra los vientos gélidos
+              de la puna peruana. Lo que comenzó como un hogar para nuestra familia se transformó, década tras década,
+              en el santuario que hoy conocemos como <span class="text-andean-brown font-semibold">Quillapata
+                Lodge</span>.
+            </p>
+            <p>
+              Nacimos de la tierra roja y el cielo infinito de Puno. Nuestra transición de rancho ganadero a hotel
+              boutique no fue solo un cambio de estructura, sino una evolución de nuestro propósito: compartir la
+              mística de los Andes con el mundo, manteniendo intacta la esencia de nuestra hospitalidad ancestral.
+            </p>
+            <div class="pt-4 border-l-4 border-primary pl-6 italic font-serif text-xl text-deep-blue/80">
+              "No solo ofrecemos una habitación; ofrecemos una parte de nuestra herencia familiar tallada en piedra y
+              tejida en lana."
+            </div>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2 relative">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl">
+            <img alt="Traditional Andean ranch atmosphere" class="w-full h-full object-cover"
+              data-alt="Atmospheric view of an old stone wall in the highlands"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0aoykHzxo8GQRfylc7Y569QEsh2j-CAJLVnH0whiiNJIFAlyl_HFBZBp3cG5IZ_wltLgxeEK9Agq23ynE6S8BjuZNsCPV-t3jFcjNuPPvnxK_4BRc45C0ffwfLV5L4h7jfZ954INfQPrnZmjMUYjT9ru1qTdUowCvINUdka4xvEZy_fxBFAjLYa8x5cRBlzUqM8xQSZLvYVAU8-U6llm3aR4iX0Fhy9CY43oTmHf7ZI0xl3B9o6IHM3zA5yo5yNeU7rvoGfv5Qgc" />
+          </div>
+          <div
+            class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-xl hidden md:block border border-primary/20">
+            <p class="text-deep-blue font-serif text-2xl font-bold">60+</p>
+            <p class="text-slate-500 text-xs uppercase tracking-tighter">Años de Historia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Misión y Visión -->
+  <section class="py-20 bg-deep-blue relative text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Misión -->
+        <div class="bg-white/5 border border-white/10 p-10 rounded-xl hover:bg-white/10 transition-all">
+          <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-white">volunteer_activism</span>
+          </div>
+          <h3 class="font-serif text-3xl mb-4 text-primary">Nuestra Misión</h3>
+          <p class="text-slate-300 leading-relaxed text-lg font-light">
+            Brindar experiencias auténticas y transformadoras que conecten a nuestros huéspedes con la cultura viva de
+            los Andes, generando un impacto positivo real en nuestra comunidad local y preservando nuestras tradiciones
+            milenarias.
+          </p>
+        </div>
+        <!-- Visión -->
+        <div class="bg-white/5 border border-white/10 p-10 rounded-xl hover:bg-white/10 transition-all">
+          <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-white">visibility</span>
+          </div>
+          <h3 class="font-serif text-3xl mb-4 text-primary">Nuestra Visión</h3>
+          <p class="text-slate-300 leading-relaxed text-lg font-light">
+            Consolidarnos como el referente líder del turismo sostenible y de lujo consciente en el Altiplano Peruano,
+            demostrando que la modernidad y el respeto por el medio ambiente pueden coexistir en perfecta armonía.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Compromiso -->
+  <section class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-primary font-bold tracking-widest uppercase text-sm">Sustentabilidad</span>
+      <h2 class="font-serif text-4xl text-deep-blue mt-4 mb-16">Nuestro Compromiso con el Planeta</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="flex flex-col items-center group">
+          <div
+            class="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+            <span
+              class="material-symbols-outlined text-primary text-4xl group-hover:text-white transition-colors">eco</span>
+          </div>
+          <h4 class="font-bold text-deep-blue mb-2">Compostaje y Huerto</h4>
+          <p class="text-slate-500 text-sm">Transformamos residuos en vida para nuestro huerto orgánico.</p>
+        </div>
+        <div class="flex flex-col items-center group">
+          <div
+            class="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+            <span
+              class="material-symbols-outlined text-primary text-4xl group-hover:text-white transition-colors">solar_power</span>
+          </div>
+          <h4 class="font-bold text-deep-blue mb-2">Energía Solar</h4>
+          <p class="text-slate-500 text-sm">Aprovechamos la potente radiación del altiplano para nuestra energía.</p>
+        </div>
+        <div class="flex flex-col items-center group">
+          <div
+            class="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+            <span
+              class="material-symbols-outlined text-primary text-4xl group-hover:text-white transition-colors">groups</span>
+          </div>
+          <h4 class="font-bold text-deep-blue mb-2">Equipo 90% Local</h4>
+          <p class="text-slate-500 text-sm">Orgullosos de emplear y capacitar a la gente de nuestra región.</p>
+        </div>
+        <div class="flex flex-col items-center group">
+          <div
+            class="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+            <span
+              class="material-symbols-outlined text-primary text-4xl group-hover:text-white transition-colors">local_shipping</span>
+          </div>
+          <h4 class="font-bold text-deep-blue mb-2">Proveedores del Valle</h4>
+          <p class="text-slate-500 text-sm">Priorizamos la compra directa a pequeños productores locales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Nuestro Equipo -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-primary font-bold tracking-widest uppercase text-sm">Anfitriones</span>
+        <h2 class="font-serif text-4xl text-deep-blue mt-4">Nuestro Equipo</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <!-- Miembro 1 -->
+        <div class="text-center">
+          <div class="aspect-square rounded-xl overflow-hidden mb-6 shadow-md border-b-4 border-primary">
+            <img alt="María Quispe" class="w-full h-full object-cover"
+              data-alt="Portrait of a smiling professional woman in a modern setting"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMvdhVgMWqvy_IlkY4n6BVKRwhgT13C2R3IzYC86roUexS8LTecwB6GB2mSDo8PcQK-3C-_xQv5JS3tFkEDvSIe9t1u1xKKNGyyk4sAdlxcyKVC9Nv4X7s3REzSp2pPrFQ0peEXibY32XCckKpqHbR-JJrsMd0KIOZ72fvaisviRjKtCJQTjwaZBQSBP--uaEgL-lPzghzWfMypjOCuuMY1ZHvqkMtDmMxlbe6iRqdUOkoRBc4LnMGqJ4G-50VT7a6CEsyA51OfgU" />
+          </div>
+          <h5 class="text-xl font-bold text-deep-blue">María Quispe</h5>
+          <p class="text-primary font-medium text-sm italic">Directora General</p>
+        </div>
+        <!-- Miembro 2 -->
+        <div class="text-center">
+          <div class="aspect-square rounded-xl overflow-hidden mb-6 shadow-md border-b-4 border-primary">
+            <img alt="Juan Carlos Mamani" class="w-full h-full object-cover"
+              data-alt="Portrait of a professional male chef in a white uniform"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEImWzKbNrdTRcTISkdFtnDbNMpWYCDVuLJotgFidI6nVsJeTjPp9qOUaQJjBFE0RfUGEqPNnK_iDYiO6KUW40Af6vai70KGByCZiNnsER1qrYGc-dRH5atqdeW39esgm5fwBHDCmnJmfRDu8PptU5v8YJbTu9k5uh_cLKHmwqdR129vKCYF4HIM_GMdVHSLJrARB3MmaNCFinoUvEt-MA0hFuZUW8rbqs6RN-79sQHoZbq_nxlfiapE06Itj91Ljjxx3ClyBc_Ls" />
+          </div>
+          <h5 class="text-xl font-bold text-deep-blue">Juan Carlos Mamani</h5>
+          <p class="text-primary font-medium text-sm italic">Chef Ejecutivo</p>
+        </div>
+        <!-- Miembro 3 -->
+        <div class="text-center">
+          <div class="aspect-square rounded-xl overflow-hidden mb-6 shadow-md border-b-4 border-primary">
+            <img alt="Rosa Apaza" class="w-full h-full object-cover"
+              data-alt="Portrait of a young woman with a friendly smile in outdoor light"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy-V2iDootcVO-8EnU3K3-OKRTpWy56_Yd8xh1yA2R71IP2lI7fBnFY_kpYTGcA2nByc8jIW3wPgYjlgjVVM_Z97N9o7x1tB8Xye9fL80XvGtan000hyQbeFQBnD9TQuiLS1oM7dTGShBp3xMME_TRWIaimn0B0c8lhoGl_6uSVjW4Iw2MxvE7ErUW1ziw4cSPmvUFGWEGZDPGOYsrfEzjlLKsnycBWTAkBWcF3BvWESx7qt57O5zq0lj_izJIj9XGd5G_UUhns94" />
+          </div>
+          <h5 class="text-xl font-bold text-deep-blue">Rosa Apaza</h5>
+          <p class="text-primary font-medium text-sm italic">Coordinadora de Experiencias</p>
+        </div>
+        <!-- Miembro 4 -->
+        <div class="text-center">
+          <div class="aspect-square rounded-xl overflow-hidden mb-6 shadow-md border-b-4 border-primary">
+            <img alt="Pedro Huanca" class="w-full h-full object-cover"
+              data-alt="Portrait of an experienced man wearing a traditional Andean hat"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSTaJHK-hFjVmkJzGmWF1Ocjav62DNRlvlObUsNKa2Qd7hZ21xXaj4HmmypFrXVmXmDAQ9X0Eyc7UgnPHeRtpW_MdNbyGcQl-ZyUUpaO92X3AtavwFVNap_yrwPXg4O9BZYRF_fA4tw6_t-38cJYwTEqeADqMGNbXaQ8duJrbTQcLrf161NzAyyRA13DQIRWxkIrDb0smA0Ozol6dfLgPrT5V3fmOWLQI8SZSiOKL_6XcRXnN0CEHiJ1QCyGGyfPcFJ0GrAcaNyi4" />
+          </div>
+          <h5 class="text-xl font-bold text-deep-blue">Pedro Huanca</h5>
+          <p class="text-primary font-medium text-sm italic">Guía Principal</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-deep-blue text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12 border-b border-white/10 pb-12 mb-12">
+        <div class="col-span-1 md:col-span-2">
+          <span class="font-serif text-3xl font-bold tracking-tight mb-6 block">QUILLAPATA <span
+              class="text-primary italic">LODGE</span></span>
+          <p class="text-slate-400 max-w-sm mb-8">
+            Un refugio de lujo en las alturas de Puno, donde el cielo toca la tierra y la historia cobra vida.
+          </p>
+          <div class="flex space-x-4">
+            <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              href="#">
+              <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                <path
+                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                </path>
+              </svg>
+            </a>
+            <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+              href="#">
+              <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h6 class="font-bold text-lg mb-6 text-primary">Navegación</h6>
+          <ul class="space-y-4 text-slate-400">
+            <li><a class="hover:text-white transition-colors" href="index.html">Inicio</a></li>
+            <li><a class="hover:text-white transition-colors" href="habitaciones.html">Habitaciones</a></li>
+            <li><a class="hover:text-white transition-colors" href="alimentacion.html">Alimentación</a></li>
+            <li><a class="hover:text-white transition-colors" href="actividades.html">Actividades</a></li>
+            <li><a class="hover:text-white transition-colors" href="paquetes.html">Paquetes</a></li>
+            <li><a class="hover:text-white transition-colors" href="como-llegar.html">Cómo Llegar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-bold text-lg mb-6 text-primary">Contacto</h6>
+          <ul class="space-y-4 text-slate-400 text-sm">
+            <li class="flex items-start">
+              <span class="material-symbols-outlined mr-3 text-primary text-xl">location_on</span>
+              <span>Km 24 Vía Puno - Chucuito,<br />Puno, Perú</span>
+            </li>
+            <li class="flex items-center">
+              <span class="material-symbols-outlined mr-3 text-primary text-xl">call</span>
+              <span>+51 987 654 321</span>
+            </li>
+            <li class="flex items-center">
+              <span class="material-symbols-outlined mr-3 text-primary text-xl">mail</span>
+              <span>info@quillapata.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
+        <p>© 2025 Quillapata Lodge. Todos los derechos reservados.</p>
+        <div class="mt-4 md:mt-0 space-x-6">
+          <a class="hover:text-white transition-colors" href="#">Política de Privacidad</a>
+          <a class="hover:text-white transition-colors" href="#">Términos y Condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

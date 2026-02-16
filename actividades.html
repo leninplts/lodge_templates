@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Actividades - Quillapata Lodge</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c6972a",
+                        "background-light": "#faf6f0",
+                        "background-dark": "#201c12",
+                        "deep-blue": "#1B3A5C",
+                        "andean-brown": "#8B4513"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .neo-andean-pattern {
+            background-image: radial-gradient(#c6972a 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.1;
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .activity-card:hover .activity-img {
+            transform: scale(1.05);
+        }
+
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100">
+    <!-- Header -->
+    <nav class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-primary/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="material-icons-outlined text-primary text-3xl">landscape</span>
+                <span
+                    class="text-xl font-bold tracking-tight serif-title text-andean-brown dark:text-primary">QUILLAPATA
+                    <span class="font-normal italic">Lodge</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm uppercase tracking-widest">
+                <a class="hover:text-primary transition-colors" href="index.html">Inicio</a>
+                <a class="hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
+                <a class="hover:text-primary transition-colors" href="como-llegar.html">Cómo Llegar</a>
+                <a class="hover:text-primary transition-colors" href="habitaciones.html">Habitaciones</a>
+                <a class="hover:text-primary transition-colors" href="alimentacion.html">Alimentación</a>
+                <a class="text-primary border-b-2 border-primary" href="actividades.html">Actividades</a>
+                <a class="hover:text-primary transition-colors" href="paquetes.html">Paquetes</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="bg-primary hover:bg-primary/90 text-white px-8 py-2.5 rounded-lg font-semibold transition-all shadow-lg shadow-primary/20 uppercase text-xs tracking-widest">
+                    Reservar
+                </button>
+                <!-- Mobile Hamburger -->
+                <button class="md:hidden text-andean-brown dark:text-primary p-2"
+                    onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white dark:bg-background-dark border-t border-primary/10 px-6 py-4">
+            <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="index.html">Inicio</a>
+            <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
+            <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="como-llegar.html">Cómo
+                Llegar</a>
+            <a class="block py-3 text-gray-600 hover:text-primary transition-colors"
+                href="habitaciones.html">Habitaciones</a>
+            <a class="block py-3 text-gray-600 hover:text-primary transition-colors"
+                href="alimentacion.html">Alimentación</a>
+            <a class="block py-3 text-primary font-bold" href="actividades.html">Actividades</a>
+            <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="paquetes.html">Paquetes</a>
+            <a class="block py-3 bg-primary text-white text-center rounded-lg font-semibold mt-2"
+                href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <img alt="Aventuras en los Andes" class="absolute inset-0 w-full h-full object-cover"
+            data-alt="Andean landscape with a hiker overlooking mountains"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0MOiSb436KdPKvuSlt3Zmqm4hgwNAgvT_CH8iAl7UBqvCpjzYA08zsycWb_rS7MhXwURELPmeeUAT0CUR6tKEc3SmYuITcGO44v4AbLOhb2uQZAoC3yHHoUShZ0WNXoH4Bw2DRi2oyY28b0w6WohAlTIindt_U6ukebr0Y2oqAwXzRiMbT3Y4X38MymC9Qw8VGoZDgzg7QX3Q68upLt1-2TpKrFUl57yYjwohKRuPuK99BQ6N_MQ2l4siUC06Xy89cXn25OQuipw" />
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="serif-title text-6xl md:text-8xl mb-4 text-shadow italic">Actividades</h1>
+            <div class="h-1 w-24 bg-primary mx-auto mb-6"></div>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto font-light tracking-wide">Descubra la magia de Puno a través
+                de experiencias diseñadas para conectar con la tierra.</p>
+        </div>
+    </header>
+    <!-- Intro Section -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="neo-andean-pattern absolute inset-0"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <span class="text-primary font-bold uppercase tracking-[0.3em] text-xs block mb-4">Filosofía de Viaje</span>
+            <h2 class="serif-title text-3xl md:text-4xl text-andean-brown dark:text-primary/90 mb-8 italic">Armonía
+                entre Intensidad y Serenidad</h2>
+            <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+                En Quillapata Lodge, creemos que el verdadero espíritu de los Andes se vive en el equilibrio. Ofrecemos
+                una cuidadosa selección de experiencias que alternan la adrenalina de la aventura al aire libre con la
+                quietud de los talleres culturales, permitiéndole sumergirse profundamente en la esencia de nuestra
+                herencia puneña.
+            </p>
+        </div>
+    </section>
+    <!-- Activities Grid -->
+    <section class="py-12 bg-white/50 dark:bg-black/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Activity 1 -->
+                <div
+                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden relative">
+                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
+                            data-alt="Lake Titicaca viewpoint trail"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5UIuoFh10-ZM9PxdJafXq7h7UUeGgPKYBgD3Ioyn6aiKV-zm-X4rrEchyzTRfTUxn3cv1c7OVUi1V3op9yqavl7ph0MHKGawjLcqThim-LU1Sat1fXwQF5STdZRgdSjVbg4sKabgUOcM3Dyw8WJ3NS-W6Mv_2h0VNKeOTpd1o6r1dcOkL6Oj_6f_mRa55vRgSSXa5HdbEl1AiHJFEu_xWQAIRphalfol3lBhpLKvF9h1M1wRwjG9SkLKJQlD1PwZJx_jy8VGjeAs" />
+                        <div
+                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            S/40</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Caminata al Mirador del
+                            Lago Titicaca</h3>
+                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">schedule</span> 2.5h</div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 2 Pax
+                            </div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Guía y
+                                Snack</div>
+                        </div>
+                        <button
+                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
+                            información</button>
+                    </div>
+                </div>
+                <!-- Activity 2 -->
+                <div
+                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden relative">
+                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
+                            data-alt="Mountain biking along lakeshore"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCGxw7JaffLW7np2G7Fkm2Pwao2hNEYa_bzQvNw7jDW8iP3gcQ5tBiezVyaLBIufH0RiiQfJqDjGfpZj0c1xmZAnCAWr23NScBeqqbjPqxphxhoQZghxz7orixEY53a-rzADAtR8BvgsqitXXiPlZe2BDnvD0swoRr8CDxCU486D6xAAcgpgY9tjVY5O4BhOEYpGX6tXD3HgwYVPnU-oikZ1m-wSi1j5NzvE-t8dtv_uLul2rdd8YFEpYRBRbcy5MvtjNxqX6VlJc" />
+                        <div
+                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            S/65</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Cicloturismo por las
+                            Orillas</h3>
+                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">schedule</span> 2.5h</div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 1 Pax
+                            </div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Equipo
+                                completo</div>
+                        </div>
+                        <button
+                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
+                            información</button>
+                    </div>
+                </div>
+                <!-- Activity 3 -->
+                <div
+                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden relative">
+                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
+                            data-alt="Horseback riding in the Andes"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAacTe9rqDc2etSXdHo0sQsyBT8XpMMP1LvNp1htHoGXkwXYoNGts4YlKMzZPu1u83_L4aYQNqxGhZSvJsNZmKD6wZmh2BQmiLUpLxAPT4W5ZZmH0QV26hVy9JxTKAj2FB9MGw1Ke3GjKa2JUaBQ6UJEd3dXHvAFaFzuzan9lLHPoJkSHfMjek8jjTHlkUdAb38waA5tKzBscienPC1wG8JvLfIxq6O5Uqhwt-wyUGNaeAB7O1t8RM7jNvkPKxPQhK8FBkXG12cAUI" />
+                        <div
+                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            S/40</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Paseo a Caballo</h3>
+                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">schedule</span> 50min</div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 1 Pax
+                            </div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Equipo de
+                                seguridad</div>
+                        </div>
+                        <button
+                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
+                            información</button>
+                    </div>
+                </div>
+                <!-- Activity 4 -->
+                <div
+                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden relative">
+                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
+                            data-alt="Traditional community farm visit"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHjCN1S6dLl-HbyfmN-guTSNWPwDc-3zmuKsLxEtCcqY7-QUkew85mOZPHDej8prUtTZXHwZwQxWOzPcZq2sxVCEsI0UFxbN0O0wIq6ai_bPSX35nJq5HbPOH7f1Hg2bnjpeKeBwydXFp1omLV4BtEkf2xOsYm0rNM_TmdfdtPo2DVzpmxdDdgSI20bttufrIJuq6mgLAiooed-8_-4-7Vsli28GBjAZZ9_lZzxtKy_4BP-8biO3KBTRw-fAzg-gcxO9Ihh2sXr2s" />
+                        <div
+                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            S/15</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Visita a Comunidad
+                            Ganadera</h3>
+                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">schedule</span> 50min</div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 2 Pax
+                            </div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Guía local
+                            </div>
+                        </div>
+                        <button
+                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
+                            información</button>
+                    </div>
+                </div>
+                <!-- Activity 5 -->
+                <div
+                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden relative">
+                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
+                            data-alt="Archaeological site bike tour"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6vSy21OXwmiGyRSS5z7y6gZkTYvVH4RIk8sAZ-wSL2VNegHO97Ne9HfZc0phhFE6cngdCjZwfl8jsPjJqoC7urQlYJl48jwu8um5Owio9yZIDJGWCo0uh9R01zdgqs_-1HT6p8D0ikRDau_P-tIO3TDpDvQ8skigPvymBjLRwaFxOq2J8LaI1YK47pXKwllH9tXrxpTpaKahA0xpNbZIuXSVT8GVGLvB81TMJN3VkNSrTypSS5CtxRAHJ1SZTQOMTDCQQBqCcXSU" />
+                        <div
+                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            S/65</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Cicloturismo a
+                            Sillustani</h3>
+                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">schedule</span> 2.5h</div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 2 Pax
+                            </div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Bicicleta y
+                                Guía</div>
+                        </div>
+                        <button
+                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
+                            información</button>
+                    </div>
+                </div>
+                <!-- Activity 6 -->
+                <div
+                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden relative">
+                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
+                            data-alt="Extended horseback ride through valleys"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPMngxmqRKb5WFTa7TjDZnenOE-5ibP-XO3XLvhrV01UYMiccLFCITYfajtJQ-tw0nQpnCkknD-V_X1EmBNjtHBpi0bGMxo6a6EyjZJzFKXJ2abKVex8yGuLqYNlaDiDbsoVhb3dQEgQQt1ovp9KvyaZXE8v-715OQaSuA0FCmTTdVQpp37rN4KCMQUBFDHa-Q60R5iqWlqdK-pj-ESLpMU0ymTEY-dzGO3ukXvBz9fFbOGUXri_MsXXUq7GKQLHHWNG9GiSXFZO0" />
+                        <div
+                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            S/130</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Cabalgata Larga</h3>
+                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">schedule</span> 1.5h</div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 1 Pax
+                            </div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Equipo y
+                                Guía</div>
+                        </div>
+                        <button
+                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
+                            información</button>
+                    </div>
+                </div>
+                <!-- Activity 7 -->
+                <div
+                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden relative">
+                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
+                            data-alt="Boat ride on Lake Titicaca"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyNxVn8wF6VtvhK3ITDK-y9B7WF0EoMy-n3xXSwXz4rQW-FGInbp13o5i9t5wR3NaxR0XOP8eyGkHygBQmnHpfQJNWGzZcdVacyOwX-vCsZ-sdpa3lz94zWPSm4us33ozEkK3HhRiYSe8kQ9p8jivTsz9MFfn2hmY4HiSE2ciL8hwWRRuGkh3Bmh78AfCThQJFdk5SRsFjtP5m8eLEuh4s3_g3SvW4_YpJw3gVWh4XbXEuE7VnIgSfspMhC4gg3nCqavjL_HVaPp4" />
+                        <div
+                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            S/80</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Paseo en Bote</h3>
+                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">directions_boat</span> 2h
+                            </div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 4 Pax
+                            </div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Traslados
+                                incl.</div>
+                        </div>
+                        <button
+                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
+                            información</button>
+                    </div>
+                </div>
+                <!-- Activity 8 -->
+                <div
+                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden relative">
+                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
+                            data-alt="Traditional Andean textile weaving workshop"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuArsmamvPggKwX-mRbucjj_1Q95ewUZ6AnzrGZzJUhVa6vyzGuWn0ymXH5plrKz2anddSgpE7iOMjdIXmi0DQGWA52b8EN-Lk-mc9V2e8pGNEhdXFd6hJSxlQQr3cFADcux_wJggg5sQRNvdWbTyIqSNpWA1jprQ5q4jg0kCUZ2XUVUWyuwDbCLshnoCUwjsMpqpAV2qYSl9tMg2o23dFey283lxkkRkk4dUX1U2kFIhQWPygCptmsGOn2cnr5cbQlMJ8ql1GQr-Q0" />
+                        <div
+                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            S/50</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Taller de Textilería
+                            Andina</h3>
+                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">palette</span> 1.5h</div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 2 Pax
+                            </div>
+                            <div class="flex items-center gap-2"><span
+                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Materiales
+                                incl.</div>
+                        </div>
+                        <button
+                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
+                            información</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Banner -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img class="w-full h-full object-cover" data-alt="Scenic Andean sunset background"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfrjlrO7qKGvQZSTTh38fqLqp_eFSU4drgZ47LjAooItvHtTD9Iij72Ail_coHScWTedL1GUfW1Xk8qr_3cVCS-igW6OgeOa-lcnYJCKAAlkCAdRyTtUy-5CkdqqHqfWeV_vSACoa2ZXLyH5uLv_JUMewH-CF4JJWn1-5GJ9oIJ81dDT6zh8O0NSe6VUy6XICf67v_jq2LrZbd3u8nzdrfKO2xxeWCcBfCT1pMhBVo4V3Yk2kB8yFDStfJ-HePBWvPrJCV2f3d6aM" />
+            <div class="absolute inset-0 bg-deep-blue/80"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 text-white">
+            <h2 class="serif-title text-3xl md:text-5xl mb-8 leading-tight italic">Cada actividad es una invitación a
+                vivir los Andes con intensidad o serenidad</h2>
+            <div class="flex justify-center">
+                <button
+                    class="bg-[#25D366] hover:bg-[#20ba5a] text-white px-10 py-4 rounded-xl font-bold flex items-center gap-3 transition-transform hover:scale-105 shadow-2xl">
+                    <svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.82l.303.18c1.397.831 3.013 1.27 4.673 1.271 5.033 0 9.13-4.097 9.132-9.131.002-2.438-.946-4.731-2.67-6.457-1.725-1.725-4.018-2.674-6.455-2.675-5.033 0-9.13 4.097-9.132 9.132-.001 1.685.464 3.325 1.341 4.766l.197.321-1.112 4.062 4.122-1.079zm11.446-5.494c-.31-.156-1.832-.903-2.112-1.005-.28-.102-.484-.156-.688.156-.204.311-.79.997-.968 1.201-.178.204-.357.23-.667.074-.31-.156-1.31-.482-2.492-1.538-.919-.819-1.54-1.831-1.72-2.142-.18-.311-.02-.479.135-.634.14-.139.31-.361.466-.541.156-.18.208-.307.31-.514.103-.207.052-.389-.026-.544-.078-.155-.688-1.658-.943-2.273-.248-.599-.5-.518-.688-.527-.178-.008-.382-.01-.586-.01s-.535.077-.816.388c-.28.311-1.072 1.048-1.072 2.557s1.1 2.964 1.253 3.172c.153.207 2.162 3.303 5.238 4.63.731.316 1.302.505 1.746.646.735.234 1.403.201 1.931.122.588-.088 1.832-.749 2.088-1.474.256-.725.256-1.348.179-1.475-.077-.127-.281-.204-.591-.36z">
+                        </path>
+                    </svg>
+                    <span>RESERVAR POR WHATSAPP</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-deep-blue text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="material-icons-outlined text-primary text-3xl">landscape</span>
+                        <span class="text-xl font-bold tracking-tight serif-title">QUILLAPATA <span
+                                class="font-normal italic">Lodge</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">Una experiencia de lujo andino a orillas del Lago
+                        Titicaca, donde la tradición y la modernidad se encuentran.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-primary">Navegación</h4>
+                    <ul class="space-y-4 text-sm text-gray-300">
+                        <li><a class="hover:text-primary transition-colors" href="index.html">Inicio</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="nosotros.html">Nosotros</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="habitaciones.html">Habitaciones</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="alimentacion.html">Alimentación</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="paquetes.html">Paquetes</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="como-llegar.html">Cómo Llegar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-primary">Contacto</h4>
+                    <ul class="space-y-4 text-sm text-gray-300">
+                        <li class="flex items-start gap-3"><span
+                                class="material-icons-outlined text-primary text-sm">location_on</span> Puno, Peru -
+                            Orillas del Lago Titicaca</li>
+                        <li class="flex items-center gap-3"><span
+                                class="material-icons-outlined text-primary text-sm">phone</span> +51 987 654 321</li>
+                        <li class="flex items-center gap-3"><span
+                                class="material-icons-outlined text-primary text-sm">mail</span>
+                            info@quillapatalodge.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-primary">Síguenos</h4>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">
+                            <span class="material-icons-outlined text-lg">facebook</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">
+                            <span class="material-icons-outlined text-lg">photo_camera</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">
+                            <span class="material-icons-outlined text-lg">travel_explore</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-500 uppercase tracking-widest font-bold">
+                <p>© 2024 Quillapata Lodge. Todos los derechos reservados.</p>
+                <div class="flex gap-8">
+                    <a class="hover:text-white transition-colors" href="#">Términos y Condiciones</a>
+                    <a class="hover:text-white transition-colors" href="#">Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
