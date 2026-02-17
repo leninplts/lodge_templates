@@ -11,7 +11,7 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
-    <script>tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#c5942b", "navy": "#1B3A5C" }, fontFamily: { "display": ["Plus Jakarta Sans", "sans-serif"], "serif": ["Playfair Display", "serif"] } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { "primary": "#c5942b", "dark-bg": "#0d0d0d", "navy": "#1B3A5C" }, fontFamily: { "display": ["Plus Jakarta Sans", "sans-serif"], "serif": ["Playfair Display", "serif"] } } } }</script>
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif
@@ -20,131 +20,138 @@
         .sf {
             font-family: 'Playfair Display', serif
         }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08)
+        }
     </style>
 </head>
 
-<body class="bg-white text-gray-900">
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+<body class="bg-[#0d0d0d] text-white">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-[72px]">
-                <a href="index.html" class="sf text-2xl font-bold text-navy">Quillapata <span
+                <a href="index.html" class="sf text-2xl font-bold text-white">Quillapata <span
                         class="text-primary font-light">Lodge</span></a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
-                        href="index.html">Inicio</a><a
-                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
-                        href="nosotros.html">Nosotros</a><a
-                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
-                        href="como-llegar.html">Cómo Llegar</a><a
-                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
-                        href="habitaciones.html">Habitaciones</a><a class="text-sm font-semibold text-primary"
-                        href="alimentacion.html">Alimentación</a><a
-                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
-                        href="actividades.html">Actividades</a><a
-                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
+                        href="index.html">Inicio</a>
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
+                        href="nosotros.html">Nosotros</a>
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
+                        href="como-llegar.html">Cómo Llegar</a>
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
+                        href="habitaciones.html">Habitaciones</a>
+                    <a class="text-sm font-semibold text-primary" href="alimentacion.html">Alimentación</a>
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
+                        href="actividades.html">Actividades</a>
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
                         href="paquetes.html">Paquetes</a>
                 </div>
-                <div class="flex items-center gap-4"><a href="https://api.whatsapp.com/send?phone=51987654321"
-                        class="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all">RESERVAR</a><button
-                        class="lg:hidden p-2"
+                <div class="flex items-center gap-4">
+                    <a href="https://api.whatsapp.com/send?phone=51987654321"
+                        class="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-primary/20">RESERVAR</a>
+                    <button class="lg:hidden p-2 text-white"
                         onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"><svg class="w-7 h-7"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
-                        </svg></button></div>
+                        </svg></button>
+                </div>
             </div>
         </div>
     </nav>
     <div id="mobile-menu"
-        class="hidden lg:hidden fixed top-[72px] left-0 right-0 z-50 bg-white border-t border-gray-100 px-6 py-4 shadow-lg">
-        <a class="block py-3 text-gray-600 hover:text-primary" href="index.html">Inicio</a><a
-            class="block py-3 text-gray-600 hover:text-primary" href="nosotros.html">Nosotros</a><a
-            class="block py-3 text-gray-600 hover:text-primary" href="como-llegar.html">Cómo Llegar</a><a
-            class="block py-3 text-gray-600 hover:text-primary" href="habitaciones.html">Habitaciones</a><a
-            class="block py-3 text-primary font-bold" href="alimentacion.html">Alimentación</a><a
-            class="block py-3 text-gray-600 hover:text-primary" href="actividades.html">Actividades</a><a
-            class="block py-3 text-gray-600 hover:text-primary" href="paquetes.html">Paquetes</a><a
-            class="block py-3 bg-primary text-white text-center rounded-lg font-semibold mt-2"
-            href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a></div>
+        class="hidden lg:hidden fixed top-[72px] left-0 right-0 z-50 bg-[#1a1a1a]/95 backdrop-blur-xl border-t border-white/5 px-6 py-4">
+        <a class="block py-3 text-white/50 hover:text-primary" href="index.html">Inicio</a>
+        <a class="block py-3 text-white/50 hover:text-primary" href="nosotros.html">Nosotros</a>
+        <a class="block py-3 text-white/50 hover:text-primary" href="como-llegar.html">Cómo Llegar</a>
+        <a class="block py-3 text-white/50 hover:text-primary" href="habitaciones.html">Habitaciones</a>
+        <a class="block py-3 text-primary font-bold" href="alimentacion.html">Alimentación</a>
+        <a class="block py-3 text-white/50 hover:text-primary" href="actividades.html">Actividades</a>
+        <a class="block py-3 text-white/50 hover:text-primary" href="paquetes.html">Paquetes</a>
+        <a class="block py-3 bg-primary text-white text-center rounded-full font-semibold mt-2"
+            href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a>
+    </div>
 
-    <header class="relative h-[60vh] flex items-center justify-center pt-[72px]">
+    <header class="relative h-[60vh] flex items-center justify-center">
         <img alt="Gastronomía" class="absolute inset-0 w-full h-full object-cover"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS00PnaO0SFgWSutlibmwkDkluXVK6uYYyNPDqiI2CeYK8MocS3wdrewkFQsezeN4Nlr5i_zxOcSIPUwzXYdID7XkcaSDbLIs3uDf36lJXiQEdaQFRQWYrvkVjAEJG7kt1HrqjDBdPAx1cTHMwHX9PoRifY5Yhl3i8WVq1bPOIfPzOMBgoX4Rxw5tg2PySEAxrsjqj29k_A_SI02gtgZty2sVuIxvuR-D20ZbmCww4qTquqHkHJWvhGwPUpd4LeYSElmi29eJlGLo" />
-        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0d0d0d]"></div>
         <div class="relative z-10 text-center px-4">
             <h1 class="text-5xl md:text-7xl font-extrabold text-white uppercase tracking-tight">ALIMENTACIÓN</h1>
-            <p class="text-white/80 text-lg mt-4 max-w-xl mx-auto">Sabores de los Andes que cuentan historias</p>
+            <p class="text-white/60 text-lg mt-4 max-w-xl mx-auto">Sabores de los Andes que cuentan historias</p>
         </div>
     </header>
 
-    <section class="py-24 bg-white">
+    <section class="py-24 bg-[#0d0d0d]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div><span class="text-primary font-semibold tracking-widest uppercase text-xs">Gastronomía</span>
-                <h2 class="sf text-4xl md:text-5xl font-bold text-navy mt-2 mb-6">De la Tierra<br />a tu <span
+                <h2 class="sf text-4xl md:text-5xl font-bold text-white mt-2 mb-6">De la Tierra<br />a tu <span
                         class="text-primary">Mesa</span></h2>
                 <div class="w-16 h-1 bg-primary rounded-full mb-6"></div>
-                <p class="text-gray-600 leading-relaxed mb-4">Nuestra cocina celebra la biodiversidad del Altiplano.
+                <p class="text-white/60 leading-relaxed mb-4">Nuestra cocina celebra la biodiversidad del Altiplano.
                     Trabajamos directamente con agricultores locales para ofrecer los ingredientes más frescos y
                     nutritivos de la región.</p>
-                <p class="text-gray-600 leading-relaxed mb-8">Cada plato es una fusión de técnicas ancestrales con
+                <p class="text-white/60 leading-relaxed mb-8">Cada plato es una fusión de técnicas ancestrales con
                     presentación contemporánea, honrando las recetas transmitidas de generación en generación en las
                     comunidades aledañas.</p>
-                <div class="flex flex-wrap gap-4"><span
-                        class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold">Farm-to-Table</span><span
-                        class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold">100%
-                        Orgánico</span><span
-                        class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold">Cocina a Leña</span>
+                <div class="flex flex-wrap gap-4">
+                    <span
+                        class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold border border-primary/20">Farm-to-Table</span>
+                    <span
+                        class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold border border-primary/20">100%
+                        Orgánico</span>
+                    <span
+                        class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold border border-primary/20">Cocina
+                        a Leña</span>
                 </div>
             </div>
-            <div class="rounded-2xl overflow-hidden shadow-xl"><img alt="Plato Andino"
+            <div class="rounded-2xl overflow-hidden border border-white/10"><img alt="Plato Andino"
                     class="w-full h-[500px] object-cover"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS00PnaO0SFgWSutlibmwkDkluXVK6uYYyNPDqiI2CeYK8MocS3wdrewkFQsezeN4Nlr5i_zxOcSIPUwzXYdID7XkcaSDbLIs3uDf36lJXiQEdaQFRQWYrvkVjAEJG7kt1HrqjDBdPAx1cTHMwHX9PoRifY5Yhl3i8WVq1bPOIfPzOMBgoX4Rxw5tg2PySEAxrsjqj29k_A_SI02gtgZty2sVuIxvuR-D20ZbmCww4qTquqHkHJWvhGwPUpd4LeYSElmi29eJlGLo" />
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-gray-50">
+    <section class="py-24 bg-[#111111]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span class="text-primary font-semibold tracking-widest uppercase text-xs">Nuestro Menú</span>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-navy mt-2 mb-4">Platos Destacados</h2>
-            <p class="text-gray-500 max-w-xl mx-auto mb-12">Cada plato cuenta una historia del altiplano peruano</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-4">Platos Destacados</h2>
+            <p class="text-white/40 max-w-xl mx-auto mb-12">Cada plato cuenta una historia del altiplano peruano</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                <div
-                    class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                <div class="group glass rounded-2xl overflow-hidden hover:border-white/20 transition-all">
                     <div class="h-56 overflow-hidden"><img alt="Trucha"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS00PnaO0SFgWSutlibmwkDkluXVK6uYYyNPDqiI2CeYK8MocS3wdrewkFQsezeN4Nlr5i_zxOcSIPUwzXYdID7XkcaSDbLIs3uDf36lJXiQEdaQFRQWYrvkVjAEJG7kt1HrqjDBdPAx1cTHMwHX9PoRifY5Yhl3i8WVq1bPOIfPzOMBgoX4Rxw5tg2PySEAxrsjqj29k_A_SI02gtgZty2sVuIxvuR-D20ZbmCww4qTquqHkHJWvhGwPUpd4LeYSElmi29eJlGLo" />
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-extrabold text-navy mb-2">Trucha del Titicaca</h3>
-                        <p class="text-gray-500 text-sm">Trucha fresca del lago, preparada a la brasa con hierbas
+                        <h3 class="text-xl font-extrabold text-white mb-2">Trucha del Titicaca</h3>
+                        <p class="text-white/40 text-sm">Trucha fresca del lago, preparada a la brasa con hierbas
                             andinas, quinua y vegetales de temporada.</p>
                     </div>
                 </div>
-
-                <div
-                    class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                <div class="group glass rounded-2xl overflow-hidden hover:border-white/20 transition-all">
                     <div class="h-56 overflow-hidden"><img alt="Quinotto"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0UMFPv5beCgx2jSGjw3FgwXVm-7A-EyUcLnoMecBd0E7k02BGYa25tLZMtBPRZlgoYOfwlcIY_-gBfIbxzDqMqOdLYPN3PyRUgVZq6bC_mmsi09v81yDZq9_f8tm6IKMBYKb_j2mWdTY0hz2g9xhnC-ra5SitkvSvnBqskwLWYbxOmx_S-n_JG9Aht7ztAWAW7XNzA4nbXcMMMZn089Mf9_sWpcg9xfjAGWp9k_SiY8XAIKrgmE9NobUTp1Sruk8GYmkF07EhgtQ" />
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-extrabold text-navy mb-2">Quinotto Andino</h3>
-                        <p class="text-gray-500 text-sm">Risotto de quinua real con queso fresco, hongos silvestres y
+                        <h3 class="text-xl font-extrabold text-white mb-2">Quinotto Andino</h3>
+                        <p class="text-white/40 text-sm">Risotto de quinua real con queso fresco, hongos silvestres y
                             reducción de muña.</p>
                     </div>
                 </div>
-
-                <div
-                    class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                <div class="group glass rounded-2xl overflow-hidden hover:border-white/20 transition-all">
                     <div class="h-56 overflow-hidden"><img alt="Pachamanca"
-                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjLRm8UKEzpYHI84ymQSn3Kg6_0vPHEnYoKsB4trBWpkSLp2aUn6P4VvZ3WvXWZM1Y3jlTpKOJsIFIwNibC-mCYpD59gOr5EmnD9WA6ccznu2u7XEbA6FoMh0LHgPBuz2diWMocC6DHTRzr46hlBv39_pmBQZWU4-vZgNfxrkh_OqQhu4SACM18uxU9T0CwNmns54FscuqLCqqh0sGv0TtkkZg99-qGHDREJ3hX-G2dD3uWrA6scRsmOxicTnk_yVwx-HrDAHdzxY" />
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-extrabold text-navy mb-2">Pachamanca</h3>
-                        <p class="text-gray-500 text-sm">Festín ancestral cocido bajo tierra con carnes tiernas,
+                        <h3 class="text-xl font-extrabold text-white mb-2">Pachamanca</h3>
+                        <p class="text-white/40 text-sm">Festín ancestral cocido bajo tierra con carnes tiernas,
                             tubérculos y habas, servido los sábados.</p>
                     </div>
                 </div>
@@ -152,32 +159,32 @@
         </div>
     </section>
 
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-[#0d0d0d]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12"><span
                     class="text-primary font-semibold tracking-widest uppercase text-xs">Servicios</span>
-                <h2 class="text-3xl font-extrabold text-navy mt-2">Horarios y Servicios</h2>
+                <h2 class="text-3xl font-extrabold text-white mt-2">Horarios y Servicios</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 rounded-2xl p-8 text-center border border-gray-100"><span
+                <div class="glass rounded-2xl p-8 text-center"><span
                         class="material-symbols-outlined text-4xl text-primary mb-4">wb_sunny</span>
-                    <h3 class="text-lg font-bold text-navy mb-2">Desayuno</h3>
+                    <h3 class="text-lg font-bold text-white mb-2">Desayuno</h3>
                     <p class="text-primary font-bold text-sm mb-1">6:30 - 10:00 AM</p>
-                    <p class="text-gray-500 text-sm">Buffet andino con panes artesanales, frutas, quesos locales y
+                    <p class="text-white/40 text-sm">Buffet andino con panes artesanales, frutas, quesos locales y
                         opciones calientes.</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-8 text-center border border-gray-100"><span
+                <div class="glass rounded-2xl p-8 text-center"><span
                         class="material-symbols-outlined text-4xl text-primary mb-4">lunch_dining</span>
-                    <h3 class="text-lg font-bold text-navy mb-2">Almuerzo</h3>
+                    <h3 class="text-lg font-bold text-white mb-2">Almuerzo</h3>
                     <p class="text-primary font-bold text-sm mb-1">12:30 - 3:00 PM</p>
-                    <p class="text-gray-500 text-sm">Menú de 3 tiempos con opciones vegetarianas y veganas. Carta de
+                    <p class="text-white/40 text-sm">Menú de 3 tiempos con opciones vegetarianas y veganas. Carta de
                         vinos selectos.</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-8 text-center border border-gray-100"><span
+                <div class="glass rounded-2xl p-8 text-center"><span
                         class="material-symbols-outlined text-4xl text-primary mb-4">dinner_dining</span>
-                    <h3 class="text-lg font-bold text-navy mb-2">Cena</h3>
+                    <h3 class="text-lg font-bold text-white mb-2">Cena</h3>
                     <p class="text-primary font-bold text-sm mb-1">7:00 - 10:00 PM</p>
-                    <p class="text-gray-500 text-sm">Experiencia gastronómica completa con maridaje de pisco y cocteles
+                    <p class="text-white/40 text-sm">Experiencia gastronómica completa con maridaje de pisco y cocteles
                         andinos.</p>
                 </div>
             </div>
@@ -186,10 +193,10 @@
 
     <section class="relative py-20 overflow-hidden"><img alt="CTA" class="absolute inset-0 w-full h-full object-cover"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS00PnaO0SFgWSutlibmwkDkluXVK6uYYyNPDqiI2CeYK8MocS3wdrewkFQsezeN4Nlr5i_zxOcSIPUwzXYdID7XkcaSDbLIs3uDf36lJXiQEdaQFRQWYrvkVjAEJG7kt1HrqjDBdPAx1cTHMwHX9PoRifY5Yhl3i8WVq1bPOIfPzOMBgoX4Rxw5tg2PySEAxrsjqj29k_A_SI02gtgZty2sVuIxvuR-D20ZbmCww4qTquqHkHJWvhGwPUpd4LeYSElmi29eJlGLo" />
-        <div class="absolute inset-0 bg-navy/85"></div>
+        <div class="absolute inset-0 bg-black/80"></div>
         <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">RESERVA TU EXPERIENCIA GASTRONÓMICA</h2>
-            <p class="text-white/80 text-lg mb-10">Menús especiales disponibles para grupos y celebraciones privadas.
+            <p class="text-white/60 text-lg mb-10">Menús especiales disponibles para grupos y celebraciones privadas.
             </p>
             <a class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5c] text-white px-10 py-5 rounded-full font-bold text-xl transition-transform hover:scale-105 shadow-xl"
                 href="https://api.whatsapp.com/send?phone=51987654321"><svg class="w-8 h-8 fill-current"
@@ -200,43 +207,47 @@
         </div>
     </section>
 
-    <footer class="bg-navy text-white">
+    <footer class="bg-[#0a0a0a] text-white border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
             <div class="text-center mb-16">
                 <h2
-                    class="text-6xl md:text-8xl lg:text-9xl font-extrabold text-white/5 uppercase tracking-tighter leading-none">
+                    class="text-6xl md:text-8xl lg:text-9xl font-extrabold text-white/[0.03] uppercase tracking-tighter leading-none">
                     QUILLAPATA LODGE</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <div><span class="sf text-2xl font-bold block mb-4">Quillapata <span
                             class="text-primary font-light">Lodge</span></span>
-                    <p class="text-white/50 text-sm">Experiencias auténticas en el Altiplano peruano.</p>
+                    <p class="text-white/40 text-sm">Experiencias auténticas en el Altiplano peruano.</p>
                 </div>
                 <div>
                     <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Navegación</h3>
-                    <ul class="space-y-4 text-white/60 text-sm">
-                        <li><a class="hover:text-primary" href="habitaciones.html">Habitaciones</a></li>
-                        <li><a class="hover:text-primary" href="alimentacion.html">Gastronomía</a></li>
-                        <li><a class="hover:text-primary" href="actividades.html">Experiencias</a></li>
-                        <li><a class="hover:text-primary" href="paquetes.html">Paquetes</a></li>
+                    <ul class="space-y-4 text-white/40 text-sm">
+                        <li><a class="hover:text-primary transition-colors" href="habitaciones.html">Habitaciones</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="alimentacion.html">Gastronomía</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="actividades.html">Experiencias</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="paquetes.html">Paquetes</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Contacto</h3>
-                    <ul class="space-y-4 text-white/60 text-sm">
+                    <ul class="space-y-4 text-white/40 text-sm">
                         <li>+51 987 654 321</li>
                         <li>reservas@quillapatalodge.com</li>
+                        <li>Km 45 Carretera Puno-Desaguadero</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Legal</h3>
-                    <ul class="space-y-4 text-white/60 text-sm">
-                        <li><a class="hover:text-primary" href="#">Términos</a></li>
-                        <li><a class="hover:text-primary" href="#">Privacidad</a></li>
+                    <ul class="space-y-4 text-white/40 text-sm">
+                        <li><a class="hover:text-primary transition-colors" href="#">Términos</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Privacidad</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-white/10 pt-8 text-center text-white/30 text-xs">© 2025 Quillapata Lodge.</div>
+            <div class="border-t border-white/5 pt-8 text-center text-white/20 text-xs">© 2025 Quillapata Lodge.</div>
         </div>
     </footer>
     <a href="https://api.whatsapp.com/send?phone=51987654321"

@@ -13,15 +13,14 @@
         rel="stylesheet" />
     <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
                         "primary": "#c5942b",
-                        "background-light": "#f8f7f6",
-                        "background-dark": "#201b12",
+                        "dark-bg": "#0d0d0d",
+                        "dark-surface": "#1a1a1a",
+                        "dark-border": "#2a2a2a",
                         "navy": "#1B3A5C",
-                        "cream": "#FAF6F0",
                     },
                     fontFamily: {
                         "display": ["Plus Jakarta Sans", "sans-serif"],
@@ -39,36 +38,96 @@
         .serif-font {
             font-family: 'Playfair Display', serif;
         }
+
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0d0d0d;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3a3a3a;
+        }
+
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        /* Smooth reveal animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+
+        .fade-up-delay {
+            animation: fadeUp 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        .fade-up-delay-2 {
+            animation: fadeUp 0.8s ease-out 0.4s forwards;
+            opacity: 0;
+        }
     </style>
 </head>
 
-<body class="bg-white text-gray-900">
+<body class="bg-dark-bg text-white">
 
     <!-- NAV -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-[72px]">
-                <a href="index.html" class="serif-font text-2xl font-bold text-navy tracking-tight">Quillapata <span
+                <a href="index.html" class="serif-font text-2xl font-bold text-white tracking-tight">Quillapata <span
                         class="text-primary font-light">Lodge</span></a>
                 <div class="hidden lg:flex items-center gap-8">
                     <a class="text-sm font-semibold text-primary" href="index.html">Inicio</a>
-                    <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
                         href="nosotros.html">Nosotros</a>
-                    <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
                         href="como-llegar.html">Cómo Llegar</a>
-                    <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
                         href="habitaciones.html">Habitaciones</a>
-                    <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
                         href="alimentacion.html">Alimentación</a>
-                    <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
                         href="actividades.html">Actividades</a>
-                    <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
                         href="paquetes.html">Paquetes</a>
                 </div>
                 <div class="flex items-center gap-4">
                     <a href="https://api.whatsapp.com/send?phone=51987654321"
-                        class="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all shadow-lg shadow-primary/20">RESERVAR</a>
-                    <button class="lg:hidden p-2"
+                        class="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-primary/20">RESERVAR</a>
+                    <button class="lg:hidden p-2 text-white"
                         onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -81,65 +140,68 @@
     </nav>
     <!-- Mobile Menu -->
     <div id="mobile-menu"
-        class="hidden lg:hidden fixed top-[72px] left-0 right-0 z-50 bg-white border-t border-gray-100 px-6 py-4 shadow-lg">
+        class="hidden lg:hidden fixed top-[72px] left-0 right-0 z-50 bg-[#1a1a1a]/95 backdrop-blur-xl border-t border-white/5 px-6 py-4">
         <a class="block py-3 text-primary font-bold" href="index.html">Inicio</a>
-        <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
-        <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="como-llegar.html">Cómo Llegar</a>
-        <a class="block py-3 text-gray-600 hover:text-primary transition-colors"
+        <a class="block py-3 text-white/50 hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
+        <a class="block py-3 text-white/50 hover:text-primary transition-colors" href="como-llegar.html">Cómo Llegar</a>
+        <a class="block py-3 text-white/50 hover:text-primary transition-colors"
             href="habitaciones.html">Habitaciones</a>
-        <a class="block py-3 text-gray-600 hover:text-primary transition-colors"
+        <a class="block py-3 text-white/50 hover:text-primary transition-colors"
             href="alimentacion.html">Alimentación</a>
-        <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="actividades.html">Actividades</a>
-        <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="paquetes.html">Paquetes</a>
-        <a class="block py-3 bg-primary text-white text-center rounded-lg font-semibold mt-2"
+        <a class="block py-3 text-white/50 hover:text-primary transition-colors" href="actividades.html">Actividades</a>
+        <a class="block py-3 text-white/50 hover:text-primary transition-colors" href="paquetes.html">Paquetes</a>
+        <a class="block py-3 bg-primary text-white text-center rounded-full font-semibold mt-2"
             href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a>
     </div>
 
     <!-- HERO -->
-    <header class="relative min-h-screen flex items-center justify-center pt-[72px]">
+    <header class="relative min-h-screen flex items-center justify-center">
         <img alt="Andes Mountains and Lake Titicaca" class="absolute inset-0 w-full h-full object-cover"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqhBiZlBHVCo5R3Y0nTq5xeQog81CUxJg2C7b55vlZZ7nQpTHCX2qwrc4WaeCgGCNDKZUzkY0RccwJKFJ3_rCu0Jb3m92-h_urPiLFzvgdcgvKzMj4nbYd3lovkJ-1RWxL0M-ONzlL3ddgHviw7zV-25A_pKLqyKtgIe3klbKtba3uIVbY04VVtvHtmgjzPTye890anmFYb7P5gAWchCnzt4W1B-z-MKTUD9o8TYKmD_6Wyw-6RChG8_e0o9Jc2QvcvtO4CnFDLcs" />
-        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
-        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-dark-bg"></div>
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto fade-up">
+            <div class="inline-flex items-center gap-2 glass rounded-full px-5 py-2 mb-8">
+                <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                <span class="text-white/70 text-sm font-medium">Puno, Perú · 3,800 msnm</span>
+            </div>
             <h1
                 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white uppercase tracking-tight leading-tight mb-6">
                 DESCUBRE TU ESPACIO<br />PERFECTO EN LOS ANDES
             </h1>
-            <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+            <p class="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-10">
                 Una experiencia vivencial única a orillas del sagrado Lago Titicaca, donde el confort moderno se
                 encuentra con la herencia ancestral.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up-delay">
                 <a href="habitaciones.html"
-                    class="bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-xl">Explorar
+                    class="bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl shadow-primary/20">Explorar
                     Habitaciones</a>
                 <a href="nosotros.html"
-                    class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all">Nuestra
+                    class="glass hover:bg-white/10 text-white px-10 py-4 rounded-full font-bold text-lg transition-all">Nuestra
                     Historia</a>
             </div>
         </div>
         <!-- Search Bar -->
-        <div class="absolute bottom-0 left-0 right-0 z-20">
+        <div class="absolute bottom-0 left-0 right-0 z-20 fade-up-delay-2">
             <div class="max-w-5xl mx-auto px-4 pb-8">
-                <div
-                    class="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-4 md:p-6 grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+                <div class="glass-strong rounded-2xl p-4 md:p-6 grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
                     <div>
                         <label
-                            class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Check-in</label>
+                            class="block text-xs font-bold text-white/40 uppercase tracking-wider mb-2">Check-in</label>
                         <input type="date"
-                            class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary text-sm" />
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary text-sm text-white" />
                     </div>
                     <div>
                         <label
-                            class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Check-out</label>
+                            class="block text-xs font-bold text-white/40 uppercase tracking-wider mb-2">Check-out</label>
                         <input type="date"
-                            class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary text-sm" />
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary text-sm text-white" />
                     </div>
                     <div>
                         <label
-                            class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Huéspedes</label>
+                            class="block text-xs font-bold text-white/40 uppercase tracking-wider mb-2">Huéspedes</label>
                         <select
-                            class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary text-sm bg-white">
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary text-sm text-white">
                             <option>2 Adultos</option>
                             <option>1 Adulto</option>
                             <option>3 Adultos</option>
@@ -148,38 +210,38 @@
                         </select>
                     </div>
                     <a href="https://api.whatsapp.com/send?phone=51987654321"
-                        class="bg-navy hover:bg-navy/90 text-white px-8 py-3 rounded-lg font-bold text-center transition-all">Buscar</a>
+                        class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-xl font-bold text-center transition-all">Buscar</a>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- STATS -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-dark-bg">
         <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-            <div>
-                <div class="text-5xl md:text-6xl font-extrabold text-navy">15+</div>
-                <div class="text-gray-500 font-medium mt-2 uppercase tracking-wider text-sm">Años de Experiencia</div>
+            <div class="glass rounded-2xl p-8">
+                <div class="text-5xl md:text-6xl font-extrabold text-primary">15+</div>
+                <div class="text-white/40 font-medium mt-2 uppercase tracking-wider text-sm">Años de Experiencia</div>
             </div>
-            <div>
-                <div class="text-5xl md:text-6xl font-extrabold text-navy">5000+</div>
-                <div class="text-gray-500 font-medium mt-2 uppercase tracking-wider text-sm">Huéspedes Felices</div>
+            <div class="glass rounded-2xl p-8">
+                <div class="text-5xl md:text-6xl font-extrabold text-primary">5000+</div>
+                <div class="text-white/40 font-medium mt-2 uppercase tracking-wider text-sm">Huéspedes Felices</div>
             </div>
-            <div>
-                <div class="text-5xl md:text-6xl font-extrabold text-navy">99%</div>
-                <div class="text-gray-500 font-medium mt-2 uppercase tracking-wider text-sm">Satisfacción</div>
+            <div class="glass rounded-2xl p-8">
+                <div class="text-5xl md:text-6xl font-extrabold text-primary">99%</div>
+                <div class="text-white/40 font-medium mt-2 uppercase tracking-wider text-sm">Satisfacción</div>
             </div>
         </div>
     </section>
 
     <!-- EXPERIENCE CARDS -->
-    <section class="py-24 bg-gray-50">
+    <section class="py-24 bg-[#111111]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
                     <span class="text-primary font-semibold tracking-widest uppercase text-xs">Experiencia
                         Quillapata</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-navy mt-2">Explora Nuestras Experiencias</h2>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2">Explora Nuestras Experiencias</h2>
                 </div>
                 <a href="actividades.html"
                     class="text-primary font-bold text-sm hover:underline hidden md:inline-flex items-center gap-1">Ver
@@ -187,26 +249,26 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Card 1 -->
-                <div
-                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div class="group glass rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300">
                     <div class="h-72 overflow-hidden relative">
                         <img alt="Habitaciones y Suites"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Go1wLhV9770y-lYKzvkg_dQoVAWrXGJEjegbor6f4DycQOMESsBZq6w9vtJH2HO1szy9r9AdwSqtqT5LWuc1raYj4pyDEaxcP9SjlUHDfKWaZ44FkW6M5QBdY1wTqqiaEC6bY1ayXvlQ75ckWopFPPWavhena4r7f21IPl-bmA-eGAANc0ni3mJmQGMfhWHVtNBixXfnj45MHnkniGXBgvcXw4uWYisczEQ1A7Q6Ub0GY490aH_FYXGs6y3Pd_u3UClK4vIJYJM" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         <div
-                            class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">
+                            class="absolute top-4 left-4 rounded-full bg-primary/90 text-white px-4 py-1.5 text-xs font-bold uppercase backdrop-blur-sm">
                             Alojamiento</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-extrabold text-navy mb-2">Habitaciones & Suites</h3>
-                        <p class="text-gray-500 text-sm mb-4">Espacios diseñados con materiales locales, chimenea a leña
+                        <h3 class="text-xl font-extrabold text-white mb-2">Habitaciones & Suites</h3>
+                        <p class="text-white/50 text-sm mb-4">Espacios diseñados con materiales locales, chimenea a leña
                             y vistas panorámicas al Lago Titicaca.</p>
-                        <div class="flex items-center gap-4 text-xs text-gray-400 mb-4">
-                            <span class="flex items-center gap-1"><span
+                        <div class="flex items-center gap-4 text-xs text-white/30 mb-4">
+                            <span class="flex items-center gap-1 rounded-full border border-white/10 px-3 py-1"><span
                                     class="material-symbols-outlined text-sm">bed</span> 4 tipos</span>
-                            <span class="flex items-center gap-1"><span
+                            <span class="flex items-center gap-1 rounded-full border border-white/10 px-3 py-1"><span
                                     class="material-symbols-outlined text-sm">square_foot</span> 35-65 m²</span>
-                            <span class="flex items-center gap-1"><span
+                            <span class="flex items-center gap-1 rounded-full border border-white/10 px-3 py-1"><span
                                     class="material-symbols-outlined text-sm">landscape</span> Vista lago</span>
                         </div>
                         <a class="text-primary font-bold text-sm inline-flex items-center gap-2 group-hover:gap-4 transition-all"
@@ -215,26 +277,26 @@
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div
-                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div class="group glass rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300">
                     <div class="h-72 overflow-hidden relative">
                         <img alt="Gastronomía Andina"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS00PnaO0SFgWSutlibmwkDkluXVK6uYYyNPDqiI2CeYK8MocS3wdrewkFQsezeN4Nlr5i_zxOcSIPUwzXYdID7XkcaSDbLIs3uDf36lJXiQEdaQFRQWYrvkVjAEJG7kt1HrqjDBdPAx1cTHMwHX9PoRifY5Yhl3i8WVq1bPOIfPzOMBgoX4Rxw5tg2PySEAxrsjqj29k_A_SI02gtgZty2sVuIxvuR-D20ZbmCww4qTquqHkHJWvhGwPUpd4LeYSElmi29eJlGLo" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         <div
-                            class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">
+                            class="absolute top-4 left-4 rounded-full bg-primary/90 text-white px-4 py-1.5 text-xs font-bold uppercase backdrop-blur-sm">
                             Gastronomía</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-extrabold text-navy mb-2">Gastronomía Local</h3>
-                        <p class="text-gray-500 text-sm mb-4">Sabores que cuentan historias. Ingredientes orgánicos de
+                        <h3 class="text-xl font-extrabold text-white mb-2">Gastronomía Local</h3>
+                        <p class="text-white/50 text-sm mb-4">Sabores que cuentan historias. Ingredientes orgánicos de
                             nuestra tierra transformados en alta cocina andina.</p>
-                        <div class="flex items-center gap-4 text-xs text-gray-400 mb-4">
-                            <span class="flex items-center gap-1"><span
+                        <div class="flex items-center gap-4 text-xs text-white/30 mb-4">
+                            <span class="flex items-center gap-1 rounded-full border border-white/10 px-3 py-1"><span
                                     class="material-symbols-outlined text-sm">restaurant</span> Farm-to-table</span>
-                            <span class="flex items-center gap-1"><span
+                            <span class="flex items-center gap-1 rounded-full border border-white/10 px-3 py-1"><span
                                     class="material-symbols-outlined text-sm">eco</span> Orgánico</span>
-                            <span class="flex items-center gap-1"><span
+                            <span class="flex items-center gap-1 rounded-full border border-white/10 px-3 py-1"><span
                                     class="material-symbols-outlined text-sm">local_fire_department</span> A leña</span>
                         </div>
                         <a class="text-primary font-bold text-sm inline-flex items-center gap-2 group-hover:gap-4 transition-all"
@@ -243,26 +305,26 @@
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div
-                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div class="group glass rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300">
                     <div class="h-72 overflow-hidden relative">
                         <img alt="Aventura en los Andes"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9mTLgRhuu7c0zqgi6EsQJHbHgpZOwNf2TpQMmRYgm-l9GtTYJ7MzjXPK_AzGf4-i2SDgaBia524Vvbhfw-JVbHQMviY0MBpYAyFh2qUSZ0cR0tZolmQa58jMPwzA-99wMmiQCeXDF7u-_KuHTF_U49Dr1GgfGOCVvf_PPPOV6gyznoAMN7Ny9mJwimhsl5MaHNWi3RRNXhHw7vdQqr3PHmY1IX0WitSDmGKoEV0AmhlGkl16JhU_EL4AztlLb7IS4uhagORa9Zwo" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         <div
-                            class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">
+                            class="absolute top-4 left-4 rounded-full bg-primary/90 text-white px-4 py-1.5 text-xs font-bold uppercase backdrop-blur-sm">
                             Aventura</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-extrabold text-navy mb-2">Aventuras en la Montaña</h3>
-                        <p class="text-gray-500 text-sm mb-4">Explore senderos sagrados, navegue por el Lago Titicaca y
+                        <h3 class="text-xl font-extrabold text-white mb-2">Aventuras en la Montaña</h3>
+                        <p class="text-white/50 text-sm mb-4">Explore senderos sagrados, navegue por el Lago Titicaca y
                             descubra la fauna única del altiplano peruano.</p>
-                        <div class="flex items-center gap-4 text-xs text-gray-400 mb-4">
-                            <span class="flex items-center gap-1"><span
+                        <div class="flex items-center gap-4 text-xs text-white/30 mb-4">
+                            <span class="flex items-center gap-1 rounded-full border border-white/10 px-3 py-1"><span
                                     class="material-symbols-outlined text-sm">hiking</span> Trekking</span>
-                            <span class="flex items-center gap-1"><span
+                            <span class="flex items-center gap-1 rounded-full border border-white/10 px-3 py-1"><span
                                     class="material-symbols-outlined text-sm">kayaking</span> Kayak</span>
-                            <span class="flex items-center gap-1"><span
+                            <span class="flex items-center gap-1 rounded-full border border-white/10 px-3 py-1"><span
                                     class="material-symbols-outlined text-sm">horse</span> Cabalgata</span>
                         </div>
                         <a class="text-primary font-bold text-sm inline-flex items-center gap-2 group-hover:gap-4 transition-all"
@@ -271,26 +333,26 @@
                     </div>
                 </div>
                 <!-- Card 4 -->
-                <div
-                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div class="group glass rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300">
                     <div class="h-72 overflow-hidden relative">
                         <img alt="Cultura Andina Viva"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0UMFPv5beCgx2jSGjw3FgwXVm-7A-EyUcLnoMecBd0E7k02BGYa25tLZMtBPRZlgoYOfwlcIY_-gBfIbxzDqMqOdLYPN3PyRUgVZq6bC_mmsi09v81yDZq9_f8tm6IKMBYKb_j2mWdTY0hz2g9xhnC-ra5SitkvSvnBqskwLWYbxOmx_S-n_JG9Aht7ztAWAW7XNzA4nbXcMMMZn089Mf9_sWpcg9xfjAGWp9k_SiY8XAIKrgmE9NobUTp1Sruk8GYmkF07EhgtQ" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         <div
-                            class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">
+                            class="absolute top-4 left-4 rounded-full bg-primary/90 text-white px-4 py-1.5 text-xs font-bold uppercase backdrop-blur-sm">
                             Cultura</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-extrabold text-navy mb-2">Conexión Cultural</h3>
-                        <p class="text-gray-500 text-sm mb-4">Conéctese con las comunidades locales, sus tejidos
+                        <h3 class="text-xl font-extrabold text-white mb-2">Conexión Cultural</h3>
+                        <p class="text-white/50 text-sm mb-4">Conéctese con las comunidades locales, sus tejidos
                             milenarios y ceremonias de agradecimiento a la Pachamama.</p>
-                        <div class="flex items-center gap-4 text-xs text-gray-400 mb-4">
-                            <span class="flex items-center gap-1"><span
+                        <div class="flex items-center gap-4 text-xs text-white/30 mb-4">
+                            <span class="flex items-center gap-1 rounded-full border border-white/10 px-3 py-1"><span
                                     class="material-symbols-outlined text-sm">palette</span> Textiles</span>
-                            <span class="flex items-center gap-1"><span
+                            <span class="flex items-center gap-1 rounded-full border border-white/10 px-3 py-1"><span
                                     class="material-symbols-outlined text-sm">groups</span> Comunidad</span>
-                            <span class="flex items-center gap-1"><span
+                            <span class="flex items-center gap-1 rounded-full border border-white/10 px-3 py-1"><span
                                     class="material-symbols-outlined text-sm">celebration</span> Ceremonias</span>
                         </div>
                         <a class="text-primary font-bold text-sm inline-flex items-center gap-2 group-hover:gap-4 transition-all"
@@ -303,37 +365,37 @@
     </section>
 
     <!-- TRUST BAR -->
-    <section class="py-12 bg-white border-y border-gray-100">
+    <section class="py-12 bg-dark-bg border-y border-white/5">
         <div class="max-w-5xl mx-auto px-4 text-center">
-            <p class="text-gray-400 text-sm font-medium mb-8 uppercase tracking-widest">Recomendado por 500+ viajeros en
+            <p class="text-white/30 text-sm font-medium mb-8 uppercase tracking-widest">Recomendado por 500+ viajeros en
             </p>
-            <div class="flex flex-wrap justify-center items-center gap-12 opacity-40 grayscale">
-                <span class="text-2xl font-extrabold tracking-tight">TripAdvisor</span>
-                <span class="text-2xl font-extrabold tracking-tight">Booking.com</span>
-                <span class="text-2xl font-extrabold tracking-tight">Lonely Planet</span>
-                <span class="text-2xl font-extrabold tracking-tight">Airbnb</span>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-30">
+                <span class="text-2xl font-extrabold tracking-tight text-white">TripAdvisor</span>
+                <span class="text-2xl font-extrabold tracking-tight text-white">Booking.com</span>
+                <span class="text-2xl font-extrabold tracking-tight text-white">Lonely Planet</span>
+                <span class="text-2xl font-extrabold tracking-tight text-white">Airbnb</span>
             </div>
         </div>
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="py-24 bg-gray-50">
+    <section class="py-24 bg-[#111111]">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <span class="text-primary font-semibold tracking-widest uppercase text-xs">Testimonios</span>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-navy mt-2 mb-12">Lo que Dicen Nuestros Huéspedes</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-12">Lo que Dicen Nuestros Huéspedes</h2>
             <div class="flex justify-center gap-4 mb-8">
                 <div
-                    class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-lg">
+                    class="w-14 h-14 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center text-primary font-bold text-lg">
                     MC</div>
                 <div
-                    class="w-14 h-14 rounded-full bg-navy/10 flex items-center justify-center text-navy font-bold text-lg">
+                    class="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 font-bold text-lg">
                     JW</div>
                 <div
-                    class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-lg">
+                    class="w-14 h-14 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center text-primary font-bold text-lg">
                     AR</div>
             </div>
             <div class="text-primary text-6xl serif-font leading-none mb-4">"</div>
-            <blockquote class="text-xl md:text-2xl text-gray-700 italic leading-relaxed max-w-3xl mx-auto mb-6">
+            <blockquote class="text-xl md:text-2xl text-white/70 italic leading-relaxed max-w-3xl mx-auto mb-6">
                 Una paz inigualable. El diseño del lodge respeta totalmente el entorno y la atención del personal te
                 hace sentir en casa desde el primer minuto. Una experiencia que recordaremos para siempre.
             </blockquote>
@@ -344,18 +406,18 @@
                 <span class="material-symbols-outlined text-primary">star</span>
                 <span class="material-symbols-outlined text-primary">star</span>
             </div>
-            <div class="font-bold text-navy">María Cárdenas</div>
-            <div class="text-gray-400 text-sm">Lima, Perú</div>
+            <div class="font-bold text-white">María Cárdenas</div>
+            <div class="text-white/40 text-sm">Lima, Perú</div>
         </div>
     </section>
 
     <!-- BLOG/NEWS -->
-    <section class="py-24 bg-white">
+    <section class="py-24 bg-dark-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
                     <span class="text-primary font-semibold tracking-widest uppercase text-xs">Blog</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-navy mt-2">NOTICIAS DEL LODGE</h2>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2">NOTICIAS DEL LODGE</h2>
                 </div>
                 <a href="#"
                     class="text-primary font-bold text-sm hover:underline hidden md:inline-flex items-center gap-1">Ver
@@ -363,39 +425,40 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="group cursor-pointer">
-                    <div class="h-56 rounded-2xl overflow-hidden mb-4">
+                    <div class="h-56 rounded-2xl overflow-hidden mb-4 border border-white/5">
                         <img alt="Blog: Temporada de estrellas"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjLRm8UKEzpYHI84ymQSn3Kg6_0vPHEnYoKsB4trBWpkSLp2aUn6P4VvZ3WvXWZM1Y3jlTpKOJsIFIwNibC-mCYpD59gOr5EmnD9WA6ccznu2u7XEbA6FoMh0LHgPBuz2diWMocC6DHTRzr46hlBv39_pmBQZWU4-vZgNfxrkh_OqQhu4SACM18uxU9T0CwNmns54FscuqLCqqh0sGv0TtkkZg99-qGHDREJ3hX-G2dD3uWrA6scRsmOxicTnk_yVwx-HrDAHdzxY" />
                     </div>
-                    <span class="text-xs text-gray-400 uppercase tracking-wider">Febrero 2025</span>
-                    <h3 class="text-lg font-bold text-navy mt-1 group-hover:text-primary transition-colors">Temporada de
+                    <span class="text-xs text-white/30 uppercase tracking-wider">Febrero 2025</span>
+                    <h3 class="text-lg font-bold text-white mt-1 group-hover:text-primary transition-colors">Temporada
+                        de
                         Observación de Estrellas</h3>
-                    <p class="text-gray-500 text-sm mt-2">Los cielos de Puno ofrecen una de las mejores experiencias
+                    <p class="text-white/40 text-sm mt-2">Los cielos de Puno ofrecen una de las mejores experiencias
                         astronómicas del hemisferio sur.</p>
                 </div>
                 <div class="group cursor-pointer">
-                    <div class="h-56 rounded-2xl overflow-hidden mb-4">
+                    <div class="h-56 rounded-2xl overflow-hidden mb-4 border border-white/5">
                         <img alt="Blog: Festival de la Candelaria"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9mTLgRhuu7c0zqgi6EsQJHbHgpZOwNf2TpQMmRYgm-l9GtTYJ7MzjXPK_AzGf4-i2SDgaBia524Vvbhfw-JVbHQMviY0MBpYAyFh2qUSZ0cR0tZolmQa58jMPwzA-99wMmiQCeXDF7u-_KuHTF_U49Dr1GgfGOCVvf_PPPOV6gyznoAMN7Ny9mJwimhsl5MaHNWi3RRNXhHw7vdQqr3PHmY1IX0WitSDmGKoEV0AmhlGkl16JhU_EL4AztlLb7IS4uhagORa9Zwo" />
                     </div>
-                    <span class="text-xs text-gray-400 uppercase tracking-wider">Enero 2025</span>
-                    <h3 class="text-lg font-bold text-navy mt-1 group-hover:text-primary transition-colors">Festival de
+                    <span class="text-xs text-white/30 uppercase tracking-wider">Enero 2025</span>
+                    <h3 class="text-lg font-bold text-white mt-1 group-hover:text-primary transition-colors">Festival de
                         la Candelaria 2025</h3>
-                    <p class="text-gray-500 text-sm mt-2">Vive la fiesta más grande del Altiplano peruano desde la
+                    <p class="text-white/40 text-sm mt-2">Vive la fiesta más grande del Altiplano peruano desde la
                         comodidad del lodge.</p>
                 </div>
                 <div class="group cursor-pointer">
-                    <div class="h-56 rounded-2xl overflow-hidden mb-4">
+                    <div class="h-56 rounded-2xl overflow-hidden mb-4 border border-white/5">
                         <img alt="Blog: Nuevas suites"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Go1wLhV9770y-lYKzvkg_dQoVAWrXGJEjegbor6f4DycQOMESsBZq6w9vtJH2HO1szy9r9AdwSqtqT5LWuc1raYj4pyDEaxcP9SjlUHDfKWaZ44FkW6M5QBdY1wTqqiaEC6bY1ayXvlQ75ckWopFPPWavhena4r7f21IPl-bmA-eGAANc0ni3mJmQGMfhWHVtNBixXfnj45MHnkniGXBgvcXw4uWYisczEQ1A7Q6Ub0GY490aH_FYXGs6y3Pd_u3UClK4vIJYJM" />
                     </div>
-                    <span class="text-xs text-gray-400 uppercase tracking-wider">Diciembre 2024</span>
-                    <h3 class="text-lg font-bold text-navy mt-1 group-hover:text-primary transition-colors">Nuevas
+                    <span class="text-xs text-white/30 uppercase tracking-wider">Diciembre 2024</span>
+                    <h3 class="text-lg font-bold text-white mt-1 group-hover:text-primary transition-colors">Nuevas
                         Suites Premium Inauguradas</h3>
-                    <p class="text-gray-500 text-sm mt-2">Tres nuevas suites con jacuzzi y vista panorámica al lago se
+                    <p class="text-white/40 text-sm mt-2">Tres nuevas suites con jacuzzi y vista panorámica al lago se
                         suman a la oferta del lodge.</p>
                 </div>
             </div>
@@ -403,62 +466,62 @@
     </section>
 
     <!-- FAQ -->
-    <section class="py-24 bg-gray-50">
+    <section class="py-24 bg-[#111111]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
                 <div class="lg:col-span-2">
                     <span class="text-primary font-semibold tracking-widest uppercase text-xs">FAQ</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-navy mt-2 mb-6">Preguntas Frecuentes</h2>
-                    <p class="text-gray-500 mb-8">¿Tienes alguna duda? Aquí encontrarás las respuestas más comunes. Si
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-6">Preguntas Frecuentes</h2>
+                    <p class="text-white/50 mb-8">¿Tienes alguna duda? Aquí encontrarás las respuestas más comunes. Si
                         necesitas más información, no dudes en contactarnos.</p>
                     <a href="https://api.whatsapp.com/send?phone=51987654321"
-                        class="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                        class="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-bold transition-all">
                         <span class="material-symbols-outlined">chat</span> Contáctanos
                     </a>
                 </div>
                 <div class="lg:col-span-3 space-y-4">
-                    <details class="bg-white rounded-xl border border-gray-100 shadow-sm group" open>
-                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-navy">
+                    <details class="glass rounded-xl group" open>
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-white">
                             ¿Cuál es la mejor época para visitar?
                             <span
                                 class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
                         </summary>
-                        <div class="px-6 pb-6 text-gray-500 text-sm">
+                        <div class="px-6 pb-6 text-white/50 text-sm">
                             La temporada seca (mayo a octubre) es ideal para cielos despejados y actividades al aire
                             libre. Sin embargo, la temporada de lluvias (noviembre a abril) tiene su propio encanto
                             verde y menos turistas.
                         </div>
                     </details>
-                    <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
-                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-navy">
+                    <details class="glass rounded-xl group">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-white">
                             ¿Cómo llego al lodge desde el aeropuerto?
                             <span
                                 class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
                         </summary>
-                        <div class="px-6 pb-6 text-gray-500 text-sm">
+                        <div class="px-6 pb-6 text-white/50 text-sm">
                             Ofrecemos servicio de traslado privado desde el Aeropuerto Inca Manco Cápac de Juliaca (1h30
                             min). También disponemos de traslados desde la ciudad de Puno (45 min).
                         </div>
                     </details>
-                    <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
-                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-navy">
+                    <details class="glass rounded-xl group">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-white">
                             ¿Qué debo considerar sobre la altitud?
                             <span
                                 class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
                         </summary>
-                        <div class="px-6 pb-6 text-gray-500 text-sm">
+                        <div class="px-6 pb-6 text-white/50 text-sm">
                             Estamos a 3,800 msnm. Recomendamos llegar uno o dos días antes a Puno para aclimatarse,
                             beber abundante agua, y consumir mate de coca. El lodge cuenta con oxígeno suplementario
                             disponible.
                         </div>
                     </details>
-                    <details class="bg-white rounded-xl border border-gray-100 shadow-sm group">
-                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-navy">
+                    <details class="glass rounded-xl group">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-white">
                             ¿Aceptan familias con niños?
                             <span
                                 class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
                         </summary>
-                        <div class="px-6 pb-6 text-gray-500 text-sm">
+                        <div class="px-6 pb-6 text-white/50 text-sm">
                             ¡Por supuesto! Contamos con la Suite Familiar Amantaní diseñada especialmente para familias,
                             y ofrecemos actividades adaptadas para todas las edades.
                         </div>
@@ -472,11 +535,11 @@
     <section class="relative py-20 overflow-hidden">
         <img alt="Andean Mountains CTA" class="absolute inset-0 w-full h-full object-cover"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjLRm8UKEzpYHI84ymQSn3Kg6_0vPHEnYoKsB4trBWpkSLp2aUn6P4VvZ3WvXWZM1Y3jlTpKOJsIFIwNibC-mCYpD59gOr5EmnD9WA6ccznu2u7XEbA6FoMh0LHgPBuz2diWMocC6DHTRzr46hlBv39_pmBQZWU4-vZgNfxrkh_OqQhu4SACM18uxU9T0CwNmns54FscuqLCqqh0sGv0TtkkZg99-qGHDREJ3hX-G2dD3uWrA6scRsmOxicTnk_yVwx-HrDAHdzxY" />
-        <div class="absolute inset-0 bg-navy/85"></div>
+        <div class="absolute inset-0 bg-black/80"></div>
         <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">¿LISTO PARA UNA EXPERIENCIA INOLVIDABLE?
             </h2>
-            <p class="text-white/80 text-lg mb-10">Contáctanos directamente por WhatsApp para recibir atención
+            <p class="text-white/60 text-lg mb-10">Contáctanos directamente por WhatsApp para recibir atención
                 personalizada y paquetes exclusivos.</p>
             <a class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5c] text-white px-10 py-5 rounded-full font-bold text-xl transition-transform hover:scale-105 shadow-xl"
                 href="https://api.whatsapp.com/send?phone=51987654321">
@@ -491,32 +554,32 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-navy text-white">
+    <footer class="bg-[#0a0a0a] text-white border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
             <!-- Large Brand Text -->
             <div class="text-center mb-16">
                 <h2
-                    class="text-6xl md:text-8xl lg:text-9xl font-extrabold text-white/5 uppercase tracking-tighter leading-none">
+                    class="text-6xl md:text-8xl lg:text-9xl font-extrabold text-white/[0.03] uppercase tracking-tighter leading-none">
                     QUILLAPATA LODGE</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <div>
                     <span class="serif-font text-2xl font-bold tracking-tight mb-6 block">Quillapata <span
                             class="text-primary font-light">Lodge</span></span>
-                    <p class="text-white/50 text-sm leading-relaxed mb-6">Experiencias auténticas en el Altiplano
+                    <p class="text-white/40 text-sm leading-relaxed mb-6">Experiencias auténticas en el Altiplano
                         peruano. Fusionamos la elegancia moderna con el respeto por nuestras raíces.</p>
                     <div class="flex space-x-4">
-                        <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                        <a class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"
                             href="#"><span class="material-symbols-outlined text-sm">share</span></a>
-                        <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                        <a class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"
                             href="#"><span class="material-symbols-outlined text-sm">photo_camera</span></a>
-                        <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                        <a class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"
                             href="#"><span class="material-symbols-outlined text-sm">mail</span></a>
                     </div>
                 </div>
                 <div>
                     <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Navegación</h3>
-                    <ul class="space-y-4 text-white/60 text-sm">
+                    <ul class="space-y-4 text-white/40 text-sm">
                         <li><a class="hover:text-primary transition-colors" href="habitaciones.html">Habitaciones</a>
                         </li>
                         <li><a class="hover:text-primary transition-colors" href="alimentacion.html">Gastronomía</a>
@@ -528,7 +591,7 @@
                 </div>
                 <div>
                     <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Contacto</h3>
-                    <ul class="space-y-4 text-white/60 text-sm">
+                    <ul class="space-y-4 text-white/40 text-sm">
                         <li class="flex items-start gap-3">
                             <span class="material-symbols-outlined text-primary text-sm mt-1">location_on</span>
                             <span>Comunidad de Quillapata, Km 45 Carretera Puno-Desaguadero, Puno, Perú.</span>
@@ -545,14 +608,14 @@
                 </div>
                 <div>
                     <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Legal</h3>
-                    <ul class="space-y-4 text-white/60 text-sm">
+                    <ul class="space-y-4 text-white/40 text-sm">
                         <li><a class="hover:text-primary transition-colors" href="#">Términos y Condiciones</a></li>
                         <li><a class="hover:text-primary transition-colors" href="#">Política de Privacidad</a></li>
                         <li><a class="hover:text-primary transition-colors" href="#">Política de Cancelación</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-white/10 pt-8 text-center text-white/30 text-xs">
+            <div class="border-t border-white/5 pt-8 text-center text-white/20 text-xs">
                 <p>© 2025 Quillapata Lodge. Todos los derechos reservados.</p>
             </div>
         </div>

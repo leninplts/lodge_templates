@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
     rel="stylesheet" />
   <script>
-    tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#c5942b", "navy": "#1B3A5C" }, fontFamily: { "display": ["Plus Jakarta Sans", "sans-serif"], "serif": ["Playfair Display", "serif"] } } } }
+    tailwind.config = { theme: { extend: { colors: { "primary": "#c5942b", "dark-bg": "#0d0d0d", "navy": "#1B3A5C" }, fontFamily: { "display": ["Plus Jakarta Sans", "sans-serif"], "serif": ["Playfair Display", "serif"] } } } }
   </script>
   <style>
     body {
@@ -22,35 +22,42 @@
     .sf {
       font-family: 'Playfair Display', serif
     }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
   </style>
 </head>
 
-<body class="bg-white text-gray-900">
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+<body class="bg-[#0d0d0d] text-white">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-xl border-b border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-[72px]">
-        <a href="index.html" class="sf text-2xl font-bold text-navy">Quillapata <span
+        <a href="index.html" class="sf text-2xl font-bold text-white">Quillapata <span
             class="text-primary font-light">Lodge</span></a>
         <div class="hidden lg:flex items-center gap-8">
-          <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+          <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
             href="index.html">Inicio</a>
           <a class="text-sm font-semibold text-primary" href="nosotros.html">Nosotros</a>
-          <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+          <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
             href="como-llegar.html">Cómo Llegar</a>
-          <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+          <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
             href="habitaciones.html">Habitaciones</a>
-          <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+          <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
             href="alimentacion.html">Alimentación</a>
-          <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+          <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
             href="actividades.html">Actividades</a>
-          <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+          <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
             href="paquetes.html">Paquetes</a>
         </div>
         <div class="flex items-center gap-4">
           <a href="https://api.whatsapp.com/send?phone=51987654321"
-            class="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all">RESERVAR</a>
-          <button class="lg:hidden p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"><svg
-              class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            class="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-primary/20">RESERVAR</a>
+          <button class="lg:hidden p-2 text-white"
+            onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"><svg class="w-7 h-7" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg></button>
         </div>
@@ -58,150 +65,151 @@
     </div>
   </nav>
   <div id="mobile-menu"
-    class="hidden lg:hidden fixed top-[72px] left-0 right-0 z-50 bg-white border-t border-gray-100 px-6 py-4 shadow-lg">
-    <a class="block py-3 text-gray-600 hover:text-primary" href="index.html">Inicio</a><a
-      class="block py-3 text-primary font-bold" href="nosotros.html">Nosotros</a><a
-      class="block py-3 text-gray-600 hover:text-primary" href="como-llegar.html">Cómo Llegar</a><a
-      class="block py-3 text-gray-600 hover:text-primary" href="habitaciones.html">Habitaciones</a><a
-      class="block py-3 text-gray-600 hover:text-primary" href="alimentacion.html">Alimentación</a><a
-      class="block py-3 text-gray-600 hover:text-primary" href="actividades.html">Actividades</a><a
-      class="block py-3 text-gray-600 hover:text-primary" href="paquetes.html">Paquetes</a>
-    <a class="block py-3 bg-primary text-white text-center rounded-lg font-semibold mt-2"
+    class="hidden lg:hidden fixed top-[72px] left-0 right-0 z-50 bg-[#1a1a1a]/95 backdrop-blur-xl border-t border-white/5 px-6 py-4">
+    <a class="block py-3 text-white/50 hover:text-primary" href="index.html">Inicio</a>
+    <a class="block py-3 text-primary font-bold" href="nosotros.html">Nosotros</a>
+    <a class="block py-3 text-white/50 hover:text-primary" href="como-llegar.html">Cómo Llegar</a>
+    <a class="block py-3 text-white/50 hover:text-primary" href="habitaciones.html">Habitaciones</a>
+    <a class="block py-3 text-white/50 hover:text-primary" href="alimentacion.html">Alimentación</a>
+    <a class="block py-3 text-white/50 hover:text-primary" href="actividades.html">Actividades</a>
+    <a class="block py-3 text-white/50 hover:text-primary" href="paquetes.html">Paquetes</a>
+    <a class="block py-3 bg-primary text-white text-center rounded-full font-semibold mt-2"
       href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a>
   </div>
 
-  <header class="relative h-[60vh] flex items-center justify-center pt-[72px]">
+  <header class="relative h-[60vh] flex items-center justify-center">
     <img alt="Andes" class="absolute inset-0 w-full h-full object-cover"
       src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqhBiZlBHVCo5R3Y0nTq5xeQog81CUxJg2C7b55vlZZ7nQpTHCX2qwrc4WaeCgGCNDKZUzkY0RccwJKFJ3_rCu0Jb3m92-h_urPiLFzvgdcgvKzMj4nbYd3lovkJ-1RWxL0M-ONzlL3ddgHviw7zV-25A_pKLqyKtgIe3klbKtba3uIVbY04VVtvHtmgjzPTye890anmFYb7P5gAWchCnzt4W1B-z-MKTUD9o8TYKmD_6Wyw-6RChG8_e0o9Jc2QvcvtO4CnFDLcs" />
-    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0d0d0d]"></div>
     <div class="relative z-10 text-center px-4">
       <h1 class="text-5xl md:text-7xl font-extrabold text-white uppercase tracking-tight">NUESTRA HISTORIA</h1>
-      <p class="text-white/80 text-lg mt-4">Un legado de hospitalidad andina desde 2009</p>
+      <p class="text-white/60 text-lg mt-4">Un legado de hospitalidad andina desde 2009</p>
     </div>
   </header>
 
-  <section class="py-24 bg-white">
+  <section class="py-24 bg-[#0d0d0d]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      <div class="rounded-2xl overflow-hidden shadow-xl"><img alt="Lodge" class="w-full h-[500px] object-cover"
+      <div class="rounded-2xl overflow-hidden border border-white/10"><img alt="Lodge"
+          class="w-full h-[500px] object-cover"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Go1wLhV9770y-lYKzvkg_dQoVAWrXGJEjegbor6f4DycQOMESsBZq6w9vtJH2HO1szy9r9AdwSqtqT5LWuc1raYj4pyDEaxcP9SjlUHDfKWaZ44FkW6M5QBdY1wTqqiaEC6bY1ayXvlQ75ckWopFPPWavhena4r7f21IPl-bmA-eGAANc0ni3mJmQGMfhWHVtNBixXfnj45MHnkniGXBgvcXw4uWYisczEQ1A7Q6Ub0GY490aH_FYXGs6y3Pd_u3UClK4vIJYJM" />
       </div>
       <div>
         <span class="text-primary font-semibold tracking-widest uppercase text-xs">Sobre Nosotros</span>
-        <h2 class="sf text-4xl md:text-5xl font-bold text-navy mt-2 mb-6">Más que un Lodge,<br />un <span
+        <h2 class="sf text-4xl md:text-5xl font-bold text-white mt-2 mb-6">Más que un Lodge,<br />un <span
             class="text-primary">Legado</span></h2>
         <div class="w-16 h-1 bg-primary rounded-full mb-6"></div>
-        <p class="text-gray-600 leading-relaxed mb-4">Quillapata Lodge nació en 2009 como un sueño familiar: crear un
+        <p class="text-white/60 leading-relaxed mb-4">Quillapata Lodge nació en 2009 como un sueño familiar: crear un
           espacio donde los viajeros pudieran conectar con la belleza del Altiplano peruano sin renunciar al confort
           moderno.</p>
-        <p class="text-gray-600 leading-relaxed mb-4">Inspirados por la arquitectura neo-andina, fusionamos técnicas
+        <p class="text-white/60 leading-relaxed mb-4">Inspirados por la arquitectura neo-andina, fusionamos técnicas
           ancestrales con diseño contemporáneo. Cada piedra, cada textil, cada detalle cuenta una historia de las
           tradiciones Quechua y Aymara.</p>
-        <p class="text-gray-600 leading-relaxed mb-8">Hoy somos un referente de turismo responsable, comprometidos con
+        <p class="text-white/60 leading-relaxed mb-8">Hoy somos un referente de turismo responsable, comprometidos con
           la comunidad local, la preservación cultural y la sostenibilidad ambiental.</p>
-        <div class="grid grid-cols-3 gap-6 border-t border-gray-100 pt-8">
+        <div class="grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
           <div class="text-center">
-            <div class="text-3xl font-extrabold text-navy">15</div>
-            <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Años</div>
+            <div class="text-3xl font-extrabold text-primary">15</div>
+            <div class="text-xs text-white/40 uppercase tracking-wider mt-1">Años</div>
           </div>
           <div class="text-center">
-            <div class="text-3xl font-extrabold text-navy">50</div>
-            <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Empleados Locales</div>
+            <div class="text-3xl font-extrabold text-primary">50</div>
+            <div class="text-xs text-white/40 uppercase tracking-wider mt-1">Empleados Locales</div>
           </div>
           <div class="text-center">
-            <div class="text-3xl font-extrabold text-navy">100%</div>
-            <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Energía Solar</div>
+            <div class="text-3xl font-extrabold text-primary">100%</div>
+            <div class="text-xs text-white/40 uppercase tracking-wider mt-1">Energía Solar</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-24 bg-gray-50">
+  <section class="py-24 bg-[#111111]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <span class="text-primary font-semibold tracking-widest uppercase text-xs">Nuestros Pilares</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-navy mt-2 mb-16">Lo que Nos Define</h2>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-16">Lo que Nos Define</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-2xl p-10 shadow-md border border-gray-100 hover:shadow-xl transition-shadow">
+        <div class="glass rounded-2xl p-10 hover:border-white/20 transition-all">
           <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6"><span
               class="material-symbols-outlined text-3xl text-primary">temple_buddhist</span></div>
-          <h3 class="text-xl font-extrabold text-navy mb-4">Tradición</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Preservamos y celebramos las tradiciones Quechua y Aymara
+          <h3 class="text-xl font-extrabold text-white mb-4">Tradición</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Preservamos y celebramos las tradiciones Quechua y Aymara
             milenarias, integrándolas en cada aspecto de la experiencia.</p>
         </div>
-        <div class="bg-white rounded-2xl p-10 shadow-md border border-gray-100 hover:shadow-xl transition-shadow">
+        <div class="glass rounded-2xl p-10 hover:border-white/20 transition-all">
           <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6"><span
               class="material-symbols-outlined text-3xl text-primary">eco</span></div>
-          <h3 class="text-xl font-extrabold text-navy mb-4">Sostenibilidad</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Energía 100% solar, materiales locales y prácticas de cero
+          <h3 class="text-xl font-extrabold text-white mb-4">Sostenibilidad</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Energía 100% solar, materiales locales y prácticas de cero
             residuos. Nuestro compromiso con la Pachamama es real.</p>
         </div>
-        <div class="bg-white rounded-2xl p-10 shadow-md border border-gray-100 hover:shadow-xl transition-shadow">
+        <div class="glass rounded-2xl p-10 hover:border-white/20 transition-all">
           <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6"><span
               class="material-symbols-outlined text-3xl text-primary">groups</span></div>
-          <h3 class="text-xl font-extrabold text-navy mb-4">Comunidad</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">El 90% de nuestro equipo es local. Apoyamos a familias y
+          <h3 class="text-xl font-extrabold text-white mb-4">Comunidad</h3>
+          <p class="text-white/50 text-sm leading-relaxed">El 90% de nuestro equipo es local. Apoyamos a familias y
             artesanos con empleo justo y capacitación continua.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-24 bg-white">
+  <section class="py-24 bg-[#0d0d0d]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <span class="text-primary font-semibold tracking-widest uppercase text-xs">El Corazón del Lodge</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-navy mt-2 mb-16">Nuestro Equipo</h2>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-16">Nuestro Equipo</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div class="group">
           <div
-            class="w-32 h-32 mx-auto rounded-full bg-navy/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+            class="w-32 h-32 mx-auto rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:border-primary/30 transition-colors">
             <span
-              class="material-symbols-outlined text-5xl text-navy/40 group-hover:text-primary transition-colors">person</span>
+              class="material-symbols-outlined text-5xl text-white/20 group-hover:text-primary transition-colors">person</span>
           </div>
-          <h3 class="font-bold text-navy">Carlos Quispe</h3>
-          <p class="text-gray-400 text-sm">Fundador & Director</p>
+          <h3 class="font-bold text-white">Carlos Quispe</h3>
+          <p class="text-white/40 text-sm">Fundador &amp; Director</p>
         </div>
         <div class="group">
           <div
-            class="w-32 h-32 mx-auto rounded-full bg-navy/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+            class="w-32 h-32 mx-auto rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:border-primary/30 transition-colors">
             <span
-              class="material-symbols-outlined text-5xl text-navy/40 group-hover:text-primary transition-colors">person</span>
+              class="material-symbols-outlined text-5xl text-white/20 group-hover:text-primary transition-colors">person</span>
           </div>
-          <h3 class="font-bold text-navy">Elena Mamani</h3>
-          <p class="text-gray-400 text-sm">Chef Ejecutiva</p>
+          <h3 class="font-bold text-white">Elena Mamani</h3>
+          <p class="text-white/40 text-sm">Chef Ejecutiva</p>
         </div>
         <div class="group">
           <div
-            class="w-32 h-32 mx-auto rounded-full bg-navy/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+            class="w-32 h-32 mx-auto rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:border-primary/30 transition-colors">
             <span
-              class="material-symbols-outlined text-5xl text-navy/40 group-hover:text-primary transition-colors">person</span>
+              class="material-symbols-outlined text-5xl text-white/20 group-hover:text-primary transition-colors">person</span>
           </div>
-          <h3 class="font-bold text-navy">Juan Huanca</h3>
-          <p class="text-gray-400 text-sm">Guía Principal</p>
+          <h3 class="font-bold text-white">Juan Huanca</h3>
+          <p class="text-white/40 text-sm">Guía Principal</p>
         </div>
         <div class="group">
           <div
-            class="w-32 h-32 mx-auto rounded-full bg-navy/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+            class="w-32 h-32 mx-auto rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:border-primary/30 transition-colors">
             <span
-              class="material-symbols-outlined text-5xl text-navy/40 group-hover:text-primary transition-colors">person</span>
+              class="material-symbols-outlined text-5xl text-white/20 group-hover:text-primary transition-colors">person</span>
           </div>
-          <h3 class="font-bold text-navy">Rosa Apaza</h3>
-          <p class="text-gray-400 text-sm">Gerente de Hospitalidad</p>
+          <h3 class="font-bold text-white">Rosa Apaza</h3>
+          <p class="text-white/40 text-sm">Gerente de Hospitalidad</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-24 bg-gray-50">
+  <section class="py-24 bg-[#111111]">
     <div class="max-w-3xl mx-auto px-4 text-center">
       <span class="text-primary font-semibold tracking-widest uppercase text-xs">Hitos</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-navy mt-2 mb-16">Nuestro Camino</h2>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-16">Nuestro Camino</h2>
       <div class="relative">
         <div class="absolute left-1/2 transform -translate-x-0.5 h-full w-0.5 bg-primary/20"></div>
         <div class="space-y-16">
           <div class="relative flex items-center">
             <div class="w-1/2 pr-12 text-right">
-              <h3 class="font-extrabold text-navy text-lg">Fundación</h3>
-              <p class="text-gray-500 text-sm mt-1">Abrimos con 4 habitaciones y un sueño enorme.</p>
+              <h3 class="font-extrabold text-white text-lg">Fundación</h3>
+              <p class="text-white/50 text-sm mt-1">Abrimos con 4 habitaciones y un sueño enorme.</p>
             </div>
             <div
               class="absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xs z-10">
@@ -214,14 +222,14 @@
               class="absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xs z-10">
               2012</div>
             <div class="w-1/2 pl-12 text-left">
-              <h3 class="font-extrabold text-navy text-lg">Primera Expansión</h3>
-              <p class="text-gray-500 text-sm mt-1">10 habitaciones y el restaurante.</p>
+              <h3 class="font-extrabold text-white text-lg">Primera Expansión</h3>
+              <p class="text-white/50 text-sm mt-1">10 habitaciones y el restaurante.</p>
             </div>
           </div>
           <div class="relative flex items-center">
             <div class="w-1/2 pr-12 text-right">
-              <h3 class="font-extrabold text-navy text-lg">Certificación Eco</h3>
-              <p class="text-gray-500 text-sm mt-1">Primera certificación de turismo sostenible.</p>
+              <h3 class="font-extrabold text-white text-lg">Certificación Eco</h3>
+              <p class="text-white/50 text-sm mt-1">Primera certificación de turismo sostenible.</p>
             </div>
             <div
               class="absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xs z-10">
@@ -234,14 +242,14 @@
               class="absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xs z-10">
               2020</div>
             <div class="w-1/2 pl-12 text-left">
-              <h3 class="font-extrabold text-navy text-lg">Reconocimiento Internacional</h3>
-              <p class="text-gray-500 text-sm mt-1">"Mejor Eco-Lodge del Altiplano" por Lonely Planet.</p>
+              <h3 class="font-extrabold text-white text-lg">Reconocimiento Internacional</h3>
+              <p class="text-white/50 text-sm mt-1">"Mejor Eco-Lodge del Altiplano" por Lonely Planet.</p>
             </div>
           </div>
           <div class="relative flex items-center">
             <div class="w-1/2 pr-12 text-right">
-              <h3 class="font-extrabold text-navy text-lg">Nuevas Suites Premium</h3>
-              <p class="text-gray-500 text-sm mt-1">3 suites con jacuzzi y vista panorámica.</p>
+              <h3 class="font-extrabold text-white text-lg">Nuevas Suites Premium</h3>
+              <p class="text-white/50 text-sm mt-1">3 suites con jacuzzi y vista panorámica.</p>
             </div>
             <div
               class="absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xs z-10">
@@ -253,21 +261,21 @@
     </div>
   </section>
 
-  <footer class="bg-navy text-white">
+  <footer class="bg-[#0a0a0a] text-white border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
       <div class="text-center mb-16">
         <h2
-          class="text-6xl md:text-8xl lg:text-9xl font-extrabold text-white/5 uppercase tracking-tighter leading-none">
+          class="text-6xl md:text-8xl lg:text-9xl font-extrabold text-white/[0.03] uppercase tracking-tighter leading-none">
           QUILLAPATA LODGE</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         <div><span class="sf text-2xl font-bold block mb-4">Quillapata <span
               class="text-primary font-light">Lodge</span></span>
-          <p class="text-white/50 text-sm">Experiencias auténticas en el Altiplano peruano.</p>
+          <p class="text-white/40 text-sm">Experiencias auténticas en el Altiplano peruano.</p>
         </div>
         <div>
           <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Navegación</h3>
-          <ul class="space-y-4 text-white/60 text-sm">
+          <ul class="space-y-4 text-white/40 text-sm">
             <li><a class="hover:text-primary transition-colors" href="habitaciones.html">Habitaciones</a></li>
             <li><a class="hover:text-primary transition-colors" href="alimentacion.html">Gastronomía</a></li>
             <li><a class="hover:text-primary transition-colors" href="actividades.html">Experiencias</a></li>
@@ -276,7 +284,7 @@
         </div>
         <div>
           <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Contacto</h3>
-          <ul class="space-y-4 text-white/60 text-sm">
+          <ul class="space-y-4 text-white/40 text-sm">
             <li class="flex items-start gap-3"><span
                 class="material-symbols-outlined text-primary text-sm mt-1">location_on</span><span>Km 45 Carretera
                 Puno-Desaguadero</span></li>
@@ -289,13 +297,13 @@
         </div>
         <div>
           <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Legal</h3>
-          <ul class="space-y-4 text-white/60 text-sm">
-            <li><a class="hover:text-primary" href="#">Términos y Condiciones</a></li>
-            <li><a class="hover:text-primary" href="#">Política de Privacidad</a></li>
+          <ul class="space-y-4 text-white/40 text-sm">
+            <li><a class="hover:text-primary transition-colors" href="#">Términos y Condiciones</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Política de Privacidad</a></li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-white/10 pt-8 text-center text-white/30 text-xs">© 2025 Quillapata Lodge. Todos los
+      <div class="border-t border-white/5 pt-8 text-center text-white/20 text-xs">© 2025 Quillapata Lodge. Todos los
         derechos reservados.</div>
     </div>
   </footer>

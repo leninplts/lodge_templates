@@ -11,7 +11,7 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
-    <script>tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#c5942b", "navy": "#1B3A5C" }, fontFamily: { "display": ["Plus Jakarta Sans", "sans-serif"], "serif": ["Playfair Display", "serif"] } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { "primary": "#c5942b", "dark-bg": "#0d0d0d", "navy": "#1B3A5C" }, fontFamily: { "display": ["Plus Jakarta Sans", "sans-serif"], "serif": ["Playfair Display", "serif"] } } } }</script>
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif
@@ -20,196 +20,193 @@
         .sf {
             font-family: 'Playfair Display', serif
         }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08)
+        }
     </style>
 </head>
 
-<body class="bg-white text-gray-900">
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+<body class="bg-[#0d0d0d] text-white">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-[72px]">
-                <a href="index.html" class="sf text-2xl font-bold text-navy">Quillapata <span
+                <a href="index.html" class="sf text-2xl font-bold text-white">Quillapata <span
                         class="text-primary font-light">Lodge</span></a>
                 <div class="hidden lg:flex items-center gap-8">
-                    <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
-                        href="index.html">Inicio</a><a
-                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
-                        href="nosotros.html">Nosotros</a><a
-                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
-                        href="como-llegar.html">Cómo Llegar</a><a
-                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
-                        href="habitaciones.html">Habitaciones</a><a
-                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
-                        href="alimentacion.html">Alimentación</a><a class="text-sm font-semibold text-primary"
-                        href="actividades.html">Actividades</a><a
-                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
+                        href="index.html">Inicio</a>
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
+                        href="nosotros.html">Nosotros</a>
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
+                        href="como-llegar.html">Cómo Llegar</a>
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
+                        href="habitaciones.html">Habitaciones</a>
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
+                        href="alimentacion.html">Alimentación</a>
+                    <a class="text-sm font-semibold text-primary" href="actividades.html">Actividades</a>
+                    <a class="text-sm font-semibold text-white/50 hover:text-primary transition-colors"
                         href="paquetes.html">Paquetes</a>
                 </div>
-                <div class="flex items-center gap-4"><a href="https://api.whatsapp.com/send?phone=51987654321"
-                        class="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all">RESERVAR</a><button
-                        class="lg:hidden p-2"
+                <div class="flex items-center gap-4">
+                    <a href="https://api.whatsapp.com/send?phone=51987654321"
+                        class="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-primary/20">RESERVAR</a>
+                    <button class="lg:hidden p-2 text-white"
                         onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"><svg class="w-7 h-7"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
-                        </svg></button></div>
+                        </svg></button>
+                </div>
             </div>
         </div>
     </nav>
     <div id="mobile-menu"
-        class="hidden lg:hidden fixed top-[72px] left-0 right-0 z-50 bg-white border-t border-gray-100 px-6 py-4 shadow-lg">
-        <a class="block py-3 text-gray-600 hover:text-primary" href="index.html">Inicio</a><a
-            class="block py-3 text-gray-600 hover:text-primary" href="nosotros.html">Nosotros</a><a
-            class="block py-3 text-gray-600 hover:text-primary" href="como-llegar.html">Cómo Llegar</a><a
-            class="block py-3 text-gray-600 hover:text-primary" href="habitaciones.html">Habitaciones</a><a
-            class="block py-3 text-gray-600 hover:text-primary" href="alimentacion.html">Alimentación</a><a
-            class="block py-3 text-primary font-bold" href="actividades.html">Actividades</a><a
-            class="block py-3 text-gray-600 hover:text-primary" href="paquetes.html">Paquetes</a><a
-            class="block py-3 bg-primary text-white text-center rounded-lg font-semibold mt-2"
-            href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a></div>
+        class="hidden lg:hidden fixed top-[72px] left-0 right-0 z-50 bg-[#1a1a1a]/95 backdrop-blur-xl border-t border-white/5 px-6 py-4">
+        <a class="block py-3 text-white/50 hover:text-primary" href="index.html">Inicio</a>
+        <a class="block py-3 text-white/50 hover:text-primary" href="nosotros.html">Nosotros</a>
+        <a class="block py-3 text-white/50 hover:text-primary" href="como-llegar.html">Cómo Llegar</a>
+        <a class="block py-3 text-white/50 hover:text-primary" href="habitaciones.html">Habitaciones</a>
+        <a class="block py-3 text-white/50 hover:text-primary" href="alimentacion.html">Alimentación</a>
+        <a class="block py-3 text-primary font-bold" href="actividades.html">Actividades</a>
+        <a class="block py-3 text-white/50 hover:text-primary" href="paquetes.html">Paquetes</a>
+        <a class="block py-3 bg-primary text-white text-center rounded-full font-semibold mt-2"
+            href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a>
+    </div>
 
-    <header class="relative h-[60vh] flex items-center justify-center pt-[72px]">
+    <header class="relative h-[60vh] flex items-center justify-center">
         <img alt="Trekking" class="absolute inset-0 w-full h-full object-cover"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9mTLgRhuu7c0zqgi6EsQJHbHgpZOwNf2TpQMmRYgm-l9GtTYJ7MzjXPK_AzGf4-i2SDgaBia524Vvbhfw-JVbHQMviY0MBpYAyFh2qUSZ0cR0tZolmQa58jMPwzA-99wMmiQCeXDF7u-_KuHTF_U49Dr1GgfGOCVvf_PPPOV6gyznoAMN7Ny9mJwimhsl5MaHNWi3RRNXhHw7vdQqr3PHmY1IX0WitSDmGKoEV0AmhlGkl16JhU_EL4AztlLb7IS4uhagORa9Zwo" />
-        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0d0d0d]"></div>
         <div class="relative z-10 text-center px-4">
             <h1 class="text-5xl md:text-7xl font-extrabold text-white uppercase tracking-tight">ACTIVIDADES</h1>
-            <p class="text-white/80 text-lg mt-4 max-w-xl mx-auto">Descubre la magia de los Andes a través de
+            <p class="text-white/60 text-lg mt-4 max-w-xl mx-auto">Descubre la magia de los Andes a través de
                 experiencias únicas</p>
         </div>
     </header>
 
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-[#0d0d0d]">
         <div class="max-w-3xl mx-auto px-4 text-center">
-            <h2 class="sf text-3xl md:text-4xl font-bold text-navy mb-6">Armonía entre Intensidad y Serenidad</h2>
+            <h2 class="sf text-3xl md:text-4xl font-bold text-white mb-6">Armonía entre Intensidad y Serenidad</h2>
             <div class="w-16 h-1 bg-primary rounded-full mx-auto mb-6"></div>
-            <p class="text-gray-600 leading-relaxed">En Quillapata Lodge creemos que la verdadera aventura es aquella
+            <p class="text-white/50 leading-relaxed">En Quillapata Lodge creemos que la verdadera aventura es aquella
                 que equilibra la adrenalina con la paz interior. Nuestras actividades están diseñadas para que explores
                 lo mejor del Altiplano sin perder la conexión contigo mismo.</p>
         </div>
     </section>
 
-    <section class="py-24 bg-gray-50">
+    <section class="py-24 bg-[#111111]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <span class="text-primary font-semibold tracking-widest uppercase text-xs">Experiencias</span>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-navy mt-2 mb-12">Nuestras Actividades</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-12">Nuestras Actividades</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <div
-                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                <div class="group glass rounded-2xl overflow-hidden hover:border-white/20 transition-all">
                     <div class="h-56 overflow-hidden"><img alt="Trekking"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9mTLgRhuu7c0zqgi6EsQJHbHgpZOwNf2TpQMmRYgm-l9GtTYJ7MzjXPK_AzGf4-i2SDgaBia524Vvbhfw-JVbHQMviY0MBpYAyFh2qUSZ0cR0tZolmQa58jMPwzA-99wMmiQCeXDF7u-_KuHTF_U49Dr1GgfGOCVvf_PPPOV6gyznoAMN7Ny9mJwimhsl5MaHNWi3RRNXhHw7vdQqr3PHmY1IX0WitSDmGKoEV0AmhlGkl16JhU_EL4AztlLb7IS4uhagORa9Zwo" />
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-extrabold text-navy mb-2">Trekking Alto-Andino</h3>
-                        <div class="flex gap-4 text-xs text-gray-400 mb-3"><span class="flex items-center gap-1"><span
+                        <h3 class="text-lg font-extrabold text-white mb-2">Trekking Alto-Andino</h3>
+                        <div class="flex gap-4 text-xs text-white/30 mb-3"><span class="flex items-center gap-1"><span
                                     class="material-symbols-outlined text-sm">schedule</span>4-6 hrs</span><span
                                 class="flex items-center gap-1"><span
                                     class="material-symbols-outlined text-sm">signal_cellular_alt</span>Media</span>
                         </div>
-                        <p class="text-gray-500 text-sm mb-4">Recorra senderos milenarios con vistas a nevados y lagunas
-                            de altura acompañado de guías locales expertos.</p><a
-                            href="https://api.whatsapp.com/send?phone=51987654321"
-                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-bold text-sm transition-all inline-block">Reservar</a>
+                        <p class="text-white/40 text-sm mb-4">Recorra senderos milenarios con vistas a nevados y lagunas
+                            de altura acompañado de guías locales expertos.</p>
+                        <a href="https://api.whatsapp.com/send?phone=51987654321"
+                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-full font-bold text-sm transition-all inline-block">Reservar</a>
                     </div>
                 </div>
-
-                <div
-                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                <div class="group glass rounded-2xl overflow-hidden hover:border-white/20 transition-all">
                     <div class="h-56 overflow-hidden"><img alt="Kayak"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqhBiZlBHVCo5R3Y0nTq5xeQog81CUxJg2C7b55vlZZ7nQpTHCX2qwrc4WaeCgGCNDKZUzkY0RccwJKFJ3_rCu0Jb3m92-h_urPiLFzvgdcgvKzMj4nbYd3lovkJ-1RWxL0M-ONzlL3ddgHviw7zV-25A_pKLqyKtgIe3klbKtba3uIVbY04VVtvHtmgjzPTye890anmFYb7P5gAWchCnzt4W1B-z-MKTUD9o8TYKmD_6Wyw-6RChG8_e0o9Jc2QvcvtO4CnFDLcs" />
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-extrabold text-navy mb-2">Kayak en el Titicaca</h3>
-                        <div class="flex gap-4 text-xs text-gray-400 mb-3"><span class="flex items-center gap-1"><span
+                        <h3 class="text-lg font-extrabold text-white mb-2">Kayak en el Titicaca</h3>
+                        <div class="flex gap-4 text-xs text-white/30 mb-3"><span class="flex items-center gap-1"><span
                                     class="material-symbols-outlined text-sm">schedule</span>3 hrs</span><span
                                 class="flex items-center gap-1"><span
                                     class="material-symbols-outlined text-sm">signal_cellular_alt</span>Todos</span>
                         </div>
-                        <p class="text-gray-500 text-sm mb-4">Navegue por las aguas del lago más alto del mundo en
-                            kayak, disfrutando de vistas únicas de los Andes.</p><a
-                            href="https://api.whatsapp.com/send?phone=51987654321"
-                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-bold text-sm transition-all inline-block">Reservar</a>
+                        <p class="text-white/40 text-sm mb-4">Navegue por las aguas del lago más alto del mundo en
+                            kayak, disfrutando de vistas únicas de los Andes.</p>
+                        <a href="https://api.whatsapp.com/send?phone=51987654321"
+                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-full font-bold text-sm transition-all inline-block">Reservar</a>
                     </div>
                 </div>
-
-                <div
-                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                <div class="group glass rounded-2xl overflow-hidden hover:border-white/20 transition-all">
                     <div class="h-56 overflow-hidden"><img alt="Islas"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0UMFPv5beCgx2jSGjw3FgwXVm-7A-EyUcLnoMecBd0E7k02BGYa25tLZMtBPRZlgoYOfwlcIY_-gBfIbxzDqMqOdLYPN3PyRUgVZq6bC_mmsi09v81yDZq9_f8tm6IKMBYKb_j2mWdTY0hz2g9xhnC-ra5SitkvSvnBqskwLWYbxOmx_S-n_JG9Aht7ztAWAW7XNzA4nbXcMMMZn089Mf9_sWpcg9xfjAGWp9k_SiY8XAIKrgmE9NobUTp1Sruk8GYmkF07EhgtQ" />
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-extrabold text-navy mb-2">Tour Islas Flotantes</h3>
-                        <div class="flex gap-4 text-xs text-gray-400 mb-3"><span class="flex items-center gap-1"><span
+                        <h3 class="text-lg font-extrabold text-white mb-2">Tour Islas Flotantes</h3>
+                        <div class="flex gap-4 text-xs text-white/30 mb-3"><span class="flex items-center gap-1"><span
                                     class="material-symbols-outlined text-sm">schedule</span>Medio día</span><span
                                 class="flex items-center gap-1"><span
                                     class="material-symbols-outlined text-sm">signal_cellular_alt</span>Cultural</span>
                         </div>
-                        <p class="text-gray-500 text-sm mb-4">Visite las Islas de los Uros, una maravilla de ingeniería
-                            ancestral construida sobre totora flotante.</p><a
-                            href="https://api.whatsapp.com/send?phone=51987654321"
-                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-bold text-sm transition-all inline-block">Reservar</a>
+                        <p class="text-white/40 text-sm mb-4">Visite las Islas de los Uros, una maravilla de ingeniería
+                            ancestral construida sobre totora flotante.</p>
+                        <a href="https://api.whatsapp.com/send?phone=51987654321"
+                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-full font-bold text-sm transition-all inline-block">Reservar</a>
                     </div>
                 </div>
-
-                <div
-                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                <div class="group glass rounded-2xl overflow-hidden hover:border-white/20 transition-all">
                     <div class="h-56 overflow-hidden"><img alt="Cabalgata"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjLRm8UKEzpYHI84ymQSn3Kg6_0vPHEnYoKsB4trBWpkSLp2aUn6P4VvZ3WvXWZM1Y3jlTpKOJsIFIwNibC-mCYpD59gOr5EmnD9WA6ccznu2u7XEbA6FoMh0LHgPBuz2diWMocC6DHTRzr46hlBv39_pmBQZWU4-vZgNfxrkh_OqQhu4SACM18uxU9T0CwNmns54FscuqLCqqh0sGv0TtkkZg99-qGHDREJ3hX-G2dD3uWrA6scRsmOxicTnk_yVwx-HrDAHdzxY" />
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-extrabold text-navy mb-2">Cabalgata Andina</h3>
-                        <div class="flex gap-4 text-xs text-gray-400 mb-3"><span class="flex items-center gap-1"><span
+                        <h3 class="text-lg font-extrabold text-white mb-2">Cabalgata Andina</h3>
+                        <div class="flex gap-4 text-xs text-white/30 mb-3"><span class="flex items-center gap-1"><span
                                     class="material-symbols-outlined text-sm">schedule</span>2-3 hrs</span><span
                                 class="flex items-center gap-1"><span
                                     class="material-symbols-outlined text-sm">signal_cellular_alt</span>Principiantes</span>
                         </div>
-                        <p class="text-gray-500 text-sm mb-4">Recorra las pampas altiplánicas a caballo con guía local.
-                            Apto para todos los niveles de experiencia.</p><a
-                            href="https://api.whatsapp.com/send?phone=51987654321"
-                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-bold text-sm transition-all inline-block">Reservar</a>
+                        <p class="text-white/40 text-sm mb-4">Recorra las pampas altiplánicas a caballo con guía local.
+                            Apto para todos los niveles de experiencia.</p>
+                        <a href="https://api.whatsapp.com/send?phone=51987654321"
+                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-full font-bold text-sm transition-all inline-block">Reservar</a>
                     </div>
                 </div>
-
-                <div
-                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                <div class="group glass rounded-2xl overflow-hidden hover:border-white/20 transition-all">
                     <div class="h-56 overflow-hidden"><img alt="Textiles"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS00PnaO0SFgWSutlibmwkDkluXVK6uYYyNPDqiI2CeYK8MocS3wdrewkFQsezeN4Nlr5i_zxOcSIPUwzXYdID7XkcaSDbLIs3uDf36lJXiQEdaQFRQWYrvkVjAEJG7kt1HrqjDBdPAx1cTHMwHX9PoRifY5Yhl3i8WVq1bPOIfPzOMBgoX4Rxw5tg2PySEAxrsjqj29k_A_SI02gtgZty2sVuIxvuR-D20ZbmCww4qTquqHkHJWvhGwPUpd4LeYSElmi29eJlGLo" />
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-extrabold text-navy mb-2">Taller de Textiles</h3>
-                        <div class="flex gap-4 text-xs text-gray-400 mb-3"><span class="flex items-center gap-1"><span
+                        <h3 class="text-lg font-extrabold text-white mb-2">Taller de Textiles</h3>
+                        <div class="flex gap-4 text-xs text-white/30 mb-3"><span class="flex items-center gap-1"><span
                                     class="material-symbols-outlined text-sm">schedule</span>2 hrs</span><span
                                 class="flex items-center gap-1"><span
                                     class="material-symbols-outlined text-sm">signal_cellular_alt</span>Familiar</span>
                         </div>
-                        <p class="text-gray-500 text-sm mb-4">Aprenda las técnicas ancestrales de tejido andino
-                            directamente de artesanas de la comunidad local.</p><a
-                            href="https://api.whatsapp.com/send?phone=51987654321"
-                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-bold text-sm transition-all inline-block">Reservar</a>
+                        <p class="text-white/40 text-sm mb-4">Aprenda las técnicas ancestrales de tejido andino
+                            directamente de artesanas de la comunidad local.</p>
+                        <a href="https://api.whatsapp.com/send?phone=51987654321"
+                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-full font-bold text-sm transition-all inline-block">Reservar</a>
                     </div>
                 </div>
-
-                <div
-                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                <div class="group glass rounded-2xl overflow-hidden hover:border-white/20 transition-all">
                     <div class="h-56 overflow-hidden"><img alt="Estrellas"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Go1wLhV9770y-lYKzvkg_dQoVAWrXGJEjegbor6f4DycQOMESsBZq6w9vtJH2HO1szy9r9AdwSqtqT5LWuc1raYj4pyDEaxcP9SjlUHDfKWaZ44FkW6M5QBdY1wTqqiaEC6bY1ayXvlQ75ckWopFPPWavhena4r7f21IPl-bmA-eGAANc0ni3mJmQGMfhWHVtNBixXfnj45MHnkniGXBgvcXw4uWYisczEQ1A7Q6Ub0GY490aH_FYXGs6y3Pd_u3UClK4vIJYJM" />
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-extrabold text-navy mb-2">Observación de Estrellas</h3>
-                        <div class="flex gap-4 text-xs text-gray-400 mb-3"><span class="flex items-center gap-1"><span
+                        <h3 class="text-lg font-extrabold text-white mb-2">Observación de Estrellas</h3>
+                        <div class="flex gap-4 text-xs text-white/30 mb-3"><span class="flex items-center gap-1"><span
                                     class="material-symbols-outlined text-sm">schedule</span>1.5 hrs</span><span
                                 class="flex items-center gap-1"><span
                                     class="material-symbols-outlined text-sm">dark_mode</span>Nocturno</span></div>
-                        <p class="text-gray-500 text-sm mb-4">Los cielos de Puno son ideales para la astronomía.
-                            Telescopios profesionales y guía del cosmos andino.</p><a
-                            href="https://api.whatsapp.com/send?phone=51987654321"
-                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-bold text-sm transition-all inline-block">Reservar</a>
+                        <p class="text-white/40 text-sm mb-4">Los cielos de Puno son ideales para la astronomía.
+                            Telescopios profesionales y guía del cosmos andino.</p>
+                        <a href="https://api.whatsapp.com/send?phone=51987654321"
+                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-full font-bold text-sm transition-all inline-block">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -218,10 +215,10 @@
 
     <section class="relative py-20 overflow-hidden"><img alt="CTA" class="absolute inset-0 w-full h-full object-cover"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9mTLgRhuu7c0zqgi6EsQJHbHgpZOwNf2TpQMmRYgm-l9GtTYJ7MzjXPK_AzGf4-i2SDgaBia524Vvbhfw-JVbHQMviY0MBpYAyFh2qUSZ0cR0tZolmQa58jMPwzA-99wMmiQCeXDF7u-_KuHTF_U49Dr1GgfGOCVvf_PPPOV6gyznoAMN7Ny9mJwimhsl5MaHNWi3RRNXhHw7vdQqr3PHmY1IX0WitSDmGKoEV0AmhlGkl16JhU_EL4AztlLb7IS4uhagORa9Zwo" />
-        <div class="absolute inset-0 bg-navy/85"></div>
+        <div class="absolute inset-0 bg-black/80"></div>
         <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">VIVE LA AVENTURA ANDINA</h2>
-            <p class="text-white/80 text-lg mb-10">Reserva tu actividad favorita por WhatsApp y recibe confirmación
+            <p class="text-white/60 text-lg mb-10">Reserva tu actividad favorita por WhatsApp y recibe confirmación
                 inmediata.</p>
             <a class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5c] text-white px-10 py-5 rounded-full font-bold text-xl transition-transform hover:scale-105 shadow-xl"
                 href="https://api.whatsapp.com/send?phone=51987654321"><svg class="w-8 h-8 fill-current"
@@ -232,43 +229,47 @@
         </div>
     </section>
 
-    <footer class="bg-navy text-white">
+    <footer class="bg-[#0a0a0a] text-white border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
             <div class="text-center mb-16">
                 <h2
-                    class="text-6xl md:text-8xl lg:text-9xl font-extrabold text-white/5 uppercase tracking-tighter leading-none">
+                    class="text-6xl md:text-8xl lg:text-9xl font-extrabold text-white/[0.03] uppercase tracking-tighter leading-none">
                     QUILLAPATA LODGE</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <div><span class="sf text-2xl font-bold block mb-4">Quillapata <span
                             class="text-primary font-light">Lodge</span></span>
-                    <p class="text-white/50 text-sm">Experiencias auténticas en el Altiplano peruano.</p>
+                    <p class="text-white/40 text-sm">Experiencias auténticas en el Altiplano peruano.</p>
                 </div>
                 <div>
                     <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Navegación</h3>
-                    <ul class="space-y-4 text-white/60 text-sm">
-                        <li><a class="hover:text-primary" href="habitaciones.html">Habitaciones</a></li>
-                        <li><a class="hover:text-primary" href="alimentacion.html">Gastronomía</a></li>
-                        <li><a class="hover:text-primary" href="actividades.html">Experiencias</a></li>
-                        <li><a class="hover:text-primary" href="paquetes.html">Paquetes</a></li>
+                    <ul class="space-y-4 text-white/40 text-sm">
+                        <li><a class="hover:text-primary transition-colors" href="habitaciones.html">Habitaciones</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="alimentacion.html">Gastronomía</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="actividades.html">Experiencias</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="paquetes.html">Paquetes</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Contacto</h3>
-                    <ul class="space-y-4 text-white/60 text-sm">
+                    <ul class="space-y-4 text-white/40 text-sm">
                         <li>+51 987 654 321</li>
                         <li>reservas@quillapatalodge.com</li>
+                        <li>Km 45 Carretera Puno-Desaguadero</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Legal</h3>
-                    <ul class="space-y-4 text-white/60 text-sm">
-                        <li><a class="hover:text-primary" href="#">Términos</a></li>
-                        <li><a class="hover:text-primary" href="#">Privacidad</a></li>
+                    <ul class="space-y-4 text-white/40 text-sm">
+                        <li><a class="hover:text-primary transition-colors" href="#">Términos</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Privacidad</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-white/10 pt-8 text-center text-white/30 text-xs">© 2025 Quillapata Lodge.</div>
+            <div class="border-t border-white/5 pt-8 text-center text-white/20 text-xs">© 2025 Quillapata Lodge.</div>
         </div>
     </footer>
     <a href="https://api.whatsapp.com/send?phone=51987654321"
