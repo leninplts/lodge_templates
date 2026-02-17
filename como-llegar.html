@@ -1,362 +1,291 @@
 <!DOCTYPE html>
-
-<html class="light" lang="es">
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Cómo Llegar - Quillapata Lodge</title>
+    <title>Cómo Llegar | Quillapata Lodge</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#c5942b",
-                        "background-light": "#f8f7f6",
-                        "background-dark": "#201b12",
-                        "andean-brown": "#8B4513",
-                        "andean-blue": "#1B3A5C",
-                        "andean-cream": "#FAF6F0",
-                    },
-                    fontFamily: {
-                        "display": ["Plus Jakarta Sans", "sans-serif"],
-                        "serif": ["Playfair Display", "serif"],
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
+    <script>tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#c5942b", "navy": "#1B3A5C" }, fontFamily: { "display": ["Plus Jakarta Sans", "sans-serif"], "serif": ["Playfair Display", "serif"] } } } }</script>
     <style>
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif
         }
 
-        .serif-title {
-            font-family: 'Playfair Display', serif;
-        }
-
-        .glass-nav {
-            background: rgba(250, 246, 240, 0.95);
-            backdrop-filter: blur(8px);
+        .sf {
+            font-family: 'Playfair Display', serif
         }
     </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark text-andean-blue dark:text-andean-cream antialiased">
-    <!-- 1. Header -->
-    <header class="fixed top-0 w-full z-50 glass-nav border-b border-primary/10 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                    <span class="material-icons-outlined text-white">landscape</span>
+<body class="bg-white text-gray-900">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-[72px]">
+                <a href="index.html" class="sf text-2xl font-bold text-navy">Quillapata <span
+                        class="text-primary font-light">Lodge</span></a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                        href="index.html">Inicio</a><a
+                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                        href="nosotros.html">Nosotros</a><a class="text-sm font-semibold text-primary"
+                        href="como-llegar.html">Cómo Llegar</a><a
+                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                        href="habitaciones.html">Habitaciones</a><a
+                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                        href="alimentacion.html">Alimentación</a><a
+                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                        href="actividades.html">Actividades</a><a
+                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                        href="paquetes.html">Paquetes</a>
                 </div>
-                <span
-                    class="serif-title text-2xl font-bold tracking-tight text-andean-brown dark:text-primary">Quillapata
-                    Lodge</span>
+                <div class="flex items-center gap-4"><a href="https://api.whatsapp.com/send?phone=51987654321"
+                        class="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all">RESERVAR</a><button
+                        class="lg:hidden p-2"
+                        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"><svg class="w-7 h-7"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg></button></div>
             </div>
-            <nav class="hidden lg:flex items-center gap-8">
-                <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Inicio</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
-                <a class="text-sm font-medium text-primary border-b-2 border-primary transition-colors"
-                    href="como-llegar.html">Cómo Llegar</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors"
-                    href="habitaciones.html">Habitaciones</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors"
-                    href="alimentacion.html">Alimentación</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors"
-                    href="actividades.html">Actividades</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors" href="paquetes.html">Paquetes</a>
-            </nav>
-            <button
-                class="bg-primary hover:bg-primary/90 text-white px-8 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-primary/20">
-                Reservar
-            </button>
-            <!-- Mobile Hamburger -->
-            <button class="lg:hidden text-andean-brown dark:text-primary p-2"
-                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="hidden lg:hidden bg-white dark:bg-background-dark border-t border-primary/10 px-6 py-4">
-            <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="index.html">Inicio</a>
-            <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
-            <a class="block py-3 text-primary font-bold" href="como-llegar.html">Cómo Llegar</a>
-            <a class="block py-3 text-gray-600 hover:text-primary transition-colors"
-                href="habitaciones.html">Habitaciones</a>
-            <a class="block py-3 text-gray-600 hover:text-primary transition-colors"
-                href="alimentacion.html">Alimentación</a>
-            <a class="block py-3 text-gray-600 hover:text-primary transition-colors"
-                href="actividades.html">Actividades</a>
-            <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="paquetes.html">Paquetes</a>
-            <a class="block py-3 bg-primary text-white text-center rounded-lg font-semibold mt-2"
-                href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a>
-        </div>
+    </nav>
+    <div id="mobile-menu"
+        class="hidden lg:hidden fixed top-[72px] left-0 right-0 z-50 bg-white border-t border-gray-100 px-6 py-4 shadow-lg">
+        <a class="block py-3 text-gray-600 hover:text-primary" href="index.html">Inicio</a><a
+            class="block py-3 text-gray-600 hover:text-primary" href="nosotros.html">Nosotros</a><a
+            class="block py-3 text-primary font-bold" href="como-llegar.html">Cómo Llegar</a><a
+            class="block py-3 text-gray-600 hover:text-primary" href="habitaciones.html">Habitaciones</a><a
+            class="block py-3 text-gray-600 hover:text-primary" href="alimentacion.html">Alimentación</a><a
+            class="block py-3 text-gray-600 hover:text-primary" href="actividades.html">Actividades</a><a
+            class="block py-3 text-gray-600 hover:text-primary" href="paquetes.html">Paquetes</a><a
+            class="block py-3 bg-primary text-white text-center rounded-lg font-semibold mt-2"
+            href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a></div>
+
+    <header class="relative h-[60vh] flex items-center justify-center pt-[72px]">
+        <img alt="Carretera Altiplano" class="absolute inset-0 w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjLRm8UKEzpYHI84ymQSn3Kg6_0vPHEnYoKsB4trBWpkSLp2aUn6P4VvZ3WvXWZM1Y3jlTpKOJsIFIwNibC-mCYpD59gOr5EmnD9WA6ccznu2u7XEbA6FoMh0LHgPBuz2diWMocC6DHTRzr46hlBv39_pmBQZWU4-vZgNfxrkh_OqQhu4SACM18uxU9T0CwNmns54FscuqLCqqh0sGv0TtkkZg99-qGHDREJ3hX-G2dD3uWrA6scRsmOxicTnk_yVwx-HrDAHdzxY" />
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white uppercase tracking-tight">CÓMO LLEGAR</h1>
+            <p class="text-white/80 text-lg mt-4 max-w-xl mx-auto">Tu camino a la serenidad empieza aquí</p>
         </div>
     </header>
-    <!-- 2. Hero Section -->
-    <section class="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0">
-            <img alt="Scenic mountain road in Puno Peru" class="w-full h-full object-cover"
-                data-alt="Scenic winding mountain road in Puno Peru"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAGJ1m6EjWSrBzC80L6-WNVVp06ZpBFk26Dt4uzPDav9oJ3FJszn5XxNzXGJ-Wxti-Z6ASkI1Y5d0Fgyp7MvkDP89n2Epuyu2ahQ6u0QIQfMvQkB19VNjxgNRmMdslPy_brKHj7waTdgcH0EyJHbRlN6nKtTow2EH4AWM8iV7ON-YoDV4Cn_IJhcUNHK2aPOmbU9AYI-dSzLd5P0Rpj4AD6HOmWtOJtubrLS-XMSErmzBvq2980Se4059RL1EbNU8eGE7kdy3ThuA" />
-            <div class="absolute inset-0 bg-black/40 bg-gradient-to-b from-transparent to-background-light/20"></div>
-        </div>
-        <div class="relative text-center px-4">
-            <h1 class="serif-title text-5xl md:text-7xl text-white font-bold mb-4 drop-shadow-lg">¿Cómo Llegar?</h1>
-            <p class="text-white/90 text-xl font-display max-w-2xl mx-auto drop-shadow">El inicio de tu aventura en el
-                corazón del Altiplano peruano.</p>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16"><span
+                    class="text-primary font-semibold tracking-widest uppercase text-xs">Ubicación</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-navy mt-2">Cómo Llegar al Lodge</h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <div class="rounded-2xl overflow-hidden shadow-xl mb-8 h-[400px]"><iframe class="w-full h-full"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.84916296526!2d-70.0219!3d-15.8402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915d69c5c9eef0f5%3A0xd6cc28d37fe60bb0!2sPuno!5e0!3m2!1ses!2spe!4v1706000000000!5m2!1ses!2spe"
+                            style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+                    <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                        <h3 class="font-bold text-navy mb-4 flex items-center gap-2"><span
+                                class="material-symbols-outlined text-primary">location_on</span>Dirección</h3>
+                        <p class="text-gray-600 text-sm">Comunidad de Quillapata, Km 45 Carretera
+                            Puno-Desaguadero<br />Puno, Perú<br />Altitud: 3,800 m.s.n.m.</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-2xl text-primary">flight</span></div>
+                            <div>
+                                <h3 class="font-bold text-navy text-lg mb-2">Por Avión</h3>
+                                <p class="text-gray-600 text-sm mb-2"><strong>Aeropuerto Inca Manco Cápac (JUL)</strong>
+                                    — Juliaca</p>
+                                <p class="text-gray-500 text-sm">Vuelos diarios desde Lima (1h15min). El aeropuerto está
+                                    a 1h30min del lodge. Ofrecemos traslado privado incluido en todos los paquetes.</p>
+                                <div class="mt-3 flex items-center gap-2 text-primary font-bold text-sm"><span
+                                        class="material-symbols-outlined text-base">schedule</span>1h 30 min al lodge
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-2xl text-primary">directions_bus</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-navy text-lg mb-2">Por Carretera</h3>
+                                <p class="text-gray-600 text-sm mb-2"><strong>Desde Puno ciudad</strong> — 45 min por la
+                                    Carretera Puno-Desaguadero</p>
+                                <p class="text-gray-500 text-sm">Buses interprovinciales desde Lima, Cusco y Arequipa.
+                                    Desde la terminal de Puno coordinamos recojo.</p>
+                                <div class="mt-3 flex items-center gap-2 text-primary font-bold text-sm"><span
+                                        class="material-symbols-outlined text-base">schedule</span>45 min desde Puno
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-2xl text-primary">train</span></div>
+                            <div>
+                                <h3 class="font-bold text-navy text-lg mb-2">Por Tren</h3>
+                                <p class="text-gray-600 text-sm mb-2"><strong>PeruRail</strong> — Ruta Cusco-Puno</p>
+                                <p class="text-gray-500 text-sm">Una de las rutas de tren más espectaculares del mundo.
+                                    Travesía de 10h por el Altiplano con servicio de lujo.</p>
+                                <div class="mt-3 flex items-center gap-2 text-primary font-bold text-sm"><span
+                                        class="material-symbols-outlined text-base">schedule</span>10 hrs desde Cusco
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- 3. Ubicación Section -->
-    <section class="py-24 max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-                <span class="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Destino Puno</span>
-                <h2 class="serif-title text-4xl md:text-5xl text-andean-brown dark:text-primary mb-8">Nuestra Ubicación
-                </h2>
-                <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                    Quillapata Lodge se encuentra estratégicamente ubicado en la comunidad de Quillapata, a orillas del
-                    majestuoso Lago Titicaca. Situado a una altitud de 3,800 metros sobre el nivel del mar, ofrecemos
-                    una de las vistas más impresionantes de la cordillera.
-                </p>
-                <div
-                    class="flex items-start gap-4 p-6 bg-andean-cream dark:bg-primary/10 rounded-xl border border-primary/20">
-                    <span class="material-icons-outlined text-primary text-3xl">location_on</span>
+
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12"><span
+                    class="text-primary font-semibold tracking-widest uppercase text-xs">Servicio</span>
+                <h2 class="text-3xl font-extrabold text-navy mt-2">Nuestro Servicio de Traslado</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 text-center shadow-md border border-gray-100"><span
+                        class="material-symbols-outlined text-4xl text-primary mb-4">airport_shuttle</span>
+                    <h3 class="text-lg font-bold text-navy mb-2">Traslado Privado</h3>
+                    <p class="text-gray-500 text-sm">Vehículo privado con oxígeno, mantas y mate de coca para el viaje.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 text-center shadow-md border border-gray-100"><span
+                        class="material-symbols-outlined text-4xl text-primary mb-4">person</span>
+                    <h3 class="text-lg font-bold text-navy mb-2">Chofer Bilingüe</h3>
+                    <p class="text-gray-500 text-sm">Guía/chofer que habla español e inglés, conocedor de la ruta.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 text-center shadow-md border border-gray-100"><span
+                        class="material-symbols-outlined text-4xl text-primary mb-4">medical_services</span>
+                    <h3 class="text-lg font-bold text-navy mb-2">Kit de Altitud</h3>
+                    <p class="text-gray-500 text-sm">Oxígeno portátil, hojas de coca y agua mineral para la
+                        aclimatación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-12"><span
+                    class="text-primary font-semibold tracking-widest uppercase text-xs">Importante</span>
+                <h2 class="text-3xl font-extrabold text-navy mt-2">Consejos para la Altitud</h2>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 flex items-start gap-4"><span
+                        class="material-symbols-outlined text-primary text-xl mt-0.5">check_circle</span>
                     <div>
-                        <h4 class="font-bold text-andean-brown dark:text-primary">Dirección Exacta</h4>
-                        <p class="text-gray-600 dark:text-gray-400">Sector Quillapata S/N, Distrito de Chucuito, Puno,
-                            Perú.</p>
+                        <h3 class="font-bold text-navy text-sm">Llega con anticipación</h3>
+                        <p class="text-gray-500 text-sm">Recomendamos pasar 1-2 días en Puno o Juliaca antes de subir al
+                            lodge para aclimatarse.</p>
                     </div>
                 </div>
-            </div>
-            <div class="h-[450px] bg-gray-200 dark:bg-gray-800 rounded-xl overflow-hidden shadow-2xl relative group">
-                <img alt="Map view of Puno region" class="w-full h-full object-cover grayscale opacity-80"
-                    data-alt="Abstract map of Puno region with routes" data-location="Puno, Peru"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwjLPmCmiQ5PqI8aA949e9ZAab4PiyliBsmQuY9xehfIOqEsyFVOaqXtHYGf6YuaPQmdRbA81eHgcAfoQWPxwvdxyybXbALeaxIaulrlGdAdpekH9T2HOqczCsgNlr-bVNy4kIO3qCTZyEwSSZlcNnfeJsn1Y3yIEqQHhd5TU0RmLl4XytAkXmLiXbPn3LxRjjYOUA1aFQEJcKekWs_gygtqAOT2Hl2HRQ-qE3HPoloeytGPlrofNdeykm_T8nqAwL9vlyMFfBjFg" />
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="bg-white p-4 rounded-full shadow-xl">
-                        <span class="material-icons-outlined text-primary text-4xl">pin_drop</span>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 flex items-start gap-4"><span
+                        class="material-symbols-outlined text-primary text-xl mt-0.5">check_circle</span>
+                    <div>
+                        <h3 class="font-bold text-navy text-sm">Hidrátate bien</h3>
+                        <p class="text-gray-500 text-sm">Bebe abundante agua y evita el alcohol las primeras 24 horas.
+                            El mate de coca es tu mejor aliado.</p>
                     </div>
                 </div>
-                <div
-                    class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur p-4 rounded-lg flex justify-between items-center">
-                    <span class="text-sm font-bold text-andean-blue">Abrir en Google Maps</span>
-                    <button class="bg-primary text-white p-2 rounded-lg"><span
-                            class="material-icons-outlined">open_in_new</span></button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- 4. Formas de Llegar Section -->
-    <section class="py-24 bg-andean-cream/50 dark:bg-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="serif-title text-4xl text-andean-brown dark:text-primary mb-4">Opciones de Transporte</h2>
-                <div class="h-1 w-24 bg-primary mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Vuelo -->
-                <div
-                    class="bg-white dark:bg-background-dark p-8 rounded-xl shadow-sm border border-primary/10 hover:border-primary transition-all">
-                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                        <span class="material-icons-outlined text-primary text-3xl">flight_takeoff</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Vuelo a Juliaca</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4">
-                        El aeropuerto más cercano es el Aeropuerto Internacional Inca Manco Cápac (JUL) en Juliaca.
-                        Recibe vuelos diarios desde Lima (1h 40min) y Cusco.
-                    </p>
-                    <div class="flex items-center gap-2 text-sm text-primary font-bold">
-                        <span class="material-icons-outlined text-sm">schedule</span>
-                        <span>1.5h de traslado terrestre al lodge</span>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 flex items-start gap-4"><span
+                        class="material-symbols-outlined text-primary text-xl mt-0.5">check_circle</span>
+                    <div>
+                        <h3 class="font-bold text-navy text-sm">Ropa por capas</h3>
+                        <p class="text-gray-500 text-sm">Las temperaturas varían significativamente entre el día (+18°C)
+                            y la noche (-5°C).</p>
                     </div>
                 </div>
-                <!-- Bus -->
-                <div
-                    class="bg-white dark:bg-background-dark p-8 rounded-xl shadow-sm border border-primary/10 hover:border-primary transition-all">
-                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                        <span class="material-icons-outlined text-primary text-3xl">directions_bus</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Bus a Puno</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4">
-                        Existen servicios directos y de lujo desde Lima, Cusco o Arequipa hacia el terminal terrestre de
-                        Puno. Recomendamos empresas como Cruz del Sur o Transzela.
-                    </p>
-                    <div class="flex items-center gap-2 text-sm text-primary font-bold">
-                        <span class="material-icons-outlined text-sm">schedule</span>
-                        <span>45 min desde el terminal de Puno</span>
-                    </div>
-                </div>
-                <!-- Auto Propio -->
-                <div
-                    class="bg-white dark:bg-background-dark p-8 rounded-xl shadow-sm border border-primary/10 hover:border-primary transition-all">
-                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                        <span class="material-icons-outlined text-primary text-3xl">directions_car</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Auto Propio</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4">
-                        Desde la ciudad de Puno, tome la carretera Panamericana Sur con dirección a Chucuito/Juli. El
-                        desvío hacia la comunidad de Quillapata está debidamente señalizado.
-                    </p>
-                    <div class="flex items-center gap-2 text-sm text-primary font-bold">
-                        <span class="material-icons-outlined text-sm">map</span>
-                        <span>Coordenadas: 15.89°S, 69.88°W</span>
-                    </div>
-                </div>
-                <!-- Recojo -->
-                <div
-                    class="bg-white dark:bg-background-dark p-8 rounded-xl shadow-sm border border-primary/10 hover:border-primary transition-all">
-                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                        <span class="material-icons-outlined text-primary text-3xl">airport_shuttle</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Servicio de Recojo</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4">
-                        Ofrecemos traslados privados desde el aeropuerto de Juliaca o el terminal de Puno directamente
-                        hasta nuestra puerta para su mayor comodidad.
-                    </p>
-                    <div class="flex items-center gap-2 text-sm text-primary font-bold">
-                        <span class="material-icons-outlined text-sm">stars</span>
-                        <span>Servicio premium disponible bajo reserva</span>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 flex items-start gap-4"><span
+                        class="material-symbols-outlined text-primary text-xl mt-0.5">check_circle</span>
+                    <div>
+                        <h3 class="font-bold text-navy text-sm">Protección solar</h3>
+                        <p class="text-gray-500 text-sm">La radiación UV es muy alta a esta altitud. Usa protector solar
+                            SPF 50+, lentes y sombrero.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- 5. Tips de Viaje Section -->
-    <section class="py-24 max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="text-center p-8 border border-primary/10 rounded-xl hover:bg-andean-cream/30 transition-colors">
-                <span class="material-icons-outlined text-primary text-4xl mb-4">height</span>
-                <h4 class="font-bold mb-2">Altitud</h4>
-                <p class="text-sm text-gray-500">Estamos a 3,800 msnm. Recomendamos aclimatarse 1 día previo.</p>
-            </div>
-            <div class="text-center p-8 border border-primary/10 rounded-xl hover:bg-andean-cream/30 transition-colors">
-                <span class="material-icons-outlined text-primary text-4xl mb-4">wb_sunny</span>
-                <h4 class="font-bold mb-2">Clima</h4>
-                <p class="text-sm text-gray-500">Días soleados pero noches frías. Use bloqueador y ropa térmica.</p>
-            </div>
-            <div class="text-center p-8 border border-primary/10 rounded-xl hover:bg-andean-cream/30 transition-colors">
-                <span class="material-icons-outlined text-primary text-4xl mb-4">calendar_month</span>
-                <h4 class="font-bold mb-2">Mejor Época</h4>
-                <p class="text-sm text-gray-500">De Abril a Noviembre, durante la temporada seca altiplánica.</p>
-            </div>
-            <div class="text-center p-8 border border-primary/10 rounded-xl hover:bg-andean-cream/30 transition-colors">
-                <span class="material-icons-outlined text-primary text-4xl mb-4">badge</span>
-                <h4 class="font-bold mb-2">Documentos</h4>
-                <p class="text-sm text-gray-500">Indispensable portar DNI o Pasaporte vigente para el check-in.</p>
-            </div>
-        </div>
-    </section>
-    <!-- 6. CTA Section -->
-    <section class="py-16 bg-andean-brown dark:bg-andean-blue relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <img alt="Andean pattern background" class="w-full h-full object-cover"
-                data-alt="Abstract Andean textile pattern overlay"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIghGTao66xuu-9VIv5dK0wQq4LcCJP6JqgV4sJHSPXx2qdFjX3whq3aaVH5hLMHEGVJ11-rbuAWDbT-NkRkWU4e5aFe22zdGfP8Tt-k2mvAGVot29HP_MnXofwJJwQU85xSR_CKwgxsxQTe3uUvBK9rSw81cqXWVVf6TqJXw6cfCbhNTUelTN6CLD2zYf5P149NUZD7v0AJC4yIEtqbJRgLGPGq7eYCFR_lB8xm2WCJHEaEhdKcfhjTJWB_HpSDXYyWcvKtCOPUU" />
-        </div>
-        <div class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-            <h3 class="serif-title text-3xl md:text-4xl text-primary font-bold text-center md:text-left">¿Tienes alguna
-                duda sobre tu viaje? <br class="hidden md:block" /><span class="text-white">¡Escríbenos ahora!</span>
-            </h3>
-            <a class="bg-[#25D366] hover:bg-[#20ba5a] text-white px-10 py-4 rounded-full font-bold flex items-center gap-3 transition-all transform hover:scale-105 shadow-xl"
-                href="#">
-                <svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+
+    <section class="relative py-20 overflow-hidden"><img alt="CTA" class="absolute inset-0 w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjLRm8UKEzpYHI84ymQSn3Kg6_0vPHEnYoKsB4trBWpkSLp2aUn6P4VvZ3WvXWZM1Y3jlTpKOJsIFIwNibC-mCYpD59gOr5EmnD9WA6ccznu2u7XEbA6FoMh0LHgPBuz2diWMocC6DHTRzr46hlBv39_pmBQZWU4-vZgNfxrkh_OqQhu4SACM18uxU9T0CwNmns54FscuqLCqqh0sGv0TtkkZg99-qGHDREJ3hX-G2dD3uWrA6scRsmOxicTnk_yVwx-HrDAHdzxY" />
+        <div class="absolute inset-0 bg-navy/85"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">¿NECESITAS AYUDA CON TU VIAJE?</h2>
+            <p class="text-white/80 text-lg mb-10">Nuestro equipo te ayuda a coordinar vuelos, traslados y todo lo que
+                necesites.</p>
+            <a class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5c] text-white px-10 py-5 rounded-full font-bold text-xl transition-transform hover:scale-105 shadow-xl"
+                href="https://api.whatsapp.com/send?phone=51987654321"><svg class="w-8 h-8 fill-current"
+                    viewBox="0 0 24 24">
                     <path
-                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.171c1.589.943 3.483 1.441 5.411 1.441 5.563 0 10.088-4.527 10.091-10.091.002-2.693-1.047-5.225-2.956-7.133-1.907-1.908-4.44-2.956-7.133-2.956-5.566 0-10.091 4.525-10.094 10.088-.001 1.836.499 3.626 1.447 5.215l-1.066 3.893 3.991-1.047z">
-                    </path>
-                </svg>
-                Contactar por WhatsApp
-            </a>
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.653a11.883 11.883 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>Contactar por WhatsApp</a>
         </div>
     </section>
-    <!-- 7. Footer -->
-    <footer class="bg-andean-blue text-white pt-20 pb-10">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16">
-            <div class="col-span-1 md:col-span-1">
-                <div class="flex items-center gap-2 mb-6">
-                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                        <span class="material-icons-outlined text-white text-sm">landscape</span>
-                    </div>
-                    <span class="serif-title text-xl font-bold tracking-tight text-primary">Quillapata Lodge</span>
+
+    <footer class="bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-6xl md:text-8xl lg:text-9xl font-extrabold text-white/5 uppercase tracking-tighter leading-none">
+                    QUILLAPATA LODGE</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div><span class="sf text-2xl font-bold block mb-4">Quillapata <span
+                            class="text-primary font-light">Lodge</span></span>
+                    <p class="text-white/50 text-sm">Experiencias auténticas en el Altiplano peruano.</p>
                 </div>
-                <p class="text-white/60 text-sm leading-relaxed mb-6">
-                    Un refugio de paz y lujo en las alturas de Puno, donde el cielo se une con el Titicaca.
-                </p>
-                <div class="flex gap-4">
-                    <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary transition-colors"
-                        href="#"><span class="material-icons-outlined text-sm">facebook</span></a>
-                    <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary transition-colors"
-                        href="#">
-                        <svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
-                            <path
-                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441c.795 0 1.439-.645 1.439-1.441s-.644-1.44-1.439-1.44z">
-                            </path>
-                        </svg>
-                    </a>
+                <div>
+                    <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Navegación</h3>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li><a class="hover:text-primary" href="habitaciones.html">Habitaciones</a></li>
+                        <li><a class="hover:text-primary" href="alimentacion.html">Gastronomía</a></li>
+                        <li><a class="hover:text-primary" href="actividades.html">Experiencias</a></li>
+                        <li><a class="hover:text-primary" href="paquetes.html">Paquetes</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div>
-                <h4 class="font-bold text-lg mb-6">Navegación</h4>
-                <ul class="space-y-4 text-white/60 text-sm">
-                    <li><a class="hover:text-primary transition-colors" href="index.html">Inicio</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="nosotros.html">Nosotros</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="habitaciones.html">Habitaciones</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="alimentacion.html">Alimentación</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="actividades.html">Actividades</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="paquetes.html">Paquetes</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-lg mb-6">Contacto</h4>
-                <ul class="space-y-4 text-white/60 text-sm">
-                    <li class="flex items-center gap-2"><span
-                            class="material-icons-outlined text-primary text-sm">phone</span> +51 987 654 321</li>
-                    <li class="flex items-center gap-2"><span
-                            class="material-icons-outlined text-primary text-sm">email</span> info@quillapatalodge.com
-                    </li>
-                    <li class="flex items-center gap-2"><span
-                            class="material-icons-outlined text-primary text-sm">location_on</span> Puno, Perú</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-lg mb-6">Newsletter</h4>
-                <p class="text-sm text-white/60 mb-4">Recibe ofertas exclusivas y consejos de viaje.</p>
-                <div class="flex gap-2">
-                    <input
-                        class="bg-white/5 border-white/10 rounded-lg flex-grow px-4 py-2 focus:border-primary outline-none"
-                        placeholder="Email" type="email" />
-                    <button class="bg-primary px-4 py-2 rounded-lg font-bold">Unirse</button>
+                <div>
+                    <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Contacto</h3>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li>+51 987 654 321</li>
+                        <li>reservas@quillapatalodge.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Legal</h3>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li><a class="hover:text-primary" href="#">Términos</a></li>
+                        <li><a class="hover:text-primary" href="#">Privacidad</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div
-            class="max-w-7xl mx-auto px-6 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
-            <p>© 2025 Quillapata Lodge. Todos los derechos reservados.</p>
-            <div class="flex gap-6">
-                <a class="hover:text-white transition-colors" href="#">Política de Privacidad</a>
-                <a class="hover:text-white transition-colors" href="#">Términos y Condiciones</a>
-            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-white/30 text-xs">© 2025 Quillapata Lodge.</div>
         </div>
     </footer>
+    <a href="https://api.whatsapp.com/send?phone=51987654321"
+        class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform"><svg
+            class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.653a11.883 11.883 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg></a>
 </body>
 
 </html>

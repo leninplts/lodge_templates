@@ -1,472 +1,282 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Actividades - Quillapata Lodge</title>
+    <title>Actividades | Quillapata Lodge</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#c6972a",
-                        "background-light": "#faf6f0",
-                        "background-dark": "#201c12",
-                        "deep-blue": "#1B3A5C",
-                        "andean-brown": "#8B4513"
-                    },
-                    fontFamily: {
-                        "display": ["Plus Jakarta Sans", "sans-serif"],
-                        "serif": ["Playfair Display", "serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
+    <script>tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#c5942b", "navy": "#1B3A5C" }, fontFamily: { "display": ["Plus Jakarta Sans", "sans-serif"], "serif": ["Playfair Display", "serif"] } } } }</script>
     <style>
-        .neo-andean-pattern {
-            background-image: radial-gradient(#c6972a 0.5px, transparent 0.5px);
-            background-size: 24px 24px;
-            opacity: 0.1;
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif
         }
 
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .activity-card:hover .activity-img {
-            transform: scale(1.05);
-        }
-
-        .serif-title {
-            font-family: 'Playfair Display', serif;
+        .sf {
+            font-family: 'Playfair Display', serif
         }
     </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100">
-    <!-- Header -->
-    <nav class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-primary/10">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <span class="material-icons-outlined text-primary text-3xl">landscape</span>
-                <span
-                    class="text-xl font-bold tracking-tight serif-title text-andean-brown dark:text-primary">QUILLAPATA
-                    <span class="font-normal italic">Lodge</span></span>
+<body class="bg-white text-gray-900">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-[72px]">
+                <a href="index.html" class="sf text-2xl font-bold text-navy">Quillapata <span
+                        class="text-primary font-light">Lodge</span></a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                        href="index.html">Inicio</a><a
+                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                        href="nosotros.html">Nosotros</a><a
+                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                        href="como-llegar.html">Cómo Llegar</a><a
+                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                        href="habitaciones.html">Habitaciones</a><a
+                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                        href="alimentacion.html">Alimentación</a><a class="text-sm font-semibold text-primary"
+                        href="actividades.html">Actividades</a><a
+                        class="text-sm font-semibold text-gray-600 hover:text-primary transition-colors"
+                        href="paquetes.html">Paquetes</a>
+                </div>
+                <div class="flex items-center gap-4"><a href="https://api.whatsapp.com/send?phone=51987654321"
+                        class="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all">RESERVAR</a><button
+                        class="lg:hidden p-2"
+                        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"><svg class="w-7 h-7"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg></button></div>
             </div>
-            <div class="hidden md:flex items-center gap-8 font-medium text-sm uppercase tracking-widest">
-                <a class="hover:text-primary transition-colors" href="index.html">Inicio</a>
-                <a class="hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
-                <a class="hover:text-primary transition-colors" href="como-llegar.html">Cómo Llegar</a>
-                <a class="hover:text-primary transition-colors" href="habitaciones.html">Habitaciones</a>
-                <a class="hover:text-primary transition-colors" href="alimentacion.html">Alimentación</a>
-                <a class="text-primary border-b-2 border-primary" href="actividades.html">Actividades</a>
-                <a class="hover:text-primary transition-colors" href="paquetes.html">Paquetes</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <button
-                    class="bg-primary hover:bg-primary/90 text-white px-8 py-2.5 rounded-lg font-semibold transition-all shadow-lg shadow-primary/20 uppercase text-xs tracking-widest">
-                    Reservar
-                </button>
-                <!-- Mobile Hamburger -->
-                <button class="md:hidden text-andean-brown dark:text-primary p-2"
-                    onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="hidden md:hidden bg-white dark:bg-background-dark border-t border-primary/10 px-6 py-4">
-            <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="index.html">Inicio</a>
-            <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
-            <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="como-llegar.html">Cómo
-                Llegar</a>
-            <a class="block py-3 text-gray-600 hover:text-primary transition-colors"
-                href="habitaciones.html">Habitaciones</a>
-            <a class="block py-3 text-gray-600 hover:text-primary transition-colors"
-                href="alimentacion.html">Alimentación</a>
-            <a class="block py-3 text-primary font-bold" href="actividades.html">Actividades</a>
-            <a class="block py-3 text-gray-600 hover:text-primary transition-colors" href="paquetes.html">Paquetes</a>
-            <a class="block py-3 bg-primary text-white text-center rounded-lg font-semibold mt-2"
-                href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a>
         </div>
     </nav>
-    <!-- Hero Section -->
-    <header class="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <img alt="Aventuras en los Andes" class="absolute inset-0 w-full h-full object-cover"
-            data-alt="Andean landscape with a hiker overlooking mountains"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0MOiSb436KdPKvuSlt3Zmqm4hgwNAgvT_CH8iAl7UBqvCpjzYA08zsycWb_rS7MhXwURELPmeeUAT0CUR6tKEc3SmYuITcGO44v4AbLOhb2uQZAoC3yHHoUShZ0WNXoH4Bw2DRi2oyY28b0w6WohAlTIindt_U6ukebr0Y2oqAwXzRiMbT3Y4X38MymC9Qw8VGoZDgzg7QX3Q68upLt1-2TpKrFUl57yYjwohKRuPuK99BQ6N_MQ2l4siUC06Xy89cXn25OQuipw" />
-        <div class="absolute inset-0 bg-black/40"></div>
-        <div class="relative z-10 text-center text-white px-4">
-            <h1 class="serif-title text-6xl md:text-8xl mb-4 text-shadow italic">Actividades</h1>
-            <div class="h-1 w-24 bg-primary mx-auto mb-6"></div>
-            <p class="text-lg md:text-xl max-w-2xl mx-auto font-light tracking-wide">Descubra la magia de Puno a través
-                de experiencias diseñadas para conectar con la tierra.</p>
+    <div id="mobile-menu"
+        class="hidden lg:hidden fixed top-[72px] left-0 right-0 z-50 bg-white border-t border-gray-100 px-6 py-4 shadow-lg">
+        <a class="block py-3 text-gray-600 hover:text-primary" href="index.html">Inicio</a><a
+            class="block py-3 text-gray-600 hover:text-primary" href="nosotros.html">Nosotros</a><a
+            class="block py-3 text-gray-600 hover:text-primary" href="como-llegar.html">Cómo Llegar</a><a
+            class="block py-3 text-gray-600 hover:text-primary" href="habitaciones.html">Habitaciones</a><a
+            class="block py-3 text-gray-600 hover:text-primary" href="alimentacion.html">Alimentación</a><a
+            class="block py-3 text-primary font-bold" href="actividades.html">Actividades</a><a
+            class="block py-3 text-gray-600 hover:text-primary" href="paquetes.html">Paquetes</a><a
+            class="block py-3 bg-primary text-white text-center rounded-lg font-semibold mt-2"
+            href="https://api.whatsapp.com/send?phone=51987654321">Reservar</a></div>
+
+    <header class="relative h-[60vh] flex items-center justify-center pt-[72px]">
+        <img alt="Trekking" class="absolute inset-0 w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9mTLgRhuu7c0zqgi6EsQJHbHgpZOwNf2TpQMmRYgm-l9GtTYJ7MzjXPK_AzGf4-i2SDgaBia524Vvbhfw-JVbHQMviY0MBpYAyFh2qUSZ0cR0tZolmQa58jMPwzA-99wMmiQCeXDF7u-_KuHTF_U49Dr1GgfGOCVvf_PPPOV6gyznoAMN7Ny9mJwimhsl5MaHNWi3RRNXhHw7vdQqr3PHmY1IX0WitSDmGKoEV0AmhlGkl16JhU_EL4AztlLb7IS4uhagORa9Zwo" />
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white uppercase tracking-tight">ACTIVIDADES</h1>
+            <p class="text-white/80 text-lg mt-4 max-w-xl mx-auto">Descubre la magia de los Andes a través de
+                experiencias únicas</p>
         </div>
     </header>
-    <!-- Intro Section -->
-    <section class="py-20 relative overflow-hidden">
-        <div class="neo-andean-pattern absolute inset-0"></div>
-        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <span class="text-primary font-bold uppercase tracking-[0.3em] text-xs block mb-4">Filosofía de Viaje</span>
-            <h2 class="serif-title text-3xl md:text-4xl text-andean-brown dark:text-primary/90 mb-8 italic">Armonía
-                entre Intensidad y Serenidad</h2>
-            <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-                En Quillapata Lodge, creemos que el verdadero espíritu de los Andes se vive en el equilibrio. Ofrecemos
-                una cuidadosa selección de experiencias que alternan la adrenalina de la aventura al aire libre con la
-                quietud de los talleres culturales, permitiéndole sumergirse profundamente en la esencia de nuestra
-                herencia puneña.
-            </p>
+
+    <section class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="sf text-3xl md:text-4xl font-bold text-navy mb-6">Armonía entre Intensidad y Serenidad</h2>
+            <div class="w-16 h-1 bg-primary rounded-full mx-auto mb-6"></div>
+            <p class="text-gray-600 leading-relaxed">En Quillapata Lodge creemos que la verdadera aventura es aquella
+                que equilibra la adrenalina con la paz interior. Nuestras actividades están diseñadas para que explores
+                lo mejor del Altiplano sin perder la conexión contigo mismo.</p>
         </div>
     </section>
-    <!-- Activities Grid -->
-    <section class="py-12 bg-white/50 dark:bg-black/20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Activity 1 -->
+
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <span class="text-primary font-semibold tracking-widest uppercase text-xs">Experiencias</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-navy mt-2 mb-12">Nuestras Actividades</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
                 <div
-                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 overflow-hidden relative">
-                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
-                            data-alt="Lake Titicaca viewpoint trail"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5UIuoFh10-ZM9PxdJafXq7h7UUeGgPKYBgD3Ioyn6aiKV-zm-X4rrEchyzTRfTUxn3cv1c7OVUi1V3op9yqavl7ph0MHKGawjLcqThim-LU1Sat1fXwQF5STdZRgdSjVbg4sKabgUOcM3Dyw8WJ3NS-W6Mv_2h0VNKeOTpd1o6r1dcOkL6Oj_6f_mRa55vRgSSXa5HdbEl1AiHJFEu_xWQAIRphalfol3lBhpLKvF9h1M1wRwjG9SkLKJQlD1PwZJx_jy8VGjeAs" />
-                        <div
-                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
-                            S/40</div>
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                    <div class="h-56 overflow-hidden"><img alt="Trekking"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9mTLgRhuu7c0zqgi6EsQJHbHgpZOwNf2TpQMmRYgm-l9GtTYJ7MzjXPK_AzGf4-i2SDgaBia524Vvbhfw-JVbHQMviY0MBpYAyFh2qUSZ0cR0tZolmQa58jMPwzA-99wMmiQCeXDF7u-_KuHTF_U49Dr1GgfGOCVvf_PPPOV6gyznoAMN7Ny9mJwimhsl5MaHNWi3RRNXhHw7vdQqr3PHmY1IX0WitSDmGKoEV0AmhlGkl16JhU_EL4AztlLb7IS4uhagORa9Zwo" />
                     </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Caminata al Mirador del
-                            Lago Titicaca</h3>
-                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">schedule</span> 2.5h</div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 2 Pax
-                            </div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Guía y
-                                Snack</div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-extrabold text-navy mb-2">Trekking Alto-Andino</h3>
+                        <div class="flex gap-4 text-xs text-gray-400 mb-3"><span class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">schedule</span>4-6 hrs</span><span
+                                class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">signal_cellular_alt</span>Media</span>
                         </div>
-                        <button
-                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
-                            información</button>
+                        <p class="text-gray-500 text-sm mb-4">Recorra senderos milenarios con vistas a nevados y lagunas
+                            de altura acompañado de guías locales expertos.</p><a
+                            href="https://api.whatsapp.com/send?phone=51987654321"
+                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-bold text-sm transition-all inline-block">Reservar</a>
                     </div>
                 </div>
-                <!-- Activity 2 -->
+
                 <div
-                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 overflow-hidden relative">
-                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
-                            data-alt="Mountain biking along lakeshore"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCGxw7JaffLW7np2G7Fkm2Pwao2hNEYa_bzQvNw7jDW8iP3gcQ5tBiezVyaLBIufH0RiiQfJqDjGfpZj0c1xmZAnCAWr23NScBeqqbjPqxphxhoQZghxz7orixEY53a-rzADAtR8BvgsqitXXiPlZe2BDnvD0swoRr8CDxCU486D6xAAcgpgY9tjVY5O4BhOEYpGX6tXD3HgwYVPnU-oikZ1m-wSi1j5NzvE-t8dtv_uLul2rdd8YFEpYRBRbcy5MvtjNxqX6VlJc" />
-                        <div
-                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
-                            S/65</div>
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                    <div class="h-56 overflow-hidden"><img alt="Kayak"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqhBiZlBHVCo5R3Y0nTq5xeQog81CUxJg2C7b55vlZZ7nQpTHCX2qwrc4WaeCgGCNDKZUzkY0RccwJKFJ3_rCu0Jb3m92-h_urPiLFzvgdcgvKzMj4nbYd3lovkJ-1RWxL0M-ONzlL3ddgHviw7zV-25A_pKLqyKtgIe3klbKtba3uIVbY04VVtvHtmgjzPTye890anmFYb7P5gAWchCnzt4W1B-z-MKTUD9o8TYKmD_6Wyw-6RChG8_e0o9Jc2QvcvtO4CnFDLcs" />
                     </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Cicloturismo por las
-                            Orillas</h3>
-                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">schedule</span> 2.5h</div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 1 Pax
-                            </div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Equipo
-                                completo</div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-extrabold text-navy mb-2">Kayak en el Titicaca</h3>
+                        <div class="flex gap-4 text-xs text-gray-400 mb-3"><span class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">schedule</span>3 hrs</span><span
+                                class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">signal_cellular_alt</span>Todos</span>
                         </div>
-                        <button
-                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
-                            información</button>
+                        <p class="text-gray-500 text-sm mb-4">Navegue por las aguas del lago más alto del mundo en
+                            kayak, disfrutando de vistas únicas de los Andes.</p><a
+                            href="https://api.whatsapp.com/send?phone=51987654321"
+                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-bold text-sm transition-all inline-block">Reservar</a>
                     </div>
                 </div>
-                <!-- Activity 3 -->
+
                 <div
-                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 overflow-hidden relative">
-                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
-                            data-alt="Horseback riding in the Andes"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAacTe9rqDc2etSXdHo0sQsyBT8XpMMP1LvNp1htHoGXkwXYoNGts4YlKMzZPu1u83_L4aYQNqxGhZSvJsNZmKD6wZmh2BQmiLUpLxAPT4W5ZZmH0QV26hVy9JxTKAj2FB9MGw1Ke3GjKa2JUaBQ6UJEd3dXHvAFaFzuzan9lLHPoJkSHfMjek8jjTHlkUdAb38waA5tKzBscienPC1wG8JvLfIxq6O5Uqhwt-wyUGNaeAB7O1t8RM7jNvkPKxPQhK8FBkXG12cAUI" />
-                        <div
-                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
-                            S/40</div>
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                    <div class="h-56 overflow-hidden"><img alt="Islas"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0UMFPv5beCgx2jSGjw3FgwXVm-7A-EyUcLnoMecBd0E7k02BGYa25tLZMtBPRZlgoYOfwlcIY_-gBfIbxzDqMqOdLYPN3PyRUgVZq6bC_mmsi09v81yDZq9_f8tm6IKMBYKb_j2mWdTY0hz2g9xhnC-ra5SitkvSvnBqskwLWYbxOmx_S-n_JG9Aht7ztAWAW7XNzA4nbXcMMMZn089Mf9_sWpcg9xfjAGWp9k_SiY8XAIKrgmE9NobUTp1Sruk8GYmkF07EhgtQ" />
                     </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Paseo a Caballo</h3>
-                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">schedule</span> 50min</div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 1 Pax
-                            </div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Equipo de
-                                seguridad</div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-extrabold text-navy mb-2">Tour Islas Flotantes</h3>
+                        <div class="flex gap-4 text-xs text-gray-400 mb-3"><span class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">schedule</span>Medio día</span><span
+                                class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">signal_cellular_alt</span>Cultural</span>
                         </div>
-                        <button
-                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
-                            información</button>
+                        <p class="text-gray-500 text-sm mb-4">Visite las Islas de los Uros, una maravilla de ingeniería
+                            ancestral construida sobre totora flotante.</p><a
+                            href="https://api.whatsapp.com/send?phone=51987654321"
+                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-bold text-sm transition-all inline-block">Reservar</a>
                     </div>
                 </div>
-                <!-- Activity 4 -->
+
                 <div
-                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 overflow-hidden relative">
-                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
-                            data-alt="Traditional community farm visit"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHjCN1S6dLl-HbyfmN-guTSNWPwDc-3zmuKsLxEtCcqY7-QUkew85mOZPHDej8prUtTZXHwZwQxWOzPcZq2sxVCEsI0UFxbN0O0wIq6ai_bPSX35nJq5HbPOH7f1Hg2bnjpeKeBwydXFp1omLV4BtEkf2xOsYm0rNM_TmdfdtPo2DVzpmxdDdgSI20bttufrIJuq6mgLAiooed-8_-4-7Vsli28GBjAZZ9_lZzxtKy_4BP-8biO3KBTRw-fAzg-gcxO9Ihh2sXr2s" />
-                        <div
-                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
-                            S/15</div>
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                    <div class="h-56 overflow-hidden"><img alt="Cabalgata"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjLRm8UKEzpYHI84ymQSn3Kg6_0vPHEnYoKsB4trBWpkSLp2aUn6P4VvZ3WvXWZM1Y3jlTpKOJsIFIwNibC-mCYpD59gOr5EmnD9WA6ccznu2u7XEbA6FoMh0LHgPBuz2diWMocC6DHTRzr46hlBv39_pmBQZWU4-vZgNfxrkh_OqQhu4SACM18uxU9T0CwNmns54FscuqLCqqh0sGv0TtkkZg99-qGHDREJ3hX-G2dD3uWrA6scRsmOxicTnk_yVwx-HrDAHdzxY" />
                     </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Visita a Comunidad
-                            Ganadera</h3>
-                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">schedule</span> 50min</div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 2 Pax
-                            </div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Guía local
-                            </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-extrabold text-navy mb-2">Cabalgata Andina</h3>
+                        <div class="flex gap-4 text-xs text-gray-400 mb-3"><span class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">schedule</span>2-3 hrs</span><span
+                                class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">signal_cellular_alt</span>Principiantes</span>
                         </div>
-                        <button
-                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
-                            información</button>
+                        <p class="text-gray-500 text-sm mb-4">Recorra las pampas altiplánicas a caballo con guía local.
+                            Apto para todos los niveles de experiencia.</p><a
+                            href="https://api.whatsapp.com/send?phone=51987654321"
+                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-bold text-sm transition-all inline-block">Reservar</a>
                     </div>
                 </div>
-                <!-- Activity 5 -->
+
                 <div
-                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 overflow-hidden relative">
-                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
-                            data-alt="Archaeological site bike tour"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6vSy21OXwmiGyRSS5z7y6gZkTYvVH4RIk8sAZ-wSL2VNegHO97Ne9HfZc0phhFE6cngdCjZwfl8jsPjJqoC7urQlYJl48jwu8um5Owio9yZIDJGWCo0uh9R01zdgqs_-1HT6p8D0ikRDau_P-tIO3TDpDvQ8skigPvymBjLRwaFxOq2J8LaI1YK47pXKwllH9tXrxpTpaKahA0xpNbZIuXSVT8GVGLvB81TMJN3VkNSrTypSS5CtxRAHJ1SZTQOMTDCQQBqCcXSU" />
-                        <div
-                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
-                            S/65</div>
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                    <div class="h-56 overflow-hidden"><img alt="Textiles"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS00PnaO0SFgWSutlibmwkDkluXVK6uYYyNPDqiI2CeYK8MocS3wdrewkFQsezeN4Nlr5i_zxOcSIPUwzXYdID7XkcaSDbLIs3uDf36lJXiQEdaQFRQWYrvkVjAEJG7kt1HrqjDBdPAx1cTHMwHX9PoRifY5Yhl3i8WVq1bPOIfPzOMBgoX4Rxw5tg2PySEAxrsjqj29k_A_SI02gtgZty2sVuIxvuR-D20ZbmCww4qTquqHkHJWvhGwPUpd4LeYSElmi29eJlGLo" />
                     </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Cicloturismo a
-                            Sillustani</h3>
-                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">schedule</span> 2.5h</div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 2 Pax
-                            </div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Bicicleta y
-                                Guía</div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-extrabold text-navy mb-2">Taller de Textiles</h3>
+                        <div class="flex gap-4 text-xs text-gray-400 mb-3"><span class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">schedule</span>2 hrs</span><span
+                                class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">signal_cellular_alt</span>Familiar</span>
                         </div>
-                        <button
-                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
-                            información</button>
+                        <p class="text-gray-500 text-sm mb-4">Aprenda las técnicas ancestrales de tejido andino
+                            directamente de artesanas de la comunidad local.</p><a
+                            href="https://api.whatsapp.com/send?phone=51987654321"
+                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-bold text-sm transition-all inline-block">Reservar</a>
                     </div>
                 </div>
-                <!-- Activity 6 -->
+
                 <div
-                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 overflow-hidden relative">
-                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
-                            data-alt="Extended horseback ride through valleys"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPMngxmqRKb5WFTa7TjDZnenOE-5ibP-XO3XLvhrV01UYMiccLFCITYfajtJQ-tw0nQpnCkknD-V_X1EmBNjtHBpi0bGMxo6a6EyjZJzFKXJ2abKVex8yGuLqYNlaDiDbsoVhb3dQEgQQt1ovp9KvyaZXE8v-715OQaSuA0FCmTTdVQpp37rN4KCMQUBFDHa-Q60R5iqWlqdK-pj-ESLpMU0ymTEY-dzGO3ukXvBz9fFbOGUXri_MsXXUq7GKQLHHWNG9GiSXFZO0" />
-                        <div
-                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
-                            S/130</div>
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100">
+                    <div class="h-56 overflow-hidden"><img alt="Estrellas"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Go1wLhV9770y-lYKzvkg_dQoVAWrXGJEjegbor6f4DycQOMESsBZq6w9vtJH2HO1szy9r9AdwSqtqT5LWuc1raYj4pyDEaxcP9SjlUHDfKWaZ44FkW6M5QBdY1wTqqiaEC6bY1ayXvlQ75ckWopFPPWavhena4r7f21IPl-bmA-eGAANc0ni3mJmQGMfhWHVtNBixXfnj45MHnkniGXBgvcXw4uWYisczEQ1A7Q6Ub0GY490aH_FYXGs6y3Pd_u3UClK4vIJYJM" />
                     </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Cabalgata Larga</h3>
-                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">schedule</span> 1.5h</div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 1 Pax
-                            </div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Equipo y
-                                Guía</div>
-                        </div>
-                        <button
-                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
-                            información</button>
-                    </div>
-                </div>
-                <!-- Activity 7 -->
-                <div
-                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 overflow-hidden relative">
-                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
-                            data-alt="Boat ride on Lake Titicaca"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyNxVn8wF6VtvhK3ITDK-y9B7WF0EoMy-n3xXSwXz4rQW-FGInbp13o5i9t5wR3NaxR0XOP8eyGkHygBQmnHpfQJNWGzZcdVacyOwX-vCsZ-sdpa3lz94zWPSm4us33ozEkK3HhRiYSe8kQ9p8jivTsz9MFfn2hmY4HiSE2ciL8hwWRRuGkh3Bmh78AfCThQJFdk5SRsFjtP5m8eLEuh4s3_g3SvW4_YpJw3gVWh4XbXEuE7VnIgSfspMhC4gg3nCqavjL_HVaPp4" />
-                        <div
-                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
-                            S/80</div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Paseo en Bote</h3>
-                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">directions_boat</span> 2h
-                            </div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 4 Pax
-                            </div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Traslados
-                                incl.</div>
-                        </div>
-                        <button
-                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
-                            información</button>
-                    </div>
-                </div>
-                <!-- Activity 8 -->
-                <div
-                    class="activity-card group bg-white dark:bg-background-dark border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden shadow-xl shadow-black/5 flex flex-col transition-all duration-300 hover:-translate-y-2">
-                    <div class="h-48 overflow-hidden relative">
-                        <img class="activity-img w-full h-full object-cover transition-transform duration-500"
-                            data-alt="Traditional Andean textile weaving workshop"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuArsmamvPggKwX-mRbucjj_1Q95ewUZ6AnzrGZzJUhVa6vyzGuWn0ymXH5plrKz2anddSgpE7iOMjdIXmi0DQGWA52b8EN-Lk-mc9V2e8pGNEhdXFd6hJSxlQQr3cFADcux_wJggg5sQRNvdWbTyIqSNpWA1jprQ5q4jg0kCUZ2XUVUWyuwDbCLshnoCUwjsMpqpAV2qYSl9tMg2o23dFey283lxkkRkk4dUX1U2kFIhQWPygCptmsGOn2cnr5cbQlMJ8ql1GQr-Q0" />
-                        <div
-                            class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
-                            S/50</div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="serif-title text-xl mb-3 text-andean-brown dark:text-primary">Taller de Textilería
-                            Andina</h3>
-                        <div class="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">palette</span> 1.5h</div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">groups</span> Min 2 Pax
-                            </div>
-                            <div class="flex items-center gap-2"><span
-                                    class="material-icons-outlined text-[18px] text-primary">verified</span> Materiales
-                                incl.</div>
-                        </div>
-                        <button
-                            class="mt-auto w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-bold text-xs uppercase tracking-widest">Más
-                            información</button>
+                    <div class="p-6">
+                        <h3 class="text-lg font-extrabold text-navy mb-2">Observación de Estrellas</h3>
+                        <div class="flex gap-4 text-xs text-gray-400 mb-3"><span class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">schedule</span>1.5 hrs</span><span
+                                class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">dark_mode</span>Nocturno</span></div>
+                        <p class="text-gray-500 text-sm mb-4">Los cielos de Puno son ideales para la astronomía.
+                            Telescopios profesionales y guía del cosmos andino.</p><a
+                            href="https://api.whatsapp.com/send?phone=51987654321"
+                            class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg font-bold text-sm transition-all inline-block">Reservar</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- CTA Banner -->
-    <section class="py-24 relative overflow-hidden">
-        <div class="absolute inset-0">
-            <img class="w-full h-full object-cover" data-alt="Scenic Andean sunset background"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfrjlrO7qKGvQZSTTh38fqLqp_eFSU4drgZ47LjAooItvHtTD9Iij72Ail_coHScWTedL1GUfW1Xk8qr_3cVCS-igW6OgeOa-lcnYJCKAAlkCAdRyTtUy-5CkdqqHqfWeV_vSACoa2ZXLyH5uLv_JUMewH-CF4JJWn1-5GJ9oIJ81dDT6zh8O0NSe6VUy6XICf67v_jq2LrZbd3u8nzdrfKO2xxeWCcBfCT1pMhBVo4V3Yk2kB8yFDStfJ-HePBWvPrJCV2f3d6aM" />
-            <div class="absolute inset-0 bg-deep-blue/80"></div>
-        </div>
-        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 text-white">
-            <h2 class="serif-title text-3xl md:text-5xl mb-8 leading-tight italic">Cada actividad es una invitación a
-                vivir los Andes con intensidad o serenidad</h2>
-            <div class="flex justify-center">
-                <button
-                    class="bg-[#25D366] hover:bg-[#20ba5a] text-white px-10 py-4 rounded-xl font-bold flex items-center gap-3 transition-transform hover:scale-105 shadow-2xl">
-                    <svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
-                        <path
-                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.82l.303.18c1.397.831 3.013 1.27 4.673 1.271 5.033 0 9.13-4.097 9.132-9.131.002-2.438-.946-4.731-2.67-6.457-1.725-1.725-4.018-2.674-6.455-2.675-5.033 0-9.13 4.097-9.132 9.132-.001 1.685.464 3.325 1.341 4.766l.197.321-1.112 4.062 4.122-1.079zm11.446-5.494c-.31-.156-1.832-.903-2.112-1.005-.28-.102-.484-.156-.688.156-.204.311-.79.997-.968 1.201-.178.204-.357.23-.667.074-.31-.156-1.31-.482-2.492-1.538-.919-.819-1.54-1.831-1.72-2.142-.18-.311-.02-.479.135-.634.14-.139.31-.361.466-.541.156-.18.208-.307.31-.514.103-.207.052-.389-.026-.544-.078-.155-.688-1.658-.943-2.273-.248-.599-.5-.518-.688-.527-.178-.008-.382-.01-.586-.01s-.535.077-.816.388c-.28.311-1.072 1.048-1.072 2.557s1.1 2.964 1.253 3.172c.153.207 2.162 3.303 5.238 4.63.731.316 1.302.505 1.746.646.735.234 1.403.201 1.931.122.588-.088 1.832-.749 2.088-1.474.256-.725.256-1.348.179-1.475-.077-.127-.281-.204-.591-.36z">
-                        </path>
-                    </svg>
-                    <span>RESERVAR POR WHATSAPP</span>
-                </button>
-            </div>
+
+    <section class="relative py-20 overflow-hidden"><img alt="CTA" class="absolute inset-0 w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9mTLgRhuu7c0zqgi6EsQJHbHgpZOwNf2TpQMmRYgm-l9GtTYJ7MzjXPK_AzGf4-i2SDgaBia524Vvbhfw-JVbHQMviY0MBpYAyFh2qUSZ0cR0tZolmQa58jMPwzA-99wMmiQCeXDF7u-_KuHTF_U49Dr1GgfGOCVvf_PPPOV6gyznoAMN7Ny9mJwimhsl5MaHNWi3RRNXhHw7vdQqr3PHmY1IX0WitSDmGKoEV0AmhlGkl16JhU_EL4AztlLb7IS4uhagORa9Zwo" />
+        <div class="absolute inset-0 bg-navy/85"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">VIVE LA AVENTURA ANDINA</h2>
+            <p class="text-white/80 text-lg mb-10">Reserva tu actividad favorita por WhatsApp y recibe confirmación
+                inmediata.</p>
+            <a class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5c] text-white px-10 py-5 rounded-full font-bold text-xl transition-transform hover:scale-105 shadow-xl"
+                href="https://api.whatsapp.com/send?phone=51987654321"><svg class="w-8 h-8 fill-current"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.653a11.883 11.883 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>Contactar por WhatsApp</a>
         </div>
     </section>
-    <!-- Footer -->
-    <footer class="bg-deep-blue text-white py-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12 mb-12">
-                <div class="col-span-1 md:col-span-1">
-                    <div class="flex items-center gap-2 mb-6">
-                        <span class="material-icons-outlined text-primary text-3xl">landscape</span>
-                        <span class="text-xl font-bold tracking-tight serif-title">QUILLAPATA <span
-                                class="font-normal italic">Lodge</span></span>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">Una experiencia de lujo andino a orillas del Lago
-                        Titicaca, donde la tradición y la modernidad se encuentran.</p>
+
+    <footer class="bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-6xl md:text-8xl lg:text-9xl font-extrabold text-white/5 uppercase tracking-tighter leading-none">
+                    QUILLAPATA LODGE</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div><span class="sf text-2xl font-bold block mb-4">Quillapata <span
+                            class="text-primary font-light">Lodge</span></span>
+                    <p class="text-white/50 text-sm">Experiencias auténticas en el Altiplano peruano.</p>
                 </div>
                 <div>
-                    <h4 class="font-bold text-lg mb-6 text-primary">Navegación</h4>
-                    <ul class="space-y-4 text-sm text-gray-300">
-                        <li><a class="hover:text-primary transition-colors" href="index.html">Inicio</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="nosotros.html">Nosotros</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="habitaciones.html">Habitaciones</a>
-                        </li>
-                        <li><a class="hover:text-primary transition-colors" href="alimentacion.html">Alimentación</a>
-                        </li>
-                        <li><a class="hover:text-primary transition-colors" href="paquetes.html">Paquetes</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="como-llegar.html">Cómo Llegar</a></li>
+                    <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Navegación</h3>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li><a class="hover:text-primary" href="habitaciones.html">Habitaciones</a></li>
+                        <li><a class="hover:text-primary" href="alimentacion.html">Gastronomía</a></li>
+                        <li><a class="hover:text-primary" href="actividades.html">Experiencias</a></li>
+                        <li><a class="hover:text-primary" href="paquetes.html">Paquetes</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-lg mb-6 text-primary">Contacto</h4>
-                    <ul class="space-y-4 text-sm text-gray-300">
-                        <li class="flex items-start gap-3"><span
-                                class="material-icons-outlined text-primary text-sm">location_on</span> Puno, Peru -
-                            Orillas del Lago Titicaca</li>
-                        <li class="flex items-center gap-3"><span
-                                class="material-icons-outlined text-primary text-sm">phone</span> +51 987 654 321</li>
-                        <li class="flex items-center gap-3"><span
-                                class="material-icons-outlined text-primary text-sm">mail</span>
-                            info@quillapatalodge.com</li>
+                    <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Contacto</h3>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li>+51 987 654 321</li>
+                        <li>reservas@quillapatalodge.com</li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-lg mb-6 text-primary">Síguenos</h4>
-                    <div class="flex gap-4">
-                        <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary transition-colors"
-                            href="#">
-                            <span class="material-icons-outlined text-lg">facebook</span>
-                        </a>
-                        <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary transition-colors"
-                            href="#">
-                            <span class="material-icons-outlined text-lg">photo_camera</span>
-                        </a>
-                        <a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary transition-colors"
-                            href="#">
-                            <span class="material-icons-outlined text-lg">travel_explore</span>
-                        </a>
-                    </div>
+                    <h3 class="font-bold text-primary uppercase tracking-wider text-sm mb-6">Legal</h3>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li><a class="hover:text-primary" href="#">Términos</a></li>
+                        <li><a class="hover:text-primary" href="#">Privacidad</a></li>
+                    </ul>
                 </div>
             </div>
-            <div
-                class="flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-500 uppercase tracking-widest font-bold">
-                <p>© 2024 Quillapata Lodge. Todos los derechos reservados.</p>
-                <div class="flex gap-8">
-                    <a class="hover:text-white transition-colors" href="#">Términos y Condiciones</a>
-                    <a class="hover:text-white transition-colors" href="#">Privacidad</a>
-                </div>
-            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-white/30 text-xs">© 2025 Quillapata Lodge.</div>
         </div>
     </footer>
+    <a href="https://api.whatsapp.com/send?phone=51987654321"
+        class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform"><svg
+            class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.653a11.883 11.883 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg></a>
 </body>
 
 </html>
